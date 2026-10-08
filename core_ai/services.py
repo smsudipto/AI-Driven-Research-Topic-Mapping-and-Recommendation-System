@@ -2,8 +2,16 @@ from functools import lru_cache
 
 from proposals.models import ResearchTopic
 from research_library.models import ThesisPaper
-from sentence_transformers import SentenceTransformer
-from sklearn.metrics.pairwise import cosine_similarity
+
+# সেফলি এআই লাইব্রেরিগুলো ইমপোর্ট করার ব্যবস্থা, যাতে রেন্ডার সার্ভারে ক্র্যাশ না করে
+try:
+    from sentence_transformers import SentenceTransformer
+    from sklearn.metrics.pairwise import cosine_similarity
+    AI_AVAILABLE = True
+except (ImportError, ModuleNotFoundError):
+    SentenceTransformer = None
+    cosine_similarity = None
+    AI_AVAILABLE = False
 
 
 MODEL_NAME = 'all-MiniLM-L6-v2'
@@ -11,6 +19,8 @@ MODEL_NAME = 'all-MiniLM-L6-v2'
 
 @lru_cache(maxsize=1)
 def get_embedding_model():
+    if not AI_AVAILABLE or SentenceTransformer is None:
+        return None
     return SentenceTransformer(MODEL_NAME)
 
 
@@ -82,19 +92,29 @@ def analyze_query(query):
             'meta': f'{topic.domain} | {topic.status}',
         })
 
-    model = get_embedding_model()
-    query_vector = model.encode([query], convert_to_numpy=True)
-    if records:
-        record_vectors = model.encode(
-            [_document_text(item['title'], item['description']) for item in records],
-            convert_to_numpy=True,
-            show_progress_bar=False,
-        )
-        scores = cosine_similarity(query_vector, record_vectors)[0]
-        for record, score in zip(records, scores):
-            record['similarity'] = _score(score)
+    # সার্ভারে এআই উপলব্ধ থাকলে এআই দিয়ে কাজ করবে, না থাকলে ফলব্যাক মোডে চলবে
+    if AI_AVAILABLE and records:
+        model = get_embedding_model()
+        if model is not None and cosine_similarity is not None:
+            try:
+                query_vector = model.encode([query], convert_to_numpy=True)
+                record_vectors = model.encode(
+                    [_document_text(item['title'], item['description']) for item in records],
+                    convert_to_numpy=True,
+                    show_progress_bar=False,
+                )
+                scores = cosine_similarity(query_vector, record_vectors)[0]
+                for record, score in zip(records, scores):
+                    record['similarity'] = _score(score)
+            except Exception:
+                for record in records:
+                    record['similarity'] = 0.0
+        else:
+            for record in records:
+                record['similarity'] = 0.0
     else:
-        scores = []
+        for record in records:
+            record['similarity'] = 0.0
 
     matches = sorted(records, key=lambda item: item.get('similarity', 0), reverse=True)[:5]
     highest_similarity = max((item.get('similarity', 0) for item in records), default=0)
