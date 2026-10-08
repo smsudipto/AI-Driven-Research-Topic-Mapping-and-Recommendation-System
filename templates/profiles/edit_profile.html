@@ -1,0 +1,248 @@
+{% extends 'base.html' %}
+
+{% block title %}Edit Profile - ThesisBridge{% endblock %}
+
+{% block extra_css %}
+<style>
+    body {
+        background-color: #f3f6f9;
+    }
+
+    .profile-edit-card {
+        background: #ffffff;
+        border: 1px solid #e2e8f0;
+        border-radius: 12px;
+        padding: 30px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+    }
+
+    .form-label {
+        font-weight: 600;
+        color: #0f172a;
+        font-size: 0.9rem;
+    }
+
+    .form-control,
+    .form-select {
+        border-radius: 8px;
+        border: 1px solid #cbd5e1;
+        padding: 10px 14px;
+        font-size: 0.95rem;
+    }
+
+    .form-control:focus,
+    .form-select:focus {
+        border-color: #0d6e75;
+        box-shadow: 0 0 0 3px rgba(13, 110, 117, 0.15);
+    }
+
+    .btn-save-profile {
+        background-color: #0d6e75;
+        color: white;
+        font-weight: 600;
+        border-radius: 8px;
+        padding: 10px 24px;
+        border: none;
+        transition: background-color 0.2s;
+    }
+
+    .btn-save-profile:hover {
+        background-color: #094a4f;
+        color: white;
+    }
+
+    .btn-cancel {
+        background-color: #f1f5f9;
+        color: #475569;
+        font-weight: 600;
+        border-radius: 8px;
+        padding: 10px 20px;
+        border: 1px solid #cbd5e1;
+        text-decoration: none;
+    }
+
+    .btn-cancel:hover {
+        background-color: #e2e8f0;
+        color: #1e293b;
+    }
+
+    .img-preview {
+        width: 100px;
+        height: 100px;
+        border-radius: 10px;
+        object-fit: cover;
+        border: 2px solid #e2e8f0;
+    }
+
+    .avatar-fallback {
+        width: 100px;
+        height: 100px;
+        border-radius: 10px;
+        object-fit: cover;
+        border: 2px solid #e2e8f0;
+        background: #f8fafc;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <div class="profile-edit-card">
+                <h4 class="fw-bold mb-4" style="color: #0f172a;">
+                    {% if user.role == 'student' %}Edit Student Profile{% else %}Edit Supervisor Profile{% endif %}
+                </h4>
+
+                <!-- enctype="multipart/form-data" দেওয়া আবশ্যক কারণ এখানে ফাইল/ছবি আপলোড হবে -->
+                <form method="POST" enctype="multipart/form-data">
+                    {% csrf_token %}
+
+                    {% if user.role == 'student' %}
+                    <div class="row g-3 mb-3">
+                        <div class="col-md-6">
+                            <label class="form-label">Student ID</label>
+                            <input type="text" name="student_id" class="form-control" value="{{ profile.student_id }}"
+                                placeholder="S12345">
+                        </div>
+
+                        <div class="col-md-6">
+                            <label class="form-label">Department</label>
+                            <select name="department" class="form-select">
+                                <option value="Computer Science">Computer Science</option>
+                                <option value="Electrical Engineering">Electrical Engineering</option>
+                                <option value="Civil">Civil</option>
+                                <option value="Business">Business</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="row g-3 mb-3">
+                        <div class="col-md-6">
+                            <label class="form-label">Intake</label>
+                            <input type="text" name="intake" class="form-control"
+                                value="{{ profile.intake|default:'' }}" placeholder="Spring 2026">
+                        </div>
+
+                        <div class="col-md-6">
+                            <label class="form-label">Section</label>
+                            <input type="text" name="section" class="form-control"
+                                value="{{ profile.section|default:'' }}" placeholder="A / B / C">
+                        </div>
+                    </div>
+
+                    <div class="row g-3 mb-3">
+                        <div class="col-md-6">
+                            <label class="form-label">CGPA</label>
+                            <input type="number" step="0.01" min="0" max="4" name="cgpa" class="form-control"
+                                value="{{ profile.cgpa|default:'' }}" placeholder="3.75">
+                        </div>
+
+                        <div class="col-md-6">
+                            <label class="form-label">Phone Number</label>
+                            <input type="text" name="phone_number" class="form-control"
+                                value="{{ profile.phone_number|default:'' }}" placeholder="01XXXXXXXXX">
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Research Interests</label>
+                        <input type="text" name="research_interests" class="form-control"
+                            value="{{ profile.research_interests|default:'' }}"
+                            placeholder="e.g. AI, Machine Learning, Data Mining (comma separated)">
+                    </div>
+
+                    <div class="mb-4">
+                        <label class="form-label">Skills</label>
+                        <input type="text" name="skills" class="form-control" value="{{ profile.skills|default:'' }}"
+                            placeholder="e.g. Python, Django, Data Analysis (comma separated)">
+                    </div>
+
+                    <div class="alert alert-light border text-muted small mb-4">
+                        Keep each list comma-separated so the search page can show them as tags.
+                    </div>
+
+                    <div class="mb-4">
+                        <label class="form-label d-block">Profile Picture</label>
+                        <div class="d-flex align-items-center gap-3 flex-wrap">
+                            {% if profile.profile_picture %}
+                            <img src="{{ profile.profile_picture.url }}" alt="Profile Preview" class="img-preview">
+                            {% else %}
+                            <img src="https://ui-avatars.com/api/?name={{ profile.display_name|urlencode }}&background=0d6e75&color=fff"
+                                alt="Profile Preview" class="avatar-fallback">
+                            {% endif %}
+                            <div>
+                                <input type="file" name="profile_picture" class="form-control" accept="image/*">
+                                <small class="text-muted">Upload a clear square photo (JPG or PNG).</small>
+                            </div>
+                        </div>
+                    </div>
+
+                    {% else %}
+                    <!-- Profile Picture Upload -->
+                    <div class="mb-4">
+                        <label class="form-label d-block">Profile Picture</label>
+                        <div class="d-flex align-items-center gap-3">
+                            {% if profile.profile_pic %}
+                            <img src="{{ profile.profile_pic.url }}" alt="Profile Preview" class="img-preview mb-2">
+                            {% else %}
+                            <img src="https://ui-avatars.com/api/?name={{ profile.avatar_name|urlencode }}&background=0d6e75&color=fff"
+                                alt="Profile Preview" class="img-preview mb-2">
+                            {% endif %}
+                            <div>
+                                <input type="file" name="profile_pic" class="form-control" accept="image/*">
+                                <small class="text-muted">Upload a clear square photo (JPG or PNG).</small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row g-3 mb-3">
+                        <!-- Full Name -->
+                        <div class="col-md-6">
+                            <label class="form-label">Full Name</label>
+                            <input type="text" name="full_name" class="form-control" value="{{ profile.display_name }}"
+                                placeholder="Dr. Aris Khan">
+                        </div>
+
+                        <!-- Department Selection -->
+                        <div class="col-md-6">
+                            <label class="form-label">Department</label>
+                            <select name="department" class="form-select">
+                                <option value="Computer Science">Computer Science</option>
+                                <option value="Electrical Engineering">Electrical Engineering</option>
+                                <option value="Civil">Civil</option>
+                                <option value="Business">Business</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Research Interests -->
+                    <div class="mb-3">
+                        <label class="form-label">Research Interests</label>
+                        <input type="text" name="research_interests" class="form-control"
+                            value="{{ profile.research_interests }}"
+                            placeholder="e.g. AI, Machine Learning, Data Mining (comma separated)">
+                    </div>
+
+                    <!-- Availability Status -->
+                    <div class="mb-4">
+                        <label class="form-label">Availability Status</label>
+                        <select name="status" class="form-select">
+                            <option value="Accepting Students">Accepting Students</option>
+                            <option value="Full">Full</option>
+                        </select>
+                    </div>
+                    {% endif %}
+
+                    <!-- Action Buttons -->
+                    <div class="d-flex justify-content-end gap-2 pt-3 border-top">
+                        <a href="{% url 'profile' %}" class="btn btn-cancel">Cancel</a>
+                        <button type="submit" class="btn btn-save-profile shadow-sm">Save Changes</button>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,451 @@
+{% extends 'base.html' %}
+
+{% block title %}Find Supervisor - ThesisBridge{% endblock %}
+
+{% block extra_css %}
+<style>
+    body {
+        background-color: #f3f6f9;
+    }
+
+    body:has(.find-supervisor-page) {
+        overflow: auto;
+    }
+
+    .find-supervisor-page {
+        display: grid;
+        grid-template-columns: minmax(240px, 280px) minmax(0, 1fr);
+        gap: 24px;
+        height: calc(100vh - 72px);
+        min-height: 0;
+        padding: 24px;
+        overflow: visible;
+    }
+
+    .find-supervisor-sidebar {
+        position: sticky;
+        top: 1rem;
+        align-self: start;
+        min-width: 0;
+        min-height: auto;
+    }
+
+    .find-supervisor-sidebar .filter-card {
+        height: auto;
+    }
+
+    .find-supervisor-results {
+        height: 100%;
+        min-width: 0;
+        min-height: 0;
+        overflow-x: hidden;
+        overflow-y: auto;
+        padding-right: 6px;
+    }
+
+    .find-supervisor-results > .row {
+        margin-right: 0;
+        margin-left: 0;
+    }
+
+    /* Left Sidebar Filter Card */
+    .filter-card {
+        background: #ffffff;
+        border: 1px solid #e2e8f0;
+        border-radius: 12px;
+        padding: 24px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02);
+    }
+
+    .filter-main-title {
+        font-weight: 700;
+        color: #0f172a;
+        font-size: 1.25rem;
+        margin-bottom: 20px;
+    }
+
+    .filter-section-title {
+        font-size: 0.95rem;
+        font-weight: 700;
+        color: #0f172a;
+        margin-bottom: 12px;
+    }
+
+    .search-input {
+        border-radius: 8px;
+        border: 1px solid #cbd5e1;
+        padding: 8px 12px;
+        font-size: 0.9rem;
+    }
+
+    .search-input:focus {
+        border-color: #0d6efd;
+        box-shadow: 0 0 0 2px rgba(13, 110, 253, 0.15);
+    }
+
+    .form-check-label {
+        font-size: 0.9rem;
+        color: #334155;
+        font-weight: 500;
+        cursor: pointer;
+    }
+
+    .form-check-input:checked {
+        background-color: #0f5257;
+        border-color: #0f5257;
+    }
+
+    .btn-apply-filter {
+        background-color: #0d6e75;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        width: 100%;
+        padding: 10px;
+        font-weight: 600;
+        font-size: 0.95rem;
+        transition: background-color 0.2s;
+    }
+
+    .btn-apply-filter:hover {
+        background-color: #094a4f;
+        color: white;
+    }
+
+    /* Right Side Cards Grid */
+    .sup-card {
+        background: #ffffff;
+        border: 1px solid #e2e8f0;
+        border-radius: 12px;
+        padding: 20px;
+        height: 100%;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+    }
+
+    .sup-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+        border-color: #cbd5e1;
+    }
+
+    .sup-avatar {
+        width: 90px;
+        height: 90px;
+        border-radius: 0.75rem;
+        object-fit: cover;
+        border: 2px solid #e2e8f0;
+        box-shadow: 0 4px 12px rgba(15, 23, 42, 0.12);
+        background-color: #fff;
+    }
+
+    .sup-name {
+        font-size: 1.15rem;
+        font-weight: 700;
+        color: #0f172a;
+        margin-bottom: 0;
+    }
+
+    .meta-label {
+        font-size: 0.85rem;
+        color: #0f172a;
+        font-weight: 700;
+        margin-top: 10px;
+        margin-bottom: 2px;
+    }
+
+    .meta-value {
+        font-size: 0.88rem;
+        color: #475569;
+        margin-bottom: 12px;
+    }
+
+    .badge-interest {
+        background-color: #f1f5f9;
+        color: #334155;
+        font-size: 0.75rem;
+        font-weight: 600;
+        padding: 4px 10px;
+        border-radius: 6px;
+        display: inline-block;
+        margin-right: 4px;
+        margin-bottom: 4px;
+        border: 1px solid #e2e8f0;
+    }
+
+    /* Action Buttons */
+    .btn-view-profile {
+        background-color: #0f2341;
+        color: white;
+        font-size: 0.82rem;
+        font-weight: 600;
+        border-radius: 6px;
+        padding: 8px 12px;
+        border: none;
+        text-decoration: none;
+        text-align: center;
+    }
+
+    .btn-view-profile:hover {
+        background-color: #1c355e;
+        color: white;
+    }
+
+    .btn-send-req {
+        border: 1.5px solid #0d6e75;
+        color: #0d6e75;
+        background: transparent;
+        font-size: 0.82rem;
+        font-weight: 600;
+        border-radius: 6px;
+        padding: 8px 12px;
+        text-decoration: none;
+        text-align: center;
+    }
+
+    .btn-send-req:hover {
+        background-color: #0d6e75;
+        color: white;
+    }
+
+    .btn-disabled-full {
+        border: 1.5px solid #cbd5e1;
+        color: #94a3b8;
+        background: #f8fafc;
+        font-size: 0.82rem;
+        font-weight: 600;
+        border-radius: 6px;
+        padding: 8px 12px;
+        text-align: center;
+        cursor: not-allowed;
+    }
+
+    /* Pagination */
+    .page-link-custom {
+        color: #334155;
+        border-radius: 6px;
+        margin: 0 3px;
+        border: 1px solid #e2e8f0;
+        font-weight: 600;
+        padding: 6px 12px;
+        text-decoration: none;
+    }
+
+    .page-item.active .page-link-custom {
+        background-color: #0d6e75;
+        border-color: #0d6e75;
+        color: white;
+    }
+
+    @media (max-width: 991.98px) {
+        body:has(.find-supervisor-page) { overflow: auto; }
+
+        .find-supervisor-page {
+            display: block;
+            height: auto;
+            min-height: calc(100vh - 72px);
+            padding: 20px;
+            overflow: visible;
+        }
+
+        .find-supervisor-sidebar { position: static; margin-bottom: 20px; }
+        .find-supervisor-sidebar .filter-card { max-height: none; overflow: visible; }
+        .find-supervisor-results { height: auto; overflow: visible; padding-right: 0; }
+    }
+
+    @media (max-width: 575.98px) {
+        .find-supervisor-page { padding: 16px 12px; }
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="find-supervisor-page">
+
+        <!-- Left Filter Sidebar -->
+        <aside class="find-supervisor-sidebar">
+            <div class="filter-card">
+                <h5 class="filter-main-title">Search & Filter</h5>
+                <form method="GET" action="">
+
+                    <!-- Search Input Box -->
+                    <div class="mb-3">
+                        <label for="search" class="filter-section-title d-block mb-1">Search Supervisor</label>
+                        <input type="text" name="search" id="search" class="form-control search-input"
+                            placeholder="Search by name..." value="{{ request.GET.search|default:'' }}">
+                    </div>
+
+                    <!-- Department Filter -->
+                    <div class="filter-section-title mt-4">Department</div>
+
+                    <div class="form-check mb-2">
+                        <input class="form-check-input" type="radio" name="department" id="all_dept" value="all"
+                            checked>
+                        <label class="form-check-label" for="all_dept">All Departments</label>
+                    </div>
+
+                    <div class="form-check mb-2">
+                        <input class="form-check-input" type="radio" name="department" id="cs" value="Computer Science">
+                        <label class="form-check-label" for="cs">Computer Science</label>
+                    </div>
+
+                    <div class="form-check mb-2">
+                        <input class="form-check-input" type="radio" name="department" id="eee"
+                            value="Electrical Engineering">
+                        <label class="form-check-label" for="eee">Electrical Engineering</label>
+                    </div>
+
+                    <div class="form-check mb-2">
+                        <input class="form-check-input" type="radio" name="department" id="civil" value="Civil">
+                        <label class="form-check-label" for="civil">Civil</label>
+                    </div>
+
+                    <div class="form-check mb-3">
+                        <input class="form-check-input" type="radio" name="department" id="bba" value="Business">
+                        <label class="form-check-label" for="bba">Business</label>
+                    </div>
+
+                    <!-- Availability Status -->
+                    <div class="filter-section-title mt-4">Availability Status</div>
+
+                    <div class="form-check mb-2">
+                        <input class="form-check-input" type="radio" name="status" id="all_status" value="all" checked>
+                        <label class="form-check-label" for="all_status">All Status</label>
+                    </div>
+
+                    <div class="form-check mb-2">
+                        <input class="form-check-input" type="radio" name="status" id="accepting" value="accepting">
+                        <label class="form-check-label" for="accepting">Accepting Students</label>
+                    </div>
+
+                    <div class="form-check mb-4">
+                        <input class="form-check-input" type="radio" name="status" id="full" value="full">
+                        <label class="form-check-label" for="full">Full</label>
+                    </div>
+
+                    <button type="submit" class="btn btn-apply-filter shadow-sm">Apply Filters</button>
+                </form>
+            </div>
+        </aside>
+
+        <!-- Right Main Cards Area -->
+        <section class="find-supervisor-results" aria-labelledby="find-supervisor-title">
+            <h3 id="find-supervisor-title" class="fw-bold mb-4" style="color: #0f172a;">Find Supervisor</h3>
+
+            <div class="row g-3">
+                {% for supervisor in supervisors %}
+                <div class="col-lg-4 col-md-6">
+                    <div class="sup-card">
+                        <div>
+                            <!-- Header with Image & Name -->
+                            <div class="d-flex align-items-center gap-3 mb-2">
+                                {% if supervisor.profile_pic and supervisor.profile_pic.name %}
+                                <img src="{{ supervisor.profile_pic.url }}" class="sup-avatar rounded-3"
+                                    alt="{{ supervisor.avatar_name }}">
+                                {% else %}
+                                <img src="https://ui-avatars.com/api/?name={{ supervisor.display_name|urlencode }}&background=0d6e75&color=fff"
+                                    class="sup-avatar rounded-3" alt="{{ supervisor.avatar_name }}">
+                                {% endif %}
+                                <div>
+                                    <h6 class="sup-name">
+                                        {{ supervisor.display_name }}
+                                    </h6>
+                                    <div class="text-muted small">{{ supervisor.designation_label }}</div>
+                                </div>
+                            </div>
+
+                            <!-- Department -->
+                            <div class="meta-label">Department</div>
+                            <div class="meta-value">{{ supervisor.department_label }}</div>
+
+                            <!-- Dynamic Research Interests -->
+                            <div class="meta-label">Research Interests</div>
+                            <div class="mb-3">
+                                {% for interest in supervisor.get_interests_list %}
+                                <span class="badge-interest">{{ interest }}</span>
+                                {% empty %}
+                                <span class="text-muted small">None listed</span>
+                                {% endfor %}
+                            </div>
+
+                            <div class="meta-label">Capacity</div>
+                            <div class="meta-value fw-semibold text-primary">
+                                {{ supervisor.capacity_label|default:"0/5" }}
+                            </div>
+                        </div>
+
+                        <!-- Action Buttons -->
+                        <div class="d-flex align-items-center gap-2 pt-2">
+                            <!-- Dynamic Supervisor Detail Link -->
+                            <a href="{% url 'supervisor_detail' supervisor.id %}"
+                                class="btn btn-view-profile flex-fill">View Profile</a>
+
+                            {% if supervisor.is_accepting %}
+                            <a href="{% url 'profiles_contact_supervisor' supervisor.id %}"
+                                class="btn btn-send-req flex-fill">Send Request</a>
+                            {% else %}
+                            <span class="btn-disabled-full flex-fill">Full</span>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+                {% empty %}
+                <div class="col-12 text-center py-5">
+                    <h5 class="text-muted">No supervisors found.</h5>
+                    <p class="text-secondary small">Ensure supervisors exist in your database or try clearing the
+                        filters.</p>
+                </div>
+                {% endfor %}
+            </div>
+
+            <!-- Pagination -->
+            {% if supervisors.has_other_pages %}
+            <nav class="mt-4 pt-3">
+                <ul class="pagination justify-content-end">
+                    {% if supervisors.has_previous %}
+                    <li class="page-item"><a class="page-link page-link-custom"
+                            href="?page={{ supervisors.previous_page_number }}">Previous</a></li>
+                    {% endif %}
+
+                    {% for i in supervisors.paginator.page_range %}
+                    <li class="page-item {% if supervisors.number == i %}active{% endif %}">
+                        <a class="page-link page-link-custom" href="?page={{ i }}">{{ i }}</a>
+                    </li>
+                    {% endfor %}
+
+                    {% if supervisors.has_next %}
+                    <li class="page-item"><a class="page-link page-link-custom"
+                            href="?page={{ supervisors.next_page_number }}">Next</a></li>
+                    {% endif %}
+                </ul>
+            </nav>
+            {% endif %}
+        </section>
+</div>
+
+<!-- JavaScript to preserve radio selection automatically -->
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const params = new URLSearchParams(window.location.search);
+        const dept = params.get('department');
+        const status = params.get('status');
+
+        if (dept) {
+            const deptRadio = document.querySelector(`input[name="department"][value="${dept}"]`);
+            if (deptRadio) {
+                deptRadio.checked = true;
+            }
+        }
+
+        if (status) {
+            const statusRadio = document.querySelector(`input[name="status"][value="${status}"]`);
+            if (statusRadio) {
+                statusRadio.checked = true;
+            }
+        }
+    });
+</script>
+{% endblock %}

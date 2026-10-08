@@ -1,0 +1,223 @@
+{% extends 'base.html' %}
+
+{% block title %}Research Topics - ThesisBridge{% endblock %}
+
+{% block extra_css %}
+<style>
+    :root {
+        --topic-navy: #0f2341;
+        --topic-teal: #168b92;
+        --topic-ink: #24364b;
+        --topic-soft: #edf7f7;
+    }
+
+    .topics-page { background: linear-gradient(135deg, #f5f8fb 0%, #eef7f7 100%); min-height: calc(100vh - 72px); }
+    .topics-hero { background: linear-gradient(120deg, var(--topic-navy), #17506a); color: #fff; border-radius: 18px; padding: 2rem; }
+    .filter-bar { background: #fff; border: 1px solid #dce7ed; border-radius: 12px; padding: 1rem; }
+    .topic-card { height: 100%; background: #fff; border: 1px solid #dce7ed; border-radius: 12px; padding: 1rem; box-shadow: 0 8px 22px rgba(15, 35, 65, .06); }
+    .topic-card h3 { color: var(--topic-navy); font-size: 1.15rem; }
+    .domain-tag { background: var(--topic-soft); color: #096b73; font-size: .75rem; font-weight: 700; padding: .35rem .65rem; border-radius: 999px; }
+    .status-open { color: #087443; background: #e8f7ef; }
+    .status-closed { color: #9b3b26; background: #fff0eb; }
+    .topic-meta { color: #607286; font-size: .88rem; }
+    .topic-description { color: var(--topic-ink); line-height: 1.5; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 3; overflow: hidden; min-height: 4.5em; }
+    .prerequisites { border-left: 3px solid #9ed9da; padding-left: .8rem; color: #607286; font-size: .9rem; }
+    .modal-header { background: var(--topic-navy); color: #fff; }
+    .modal-header .btn-close { filter: invert(1); }
+    .btn-topic { background: var(--topic-teal); border-color: var(--topic-teal); color: #fff; }
+    .btn-topic:hover { background: #107278; border-color: #107278; color: #fff; }
+    .request-modal-header { background: linear-gradient(135deg, #0f2341 0%, #1c355e 45%, #228b96 100%); padding: 1.5rem; }
+    .request-modal-dialog { max-width: 700px; width: 90%; }
+    .request-modal-header { position: relative; padding-right: 4rem; }
+    .request-modal-header .btn-close { position: absolute; top: 1rem; right: 1.25rem; }
+    .request-modal-header .request-badge { letter-spacing: .12em; opacity: .8; }
+    .request-modal-header .request-supervisor { color: rgba(255, 255, 255, .78); }
+    .request-modal-body { padding: 1.5rem; }
+    .request-modal-body textarea.form-control { border: 1px solid #d7e1e8; border-radius: .75rem; padding: .75rem 1rem; resize: vertical; }
+    .request-modal-body textarea.form-control:focus { border-color: var(--topic-teal); box-shadow: 0 0 0 .2rem rgba(22, 139, 146, .15); }
+    .btn-teal { background: #0d6e75; border-color: #0d6e75; color: #fff; font-weight: 600; }
+    .btn-teal:hover { background: #094a4f; border-color: #094a4f; color: #fff; }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="topics-page py-4">
+    <div class="container-fluid px-4">
+        <section class="topics-hero mb-4 d-flex flex-wrap align-items-center justify-content-between gap-3">
+            <div>
+                <p class="text-uppercase small fw-semibold mb-2 opacity-75">Research marketplace</p>
+                <h1 class="h2 fw-bold mb-2">Find your next thesis topic</h1>
+                <p class="mb-0 opacity-75">Explore supervisor-led research opportunities and send a focused proposal request.</p>
+            </div>
+            {% if request.user.role == 'supervisor' %}
+            <button class="btn btn-light fw-semibold" data-bs-toggle="modal" data-bs-target="#addTopicModal">
+                <i class="fa-solid fa-plus me-2"></i>Add Topic
+            </button>
+            {% endif %}
+        </section>
+
+        <form class="filter-bar row g-2 align-items-center mb-4" method="get">
+            <div class="col-lg-7">
+                <label class="visually-hidden" for="topic-search">Search topics</label>
+                <div class="input-group">
+                    <span class="input-group-text bg-white"><i class="fa-solid fa-magnifying-glass"></i></span>
+                    <input id="topic-search" class="form-control" type="search" name="q" value="{{ query }}" placeholder="Search by title, domain, or skill">
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <label class="visually-hidden" for="topic-domain">Filter by domain</label>
+                <select id="topic-domain" class="form-select" name="domain">
+                    <option value="">All domains</option>
+                    {% for domain in domains %}
+                    <option value="{{ domain }}" {% if selected_domain == domain %}selected{% endif %}>{{ domain }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="col-lg-2 d-grid"><button class="btn btn-topic" type="submit">Filter topics</button></div>
+        </form>
+
+        {% if messages %}
+        {% for message in messages %}<div class="alert alert-{{ message.tags|default:'info' }}" role="alert">{{ message }}</div>{% endfor %}
+        {% endif %}
+
+        {% if request.user.role == 'supervisor' %}
+        <div class="modal fade" id="addTopicModal" tabindex="-1" aria-labelledby="addTopicModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h2 class="modal-title h5" id="addTopicModalLabel">Add Research Topic</h2>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <form method="post" action="{% url 'create_topic' %}">
+                        {% csrf_token %}
+                        <div class="modal-body" style="max-height: 65vh; overflow-y: auto; padding: 1.5rem;">
+                            <div class="w-100">
+                                <label for="{{ topic_form.title.id_for_label }}" class="form-label fw-semibold text-dark mb-1">Title</label>
+                                {{ topic_form.title }}
+                                {{ topic_form.title.errors }}
+
+                                <label for="{{ topic_form.domain.id_for_label }}" class="form-label fw-semibold text-dark mb-1">Domain</label>
+                                {{ topic_form.domain }}
+                                {{ topic_form.domain.errors }}
+
+                                <label for="{{ topic_form.description.id_for_label }}" class="form-label fw-semibold text-dark mb-1">Description</label>
+                                {{ topic_form.description }}
+                                {{ topic_form.description.errors }}
+
+                                <label for="{{ topic_form.prerequisites.id_for_label }}" class="form-label fw-semibold text-dark mb-1">Prerequisites</label>
+                                {{ topic_form.prerequisites }}
+                                {{ topic_form.prerequisites.errors }}
+
+                                <label for="{{ topic_form.available_seats.id_for_label }}" class="form-label fw-semibold text-dark mb-1">Available seats</label>
+                                {{ topic_form.available_seats }}
+                                {{ topic_form.available_seats.errors }}
+
+                                <label for="{{ topic_form.status.id_for_label }}" class="form-label fw-semibold text-dark mb-1">Status</label>
+                                {{ topic_form.status }}
+                                {{ topic_form.status.errors }}
+                            </div>
+                        </div>
+                        <div class="modal-footer d-flex justify-content-end gap-2 p-3 bg-light border-top">
+                            <button type="button" class="btn btn-secondary px-4" data-bs-dismiss="modal">Cancel</button>
+                            <button type="submit" class="btn btn-primary px-4">Save Topic</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        {% endif %}
+
+        <div class="row g-3">
+            {% for topic in topics %}
+            <div class="col-12 col-md-6 col-lg-4">
+                <article class="topic-card d-flex flex-column">
+                    <div class="d-flex justify-content-between align-items-start gap-2 mb-3">
+                        <span class="domain-tag">{{ topic.domain }}</span>
+                        <span class="badge rounded-pill {% if topic.status == 'Open' %}status-open{% else %}status-closed{% endif %}">{{ topic.status }}</span>
+                    </div>
+                    <h3 class="fw-bold mb-2">{{ topic.title }}</h3>
+                    <p class="topic-meta mb-3"><i class="fa-solid fa-user-tie me-2"></i>{{ topic.supervisor.get_full_name|default:topic.supervisor.username }}</p>
+                    <p class="topic-description mb-3">{{ topic.description|truncatewords:30 }}</p>
+                    <div class="prerequisites mb-4"><strong>Prerequisites</strong><br>{{ topic.prerequisites|truncatewords:20 }}</div>
+                    <div class="d-flex justify-content-between align-items-center topic-meta mt-auto mb-3">
+                        <span><i class="fa-solid fa-users me-2"></i>{{ topic.available_seats }} / 5 seats remaining</span>
+                        <span>{{ topic.created_at|date:'M j, Y' }}</span>
+                    </div>
+                    <div class="d-flex gap-2">
+                        <button class="btn btn-outline-secondary btn-sm flex-fill" data-bs-toggle="modal" data-bs-target="#detailsModal{{ topic.id }}">View Details</button>
+                        {% if request.user.role == 'student' and topic.status == 'Open' and topic.available_seats > 0 %}
+                        <button class="btn btn-topic btn-sm flex-fill" data-bs-toggle="modal" data-bs-target="#requestModal{{ topic.id }}">Send Request</button>
+                        {% elif request.user == topic.supervisor %}
+                        <button class="btn btn-outline-primary btn-sm flex-fill" data-bs-toggle="modal" data-bs-target="#editModal{{ topic.id }}">Edit</button>
+                        {% endif %}
+                    </div>
+                    {% if request.user == topic.supervisor %}
+                    <form method="post" action="{% url 'toggle_topic_status' topic.id %}" class="mt-2">
+                        {% csrf_token %}<button class="btn btn-link btn-sm p-0 text-decoration-none" type="submit">Mark as {% if topic.status == 'Open' %}closed{% else %}open{% endif %}</button>
+                    </form>
+                    {% endif %}
+                </article>
+            </div>
+
+            <div class="modal fade" id="detailsModal{{ topic.id }}" tabindex="-1" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered"><div class="modal-content">
+                    <div class="modal-header"><h2 class="modal-title h5">{{ topic.title }}</h2><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></div>
+                    <div class="modal-body"><p>{{ topic.description }}</p><h3 class="h6 text-uppercase text-muted">Prerequisites</h3><p class="mb-0">{{ topic.prerequisites }}</p></div>
+                </div></div>
+            </div>
+
+            {% if request.user.role == 'student' %}
+            <div class="modal fade" id="requestModal{{ topic.id }}" tabindex="-1" aria-hidden="true">
+                <div class="modal-dialog modal-lg modal-dialog-centered request-modal-dialog"><div class="modal-content">
+                    <div class="modal-header request-modal-header">
+                        <div>
+                            <div class="request-badge text-uppercase small fw-semibold mb-2">REQUEST TOPIC</div>
+                            <h2 class="modal-title h4 fw-bold mb-1">{{ topic.title }}</h2>
+                            <div class="request-supervisor">Supervisor: {{ topic.supervisor.get_full_name|default:topic.supervisor.username }}</div>
+                        </div>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <form method="post" action="{% url 'request_proposal' topic.id %}">
+                        {% csrf_token %}
+                        <div class="modal-body request-modal-body">
+                            <label for="request-message-{{ topic.id }}" class="form-label fw-semibold text-dark mb-2">Quick Cover Note / Message</label>
+                            <textarea id="request-message-{{ topic.id }}" name="message" class="w-100 form-control rounded-3" rows="6" placeholder="Write a short message explaining why you are interested in this topic and your relevant background..." required>{{ proposal_form.message.value|default:'' }}</textarea>
+                            <div class="form-text mt-2">Share your interest and relevant background in at least 20 characters.</div>
+                        </div>
+                        <div class="modal-footer d-flex flex-wrap justify-content-between align-items-center gap-2 p-3 bg-light border-top">
+                            <div class="text-muted small">Email: {{ topic.supervisor.email|default:'Not specified' }}</div>
+                            <div class="d-flex gap-2">
+                                <button type="button" class="btn btn-light border px-4" data-bs-dismiss="modal">Cancel</button>
+                                <button type="submit" class="btn btn-teal px-4">Send Request</button>
+                            </div>
+                        </div>
+                    </form>
+                </div></div>
+            </div>
+            {% endif %}
+
+            {% if request.user == topic.supervisor %}
+            <div class="modal fade" id="editModal{{ topic.id }}" tabindex="-1" aria-hidden="true">
+                <div class="modal-dialog modal-lg modal-dialog-centered"><div class="modal-content">
+                    <div class="modal-header"><h2 class="modal-title h5">Edit Research Topic</h2><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></div>
+                    <form method="post" action="{% url 'edit_topic' topic.id %}"><div class="modal-body">{% csrf_token %}
+                        <div class="row g-3"><div class="col-md-8"><label class="form-label">Title</label><input class="form-control" name="title" value="{{ topic.title }}" required></div><div class="col-md-4"><label class="form-label">Domain</label><input class="form-control" name="domain" value="{{ topic.domain }}" required></div><div class="col-12"><label class="form-label">Description</label><textarea class="form-control" name="description" rows="4" required>{{ topic.description }}</textarea></div><div class="col-md-8"><label class="form-label">Prerequisites</label><textarea class="form-control" name="prerequisites" rows="3" required>{{ topic.prerequisites }}</textarea></div><div class="col-md-2"><label class="form-label">Seats</label><input class="form-control" type="number" min="1" max="5" name="available_seats" value="{{ topic.available_seats }}" required></div><div class="col-md-2"><label class="form-label">Status</label><select class="form-select" name="status"><option value="Open" {% if topic.status == 'Open' %}selected{% endif %}>Open</option><option value="Closed" {% if topic.status == 'Closed' %}selected{% endif %}>Closed</option></select></div></div>
+                    </div><div class="modal-footer"><button type="button" class="btn btn-light" data-bs-dismiss="modal">Cancel</button><button class="btn btn-topic" type="submit">Save Changes</button></div></form>
+                </div></div>
+            </div>
+            {% endif %}
+            {% empty %}
+            <div class="col-12"><div class="text-center py-5"><i class="fa-solid fa-compass fa-2x text-muted mb-3"></i><h2 class="h5">No topics found</h2><p class="text-muted">Try a different search or domain filter.</p></div></div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+    document.querySelectorAll('.alert').forEach(function (alert) {
+        window.setTimeout(function () { bootstrap.Alert.getOrCreateInstance(alert).close(); }, 5000);
+    });
+</script>
+{% endblock %}

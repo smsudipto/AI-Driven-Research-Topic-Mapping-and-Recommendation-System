@@ -1,0 +1,205 @@
+{% extends 'base.html' %}
+
+{% block title %}Review Proposal - ThesisBridge{% endblock %}
+
+{% block extra_css %}
+<style>
+    body {
+        background-color: #f3f6f9;
+    }
+
+    .review-card {
+        background: #ffffff;
+        border: 1px solid #e2e8f0;
+        border-radius: 12px;
+        padding: 32px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+        max-width: 850px;
+        margin: 0 auto;
+    }
+
+    .proposal-title {
+        color: #0f172a;
+        font-weight: 700;
+        font-size: 1.5rem;
+    }
+
+    .student-meta {
+        background-color: #f8fafc;
+        border: 1px solid #e2e8f0;
+        border-radius: 8px;
+        padding: 16px 20px;
+        margin-bottom: 24px;
+    }
+
+    .abstract-box {
+        background-color: #ffffff;
+        border: 1px solid #cbd5e1;
+        border-radius: 8px;
+        padding: 18px;
+        white-space: pre-line;
+        color: #334155;
+        font-size: 0.95rem;
+        line-height: 1.6;
+    }
+
+    .section-label {
+        font-weight: 600;
+        color: #475569;
+        font-size: 0.9rem;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        margin-bottom: 8px;
+    }
+
+    /* Custom Radio Styling for Accept / Reject */
+    .status-option {
+        border: 1px solid #cbd5e1;
+        border-radius: 8px;
+        padding: 14px 20px;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .status-option:hover {
+        border-color: #0d6e75;
+        background-color: #f0fdfa;
+    }
+
+    .status-option input[type="radio"] {
+        accent-color: #0d6e75;
+        width: 18px;
+        height: 18px;
+    }
+
+    .btn-save {
+        background-color: #0d6e75;
+        color: white;
+        font-weight: 600;
+        padding: 10px 24px;
+        border-radius: 8px;
+        border: none;
+    }
+
+    .btn-save:hover {
+        background-color: #094a4f;
+        color: white;
+    }
+
+    .btn-back {
+        background-color: #f1f5f9;
+        color: #475569;
+        font-weight: 600;
+        padding: 10px 20px;
+        border-radius: 8px;
+        border: 1px solid #cbd5e1;
+        text-decoration: none;
+    }
+
+    .btn-back:hover {
+        background-color: #e2e8f0;
+        color: #1e293b;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+    <div class="review-card">
+
+        <!-- Header -->
+        <div class="d-flex justify-content-between align-items-start mb-3">
+            <div>
+                <span class="badge bg-secondary mb-2">Proposal Review</span>
+                <h3 class="proposal-title mb-0">{{ proposal.proposed_title }}</h3>
+            </div>
+        </div>
+
+        <!-- Student Details Meta -->
+        <div class="student-meta d-flex justify-content-between align-items-center flex-wrap gap-3">
+            <div>
+                <small class="text-muted d-block">Submitted By</small>
+                <strong>{{ proposal.student.get_full_name|default:proposal.student.username }}</strong>
+                <span class="text-muted">({{ proposal.student.email }})</span>
+            </div>
+            <div>
+                <small class="text-muted d-block">Submission Date</small>
+                <strong>{{ proposal.created_at|date:"F d, Y" }}</strong>
+            </div>
+            <div>
+                <small class="text-muted d-block">Current Status</small>
+                <span
+                    class="badge {% if proposal.status == 'accepted' %}bg-success{% elif proposal.status == 'rejected' %}bg-danger{% else %}bg-warning text-dark{% endif %}">
+                    {{ proposal.status|title }}
+                </span>
+            </div>
+        </div>
+
+        <!-- Abstract Details -->
+        <div class="mb-4">
+            <div class="section-label">Proposal Abstract / Description</div>
+            <div class="abstract-box">
+                {{ proposal.proposed_abstract }}
+            </div>
+        </div>
+
+        {% if proposal.file %}
+        <div class="mb-4">
+            <div class="section-label">Attached Document</div>
+            <a href="{{ proposal.file.url }}" target="_blank" class="btn btn-outline-primary btn-sm">
+                📄 View Attached File
+            </a>
+        </div>
+        {% endif %}
+
+        <hr class="my-4" />
+
+        <!-- Review Form -->
+        <form method="POST" action="{% if proposal.review_kind == 'request' %}{% url 'review_request' proposal.id %}{% else %}{% url 'review_proposal' proposal.id %}{% endif %}">
+            {% csrf_token %}
+
+            <!-- Action / Decision -->
+            <div class="mb-4">
+                <label class="form-label font-weight-bold">Decision <span class="text-danger">*</span></label>
+                <div class="row g-3">
+                    <div class="col-md-6">
+                        <label class="status-option">
+                            <input type="radio" name="status" value="accepted" {% if proposal.status == 'accepted' %}checked{% endif %} required>
+                            <div>
+                                <strong class="text-success d-block">Accept Proposal</strong>
+                                <small class="text-muted">Approve student for thesis supervision.</small>
+                            </div>
+                        </label>
+                    </div>
+                    <div class="col-md-6">
+                        <label class="status-option">
+                            <input type="radio" name="status" value="rejected" {% if proposal.status == 'rejected' %}checked{% endif %} required>
+                            <div>
+                                <strong class="text-danger d-block">Reject Proposal</strong>
+                                <small class="text-muted">Decline request with feedback.</small>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Feedback Field -->
+            <div class="mb-4">
+                <label for="feedback" class="form-label font-weight-bold">Supervisor Feedback / Comments</label>
+                <textarea name="feedback" id="feedback" rows="4" class="form-control"
+                    placeholder="Provide reasons for acceptance/rejection or suggestions for improvement...">{{ proposal.supervisor_feedback|default:'' }}</textarea>
+            </div>
+
+            <!-- Submit Buttons -->
+            <div class="d-flex align-items-center justify-content-end gap-3 pt-2">
+                <a href="{% url 'proposal_list' %}" class="btn-back">Cancel</a>
+                <button type="submit" class="btn btn-save">Update Proposal Status</button>
+            </div>
+        </form>
+
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ paper.title }} - Research Library{% endblock %}
+
+{% block content %}
+<main class="container py-5" style="max-width: 960px;">
+	<a href="{% url 'paper_list' %}" class="text-decoration-none">&larr; Back to Research Library</a>
+	<article class="bg-white border rounded-3 shadow-sm p-4 p-md-5 mt-3">
+		<span class="badge rounded-pill" style="background: #e3f3f2; color: #116b6b;">{{ paper.domain }}</span>
+		<h1 class="mt-3" style="color: #0f2b3c;">{{ paper.title }}</h1>
+		<p class="text-muted">{{ paper.authors }} · Supervisor: {{ paper.supervisor_name }} · {{ paper.publication_year }}</p>
+		<hr>
+		<h2 class="h5" style="color: #0f2b3c;">Abstract</h2>
+		<p style="white-space: pre-line;">{{ paper.abstract }}</p>
+		<a href="{{ paper.pdf_file.url }}" class="btn" style="background: #1b8585; color: #fff;" target="_blank" rel="noopener">View PDF</a>
+	</article>
+</main>
+{% endblock %}

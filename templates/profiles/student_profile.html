@@ -1,0 +1,137 @@
+{% extends 'base.html' %}
+
+{% block title %}Student Profile - ThesisBridge{% endblock %}
+
+{% block extra_css %}
+<style>
+    body {
+        background: linear-gradient(180deg, #f6f9fc 0%, #eef4f8 100%);
+    }
+
+    .profile-shell {
+        max-width: 980px;
+        margin: 0 auto;
+        padding: 40px 16px;
+    }
+
+    .profile-card {
+        background: #fff;
+        border: 1px solid #e2e8f0;
+        border-radius: 24px;
+        box-shadow: 0 14px 32px rgba(15, 35, 65, 0.08);
+        overflow: hidden;
+    }
+
+    .profile-banner {
+        background: linear-gradient(135deg, #0f2341 0%, #1c355e 45%, #228b96 100%);
+        color: #fff;
+        padding: 30px;
+    }
+
+    .profile-avatar {
+        width: 88px;
+        height: 88px;
+        border-radius: 22px;
+        object-fit: cover;
+        background: rgba(255, 255, 255, 0.12);
+        border: 2px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .detail-card {
+        background: #f8fafc;
+        border: 1px solid #e2e8f0;
+        border-radius: 18px;
+        padding: 18px;
+        height: 100%;
+    }
+
+    .meta-label {
+        font-size: 0.78rem;
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+        font-weight: 700;
+        color: #64748b;
+        margin-bottom: 5px;
+    }
+
+    .pill {
+        display: inline-block;
+        margin: 0 6px 6px 0;
+        padding: 5px 10px;
+        border-radius: 999px;
+        background: #e8f6f7;
+        color: #0f5260;
+        font-size: 0.78rem;
+        font-weight: 600;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="profile-shell">
+    <div class="profile-card">
+        <div class="profile-banner d-flex flex-wrap align-items-center gap-4">
+            {% if profile.profile_picture %}
+            <img src="{{ profile.profile_picture.url }}" alt="{{ profile.display_name }}" class="profile-avatar">
+            {% else %}
+            <img src="https://ui-avatars.com/api/?name={{ profile.display_name|urlencode }}&background=ffffff&color=0f2341"
+                alt="{{ profile.display_name }}" class="profile-avatar">
+            {% endif %}
+            <div>
+                <div class="text-uppercase small fw-semibold mb-2" style="letter-spacing: 0.12em; opacity: 0.8;">Student
+                    profile</div>
+                <h2 class="fw-bold mb-1">{{ profile.display_name }}</h2>
+                <div class="opacity-75">{{ profile.department_label }} · Student ID {{ profile.student_id }}</div>
+            </div>
+        </div>
+
+        <div class="p-4 p-md-5">
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="detail-card">
+                        <div class="meta-label">Academic Details</div>
+                        <div class="mb-2"><strong>Department:</strong> {{ profile.department_label }}</div>
+                        <div class="mb-2"><strong>Intake:</strong> {{ profile.intake_label }}</div>
+                        <div class="mb-2"><strong>Section:</strong> {{ profile.section_label }}</div>
+                        <div><strong>CGPA:</strong> {{ profile.cgpa_label }}</div>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="detail-card">
+                        <div class="meta-label">Contact</div>
+                        <div class="mb-2"><strong>Student ID:</strong> {{ profile.student_id }}</div>
+                        <div><strong>Phone:</strong> {{ profile.phone_number|default:'Not specified' }}</div>
+                    </div>
+                </div>
+
+                <div class="col-12">
+                    <div class="detail-card">
+                        <div class="meta-label">Research Interests</div>
+                        <div class="mb-3">
+                            {% for interest in profile.research_interests_list %}
+                            <span class="pill">{{ interest }}</span>
+                            {% empty %}
+                            <span class="text-muted">No research interests listed.</span>
+                            {% endfor %}
+                        </div>
+
+                        <div class="meta-label">Skills</div>
+                        <div>
+                            {% for skill in profile.skills_list %}
+                            <span class="pill">{{ skill }}</span>
+                            {% empty %}
+                            <span class="text-muted">No skills listed.</span>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="d-flex justify-content-end gap-2 mt-4">
+                <a href="{% url 'edit_profile' %}" class="btn btn-outline-primary">Edit Profile</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

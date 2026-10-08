@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block title %}My Progress - ThesisBridge{% endblock %}
+{% block extra_css %}
+<style>
+	.progress-page { background: #f3f6f9; min-height: calc(100vh - 72px); }
+	.progress-hero { background: linear-gradient(135deg, #0f2341, #228b96); color: #fff; border-radius: 16px; padding: 1.75rem; }
+	.progress-card { background: #fff; border: 1px solid #e2e8f0; border-radius: 12px; box-shadow: 0 8px 24px rgba(15,35,65,.06); }
+	.timeline-item { border-left: 3px solid #b9dfe0; padding: 0 0 1rem 1.25rem; position: relative; }
+	.timeline-item:last-child { padding-bottom: 0; }
+	.timeline-item:before { background: #168b92; border: 3px solid #e4f5f5; border-radius: 50%; content: ''; height: 14px; left: -8px; position: absolute; top: 2px; width: 14px; }
+	.status-completed { background: #e8f7ef; color: #087443; }
+	.status-progress { background: #e8f3ff; color: #145a92; }
+	.status-pending { background: #f1f5f9; color: #64748b; }
+	.bg-teal { background-color: #168b92 !important; }
+</style>
+{% endblock %}
+{% block content %}
+<div class="progress-page py-4"><div class="container px-3 px-md-4">
+	<div class="progress-hero mb-4"><p class="text-uppercase small fw-semibold mb-2 opacity-75">Thesis workspace</p><h1 class="h2 fw-bold mb-2">My Progress</h1><p class="mb-0 opacity-75">Keep your supervisor up to date as your thesis moves forward.</p></div>
+	{% if messages %}{% for message in messages %}<div class="alert alert-{{ message.tags|default:'info' }}">{{ message }}</div>{% endfor %}{% endif %}
+	{% for project in projects %}
+	<section class="progress-card p-3 p-md-4 mb-4">
+		<div class="d-flex flex-wrap justify-content-between gap-3 mb-3"><div><h2 class="h4 fw-bold text-dark mb-1">{{ project.title }}</h2><div class="text-muted small">Supervisor: {{ project.supervisor.get_full_name|default:project.supervisor.username }}</div></div><a class="btn btn-outline-primary btn-sm" href="{% url 'group_detail' project.id %}">Open workspace</a></div>
+		<div class="d-flex justify-content-between small fw-semibold mb-2"><span>Overall completion</span><span>{{ project.progress_percentage }}%</span></div><div class="progress" style="height: 12px;"><div class="progress-bar bg-teal progress-bar-striped" role="progressbar" style="width: {{ project.progress_percentage }}%;" aria-valuenow="{{ project.progress_percentage }}" aria-valuemin="0" aria-valuemax="100"></div></div>
+		<div class="mt-4">{% for milestone in project.milestones.all %}<div class="timeline-item"><div class="d-flex flex-wrap justify-content-between gap-2"><div><h3 class="h6 fw-bold mb-1">{{ milestone.title }}</h3><p class="text-muted small mb-2">{{ milestone.description }}</p></div><span class="badge rounded-pill {% if milestone.status == 'Completed' %}status-completed{% elif milestone.status == 'In Progress' %}status-progress{% else %}status-pending{% endif %}">{{ milestone.status }}</span></div><div class="d-flex flex-wrap justify-content-between align-items-center gap-2"><small class="text-muted">{% if milestone.due_date %}Due {{ milestone.due_date|date:'M j, Y' }}{% else %}No due date{% endif %}</small><button class="btn btn-sm btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#updateMilestone{{ milestone.id }}">Update milestone</button></div></div>{% empty %}<p class="text-muted mb-0">Your supervisor has not added milestones yet.</p>{% endfor %}</div>
+	</section>
+	{% empty %}<div class="progress-card text-center p-5"><h2 class="h5">No accepted thesis project yet</h2><p class="text-muted mb-0">Progress tracking becomes available after a supervisor accepts your proposal.</p></div>{% endfor %}
+</div></div>
+{% for project in projects %}{% for milestone in project.milestones.all %}<div class="modal fade" id="updateMilestone{{ milestone.id }}" tabindex="-1" aria-hidden="true"><div class="modal-dialog modal-dialog-centered"><div class="modal-content"><div class="modal-header bg-dark text-white"><h2 class="modal-title h5">Update {{ milestone.title }}</h2><button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button></div><form method="post" action="{% url 'submit_milestone' milestone.id %}">{% csrf_token %}<div class="modal-body"><label class="form-label fw-semibold">Status</label><select class="form-select mb-3" name="status"><option value="Pending" {% if milestone.status == 'Pending' %}selected{% endif %}>Pending</option><option value="In Progress" {% if milestone.status == 'In Progress' %}selected{% endif %}>In Progress</option><option value="Completed" {% if milestone.status == 'Completed' %}selected{% endif %}>Completed</option></select><label class="form-label fw-semibold">Work link</label><input class="form-control mb-3" type="url" name="submission_link" value="{{ milestone.submission_link }}" placeholder="https://..."><label class="form-label fw-semibold">Progress notes</label><textarea class="form-control" name="submission_notes" rows="4">{{ milestone.submission_notes }}</textarea></div><div class="modal-footer"><button type="button" class="btn btn-light" data-bs-dismiss="modal">Cancel</button><button type="submit" class="btn btn-primary">Save update</button></div></form></div></div></div>{% endfor %}{% endfor %}
+{% endblock %}

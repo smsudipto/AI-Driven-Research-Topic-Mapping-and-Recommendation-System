@@ -1,0 +1,4119 @@
+[
+{
+  "model": "accounts.accounts",
+  "pk": 1,
+  "fields": {
+    "password": "",
+    "last_login": "2026-09-14T16:53:49.765Z",
+    "is_superuser": false,
+    "username": "sudipto",
+    "first_name": "",
+    "last_name": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-07-21T19:39:59.863Z",
+    "email": "sudiptomandolsm@gmail.com",
+    "role": "student",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "accounts.accounts",
+  "pk": 2,
+  "fields": {
+    "password": "",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "testuser2026",
+    "first_name": "",
+    "last_name": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-07-21T19:49:25.651Z",
+    "email": "testuser2026@gmail.com",
+    "role": "student",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "accounts.accounts",
+  "pk": 3,
+  "fields": {
+    "password": "",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "sudipto123",
+    "first_name": "",
+    "last_name": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-07-21T19:56:42.235Z",
+    "email": "sudipto123@gmail.com",
+    "role": "student",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "accounts.accounts",
+  "pk": 4,
+  "fields": {
+    "password": "",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "dulal",
+    "first_name": "",
+    "last_name": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-07-21T19:57:55.273Z",
+    "email": "dulal@gmail.com",
+    "role": "supervisor",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "accounts.accounts",
+  "pk": 5,
+  "fields": {
+    "password": "pbkdf2_sha256$1200000$1nn8YbaB22bG4FX4n50eUL$TkhNqYa21gY7n7hbonu+a4Tw9ZcYhOxQxW6TX+q3C3c=",
+    "last_login": "2026-07-21T20:13:58.234Z",
+    "is_superuser": false,
+    "username": "hori",
+    "first_name": "",
+    "last_name": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-07-21T20:12:47.882Z",
+    "email": "hori@gmail.com",
+    "role": "student",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "accounts.accounts",
+  "pk": 6,
+  "fields": {
+    "password": "pbkdf2_sha256$1200000$awuCXrJKZhKKsJIYCEXgle$w2I3Ie+rjY4anrvMUrmwRMN7lN3oFkgJ4WoQ5AHJI5Y=",
+    "last_login": "2026-07-22T16:37:28.899Z",
+    "is_superuser": false,
+    "username": "kapil",
+    "first_name": "",
+    "last_name": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-07-22T16:36:59.982Z",
+    "email": "kapil@gmail.com",
+    "role": "student",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "accounts.accounts",
+  "pk": 7,
+  "fields": {
+    "password": "pbkdf2_sha256$1200000$oHcGlbktTrmDLWR6J1Se2b$z1u1IRsrTfmIl7oUaCP8YDhsiHfrOfNjhZImzhuTMlI=",
+    "last_login": "2026-07-22T18:01:19.204Z",
+    "is_superuser": false,
+    "username": "sudipto mandal",
+    "first_name": "",
+    "last_name": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-07-22T17:19:16.715Z",
+    "email": "sudipto@gmai.com",
+    "role": "student",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "accounts.accounts",
+  "pk": 8,
+  "fields": {
+    "password": "pbkdf2_sha256$1200000$UzLuEcG1WQPUyppzwx5dxs$ST6z0w5hxbMCWi/9dhy4MjSn87rS6CdThlNy0SoBnm4=",
+    "last_login": "2026-07-22T19:52:38.168Z",
+    "is_superuser": false,
+    "username": "kaushik",
+    "first_name": "",
+    "last_name": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-07-22T19:52:37.409Z",
+    "email": "kaushik@gmail.com",
+    "role": "supervisor",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "accounts.accounts",
+  "pk": 10,
+  "fields": {
+    "password": "pbkdf2_sha256$1200000$R9Cg7WpS2lOQsVqHfze6XQ$f6sXJsMreGHOpztaphsm5nr1J5yuZNvkA9PNgA7NnFI=",
+    "last_login": "2026-07-23T08:52:49.127Z",
+    "is_superuser": false,
+    "username": "raihan",
+    "first_name": "",
+    "last_name": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-07-23T08:52:47.706Z",
+    "email": "raihan@gmail.com",
+    "role": "supervisor",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "accounts.accounts",
+  "pk": 11,
+  "fields": {
+    "password": "pbkdf2_sha256$1200000$2AkHKCCLGjkMu6IaHeoyZN$aInb8VqNLgv5EpGMomBOz4BPY8rLD2gUCOUNFYatw5U=",
+    "last_login": "2026-07-31T16:18:05.706Z",
+    "is_superuser": false,
+    "username": "user",
+    "first_name": "",
+    "last_name": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-07-31T16:18:04.945Z",
+    "email": "user@gmail.com",
+    "role": "supervisor",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "accounts.accounts",
+  "pk": 12,
+  "fields": {
+    "password": "pbkdf2_sha256$1200000$0xnn6JNyFaN1TsXCE75Ldc$s3Kq6C6gix0EdwzOBCvKTZM344bcS6JvsF9Fjiwf9I0=",
+    "last_login": "2026-07-31T16:26:49.641Z",
+    "is_superuser": false,
+    "username": "user2",
+    "first_name": "",
+    "last_name": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-07-31T16:26:48.914Z",
+    "email": "user2@gmail.com",
+    "role": "supervisor",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "accounts.accounts",
+  "pk": 13,
+  "fields": {
+    "password": "pbkdf2_sha256$1200000$8CBr4BjIaxJSFkdaTWphaG$Jc7rCG1YC2JRyADTue3ppuYb7p4a0pIgiwdUZoPX80U=",
+    "last_login": "2026-07-31T16:46:22.259Z",
+    "is_superuser": false,
+    "username": "user3",
+    "first_name": "",
+    "last_name": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-07-31T16:45:27.594Z",
+    "email": "user3@gmail.com",
+    "role": "supervisor",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "accounts.accounts",
+  "pk": 14,
+  "fields": {
+    "password": "pbkdf2_sha256$1200000$JupNrauAS1vUnEoBen5kR8$RLd5qRq/O5TZwzscCT0YylmH0N5o/WyQp7cnbhfIkK0=",
+    "last_login": "2026-07-31T16:47:06.524Z",
+    "is_superuser": false,
+    "username": "user4",
+    "first_name": "",
+    "last_name": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-07-31T16:47:05.805Z",
+    "email": "user4@gmail.com",
+    "role": "student",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "accounts.accounts",
+  "pk": 16,
+  "fields": {
+    "password": "pbkdf2_sha256$1200000$goJjrXyVpKqY9sZoTyW9kl$vSmaHqz74q1bOKYnKtrKcXkHGg2w9JsyrC37kACXKIA=",
+    "last_login": "2026-08-10T16:48:06.338Z",
+    "is_superuser": false,
+    "username": "user5",
+    "first_name": "",
+    "last_name": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-07-31T18:38:08.008Z",
+    "email": "user5@gmail.com",
+    "role": "supervisor",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "accounts.accounts",
+  "pk": 17,
+  "fields": {
+    "password": "pbkdf2_sha256$1200000$bCceUwEoZYTqTHpZ4AXOCS$rxLcZEfNtyATQ7NzmAE6PvldHjevWmcxBLQVMj7JWBE=",
+    "last_login": "2026-08-01T06:25:07.074Z",
+    "is_superuser": false,
+    "username": "user6",
+    "first_name": "",
+    "last_name": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-07-31T18:38:48.104Z",
+    "email": "user6@gmail.com",
+    "role": "supervisor",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "accounts.accounts",
+  "pk": 18,
+  "fields": {
+    "password": "pbkdf2_sha256$1200000$IzvIViGuz3u92ZXuQTkZgN$yof7g876abVdCkP93doCGRGM3HFqs1YHfIrwwGJECy8=",
+    "last_login": "2026-08-01T05:46:57.550Z",
+    "is_superuser": false,
+    "username": "user7",
+    "first_name": "",
+    "last_name": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-08-01T05:46:56.226Z",
+    "email": "user7@gmail.com",
+    "role": "supervisor",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "accounts.accounts",
+  "pk": 19,
+  "fields": {
+    "password": "pbkdf2_sha256$1200000$2KqLrP7DdOllJytE9AADgv$QagpRALJpomasobzDCMxKjkUR7ulRp5vKuKOvUyXGrk=",
+    "last_login": "2026-08-01T06:36:44.948Z",
+    "is_superuser": false,
+    "username": "user8",
+    "first_name": "",
+    "last_name": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-08-01T06:36:43.669Z",
+    "email": "user8@gmail.com",
+    "role": "supervisor",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "accounts.accounts",
+  "pk": 20,
+  "fields": {
+    "password": "pbkdf2_sha256$1200000$uDOxJW0HxzuQitleKGt6fE$3y7hd4Ko36TckMZwrt1alptpyNrSrwz8kvY/999uTjY=",
+    "last_login": "2026-08-01T07:27:37.347Z",
+    "is_superuser": false,
+    "username": "user9",
+    "first_name": "",
+    "last_name": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-08-01T07:27:36.588Z",
+    "email": "user9@gmai.com",
+    "role": "supervisor",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "accounts.accounts",
+  "pk": 21,
+  "fields": {
+    "password": "pbkdf2_sha256$1200000$RFxXJU7wEt1S12mDiueK8H$+Rcc1Ao17Z2s+dfBgwh2kIukwPolxlJ9//F3R++frsw=",
+    "last_login": "2026-08-10T16:11:57.659Z",
+    "is_superuser": false,
+    "username": "user10",
+    "first_name": "user10",
+    "last_name": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-08-01T07:32:58.465Z",
+    "email": "user10@gmail.com",
+    "role": "supervisor",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "accounts.accounts",
+  "pk": 22,
+  "fields": {
+    "password": "pbkdf2_sha256$1200000$8RCpoiIoI6mjbKKftnvlLv$WKnPQb9LHIifKFWkrzMEqnjeICPg8IQZCQE0slXjTMM=",
+    "last_login": "2026-08-01T07:36:28.282Z",
+    "is_superuser": false,
+    "username": "user11",
+    "first_name": "",
+    "last_name": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-08-01T07:36:27.553Z",
+    "email": "user11@gmail.com",
+    "role": "supervisor",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "accounts.accounts",
+  "pk": 23,
+  "fields": {
+    "password": "pbkdf2_sha256$1200000$hr2sHEcSeIqKVOyMnzQWIx$lZMlkE+g4zGS8RtQcv1y2vZ5ag4s8kNwmZukHhOSKdo=",
+    "last_login": "2026-08-02T15:54:24.632Z",
+    "is_superuser": false,
+    "username": "user 12",
+    "first_name": "user",
+    "last_name": "12",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-08-01T07:40:25.354Z",
+    "email": "user12@gmail.com",
+    "role": "supervisor",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "accounts.accounts",
+  "pk": 24,
+  "fields": {
+    "password": "pbkdf2_sha256$1200000$9nTkPMXOnu0lgyhGufaXrs$iLF5W6Jm67elrOlFJe97gNg2kpFANrfwsspwW0rZ3Ho=",
+    "last_login": "2026-08-01T07:52:00.982Z",
+    "is_superuser": false,
+    "username": "user 13",
+    "first_name": "",
+    "last_name": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-08-01T07:52:00.237Z",
+    "email": "user13@gmai.com",
+    "role": "supervisor",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "accounts.accounts",
+  "pk": 25,
+  "fields": {
+    "password": "pbkdf2_sha256$1200000$g2O8cStzXderEYpc8jr6Vw$u5yMm8rOjs1sjQXK4O60/A/l+BM4ZApsgn8KW3Az8nk=",
+    "last_login": "2026-08-01T09:55:24.234Z",
+    "is_superuser": false,
+    "username": "user14",
+    "first_name": "",
+    "last_name": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-08-01T09:55:22.922Z",
+    "email": "user@gmai.com",
+    "role": "supervisor",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "accounts.accounts",
+  "pk": 26,
+  "fields": {
+    "password": "pbkdf2_sha256$1200000$GuO3w9qg3stQOYTIOOtpxy$i8Q21Gr2CTR0Yk83CkUuRcu7u1E6Ljt3eGhXCD026V4=",
+    "last_login": "2026-08-01T10:21:13.415Z",
+    "is_superuser": false,
+    "username": "user16",
+    "first_name": "",
+    "last_name": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-08-01T10:21:12.079Z",
+    "email": "user16@gmail.com",
+    "role": "supervisor",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "accounts.accounts",
+  "pk": 27,
+  "fields": {
+    "password": "pbkdf2_sha256$1200000$g14l5tzQ5SqYr25zoPFAIc$WWy2rcY19yIwfurnXJIg1ZAsRXCaiMEvKL3favXAwnM=",
+    "last_login": "2026-08-01T12:03:52.260Z",
+    "is_superuser": false,
+    "username": "Prof. Dr. Md. Ahsan Habib",
+    "first_name": "",
+    "last_name": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-08-01T12:03:50.954Z",
+    "email": "ahsan.habib.tareq@gmail.com",
+    "role": "supervisor",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "accounts.accounts",
+  "pk": 28,
+  "fields": {
+    "password": "pbkdf2_sha256$1200000$fQZpm9Ib34kMUG8fzDCZgc$IIpxoZfMzCr8bipYYVD6HG0i8yjvfxWyWTvSRjv3sIQ=",
+    "last_login": "2026-08-04T05:30:20.230Z",
+    "is_superuser": false,
+    "username": "USER1",
+    "first_name": "",
+    "last_name": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-08-01T13:00:56.630Z",
+    "email": "user1@gmail.com",
+    "role": "student",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "accounts.accounts",
+  "pk": 29,
+  "fields": {
+    "password": "pbkdf2_sha256$1200000$7KU26HGVHoF9ZkFZcsrLHL$YG63QimSvuHn1aPANC35nxltqWn7s3OSkSsiLuOnrvg=",
+    "last_login": "2026-08-01T16:48:20.861Z",
+    "is_superuser": false,
+    "username": "USER4",
+    "first_name": "",
+    "last_name": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-08-01T16:48:20.129Z",
+    "email": "user4@gmail.clm",
+    "role": "student",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "accounts.accounts",
+  "pk": 30,
+  "fields": {
+    "password": "pbkdf2_sha256$1200000$84nLf96C8SoyVbNvGfTx1j$TBV0TySE3Nc/9ncTX4XNcUOIlJ/q3kKLaGAxiMc1lcc=",
+    "last_login": "2026-08-01T17:33:32.845Z",
+    "is_superuser": false,
+    "username": "Mijanur Rahman",
+    "first_name": "",
+    "last_name": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-08-01T17:33:31.547Z",
+    "email": "riponcse.it@bubt.edu.bd",
+    "role": "supervisor",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "accounts.accounts",
+  "pk": 31,
+  "fields": {
+    "password": "pbkdf2_sha256$1200000$FsBPYcOCNm6NUAa5MARcuS$rvvLjXb7ibmaTuk7RIrjTdeh4wSKpsM4Z1toJu+HMyo=",
+    "last_login": "2026-08-01T17:40:30.645Z",
+    "is_superuser": false,
+    "username": "Md. Mahbub-Or-Rashid",
+    "first_name": "Md.",
+    "last_name": "Mahbub-Or-Rashid",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-08-01T17:40:29.356Z",
+    "email": "mahbub@bubt.edu.bd",
+    "role": "supervisor",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "accounts.accounts",
+  "pk": 32,
+  "fields": {
+    "password": "pbkdf2_sha256$1200000$xAaP66alokhedCdlAijpmU$VV0hl4TK358Uzgr9N2rKNE5H83TEbBtxPE9cHO0OiT0=",
+    "last_login": "2026-08-01T17:47:52.619Z",
+    "is_superuser": false,
+    "username": "Fahima Khanam",
+    "first_name": "Fahima",
+    "last_name": "Khanam",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-08-01T17:47:51.315Z",
+    "email": "fahima@bubt.edu.bd",
+    "role": "supervisor",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "accounts.accounts",
+  "pk": 33,
+  "fields": {
+    "password": "pbkdf2_sha256$1200000$2z6tJMXM1886QhCgfhQ21l$Wkj/P8YLLHo7v3sP2BeQ85gXno53QL7nr9ebzyfO8Q0=",
+    "last_login": "2026-08-01T17:51:28.345Z",
+    "is_superuser": false,
+    "username": "Md. Ashiqur Rahman",
+    "first_name": "",
+    "last_name": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-08-01T17:51:27.038Z",
+    "email": "ashiqashiqur@gmail.com",
+    "role": "supervisor",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "accounts.accounts",
+  "pk": 34,
+  "fields": {
+    "password": "pbkdf2_sha256$1200000$UVP4do7zWssfuOQPwHyud9$Bt2ayThtf90HAA36oxIjgp9o1v77sTlOVa6FCk/yD1Y=",
+    "last_login": "2026-08-01T17:54:43.455Z",
+    "is_superuser": false,
+    "username": "Iffat Tamanna",
+    "first_name": "",
+    "last_name": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-08-01T17:54:42.111Z",
+    "email": "iffat@bubt.edu.bd",
+    "role": "supervisor",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "accounts.accounts",
+  "pk": 35,
+  "fields": {
+    "password": "pbkdf2_sha256$1200000$04wdNXu7dzY6cL0aixk8HR$djLUSbdhARaUKlISAeuW0RVeB+ICau+MCZ6Q15Tz1Ms=",
+    "last_login": "2026-08-01T17:57:47.778Z",
+    "is_superuser": false,
+    "username": "Md. Mahbubur Rahman",
+    "first_name": "",
+    "last_name": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-08-01T17:57:46.383Z",
+    "email": "mmrmbstu@gmail.com",
+    "role": "supervisor",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "accounts.accounts",
+  "pk": 36,
+  "fields": {
+    "password": "pbkdf2_sha256$1200000$CZyM6bK3cjxu5XKwWvRoxs$rKUY9IUww/SlcxwQ/Aw4L/h/fanXbdqH/wr2FzuPcRc=",
+    "last_login": "2026-08-01T18:00:59.107Z",
+    "is_superuser": false,
+    "username": "Meher Afroj",
+    "first_name": "",
+    "last_name": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-08-01T18:00:57.794Z",
+    "email": "meher_afroj@bubt.edu.bd",
+    "role": "supervisor",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "accounts.accounts",
+  "pk": 37,
+  "fields": {
+    "password": "pbkdf2_sha256$1200000$TmOQ7oIwVkQL1GflKumLZt$Zq8O+gL5H3+NfNJ57gjL1Isf5EzMzqxW2psJx7QXafY=",
+    "last_login": "2026-08-01T18:04:40.587Z",
+    "is_superuser": false,
+    "username": "Nusrat Sultana",
+    "first_name": "",
+    "last_name": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-08-01T18:04:39.295Z",
+    "email": "nusratsultana@bubt.edu.bd",
+    "role": "supervisor",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "accounts.accounts",
+  "pk": 38,
+  "fields": {
+    "password": "pbkdf2_sha256$1200000$Yi2VywnZ55stgHsMdsklLT$38ul2G7mzvmXRvyZ8Iks2IJhaMdVatORAe8AX4QovfI=",
+    "last_login": "2026-08-01T18:07:56.808Z",
+    "is_superuser": false,
+    "username": "Maharin Afroj",
+    "first_name": "",
+    "last_name": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-08-01T18:07:55.508Z",
+    "email": "maharinshova@gmail.com",
+    "role": "supervisor",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "accounts.accounts",
+  "pk": 39,
+  "fields": {
+    "password": "pbkdf2_sha256$1200000$N6zdRvlEclrMGCudYM57Sd$7CTO7ugXx4bJP80aK6SejvIFXEJ/wLq92aTmEoGznUk=",
+    "last_login": "2026-08-01T18:11:34.479Z",
+    "is_superuser": false,
+    "username": "Maruf Billah",
+    "first_name": "",
+    "last_name": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-08-01T18:11:33.203Z",
+    "email": "marufbillah@bubt.edu.bd",
+    "role": "supervisor",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "accounts.accounts",
+  "pk": 40,
+  "fields": {
+    "password": "pbkdf2_sha256$1200000$2pTyqvh2EzY6iEGj2kZHdP$beIuOgyI7MnBKMEbiDQl8emjXCNceiOQALaIlkCqUVM=",
+    "last_login": "2026-08-01T18:14:19.544Z",
+    "is_superuser": false,
+    "username": "M. A. Nur Quraishi",
+    "first_name": "",
+    "last_name": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-08-01T18:14:18.215Z",
+    "email": "nurquraishi@bubt.edu.bd",
+    "role": "supervisor",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "accounts.accounts",
+  "pk": 41,
+  "fields": {
+    "password": "pbkdf2_sha256$1200000$zCDxESfSMl7rbvhCblh7lI$ZJXCHALgzmgjgzHQvuQiMGAYQ8qocXp8N3sac1OuGew=",
+    "last_login": "2026-08-01T18:17:35.337Z",
+    "is_superuser": false,
+    "username": "Sayefa Arafah",
+    "first_name": "",
+    "last_name": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-08-01T18:17:34.020Z",
+    "email": "sayefaarafah@bubt.edu.bd",
+    "role": "supervisor",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "accounts.accounts",
+  "pk": 42,
+  "fields": {
+    "password": "pbkdf2_sha256$1200000$nekFI3wH6NdjvH3fYUHF0J$3ml3DUfh8zlRm2omnFAK8QaQMBiGWUyEm4aqsUcJFz8=",
+    "last_login": "2026-08-01T18:21:01.536Z",
+    "is_superuser": false,
+    "username": "Nilanjana Basak",
+    "first_name": "",
+    "last_name": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-08-01T18:21:00.226Z",
+    "email": "nilanjanabasak@bubt.edu.bd",
+    "role": "supervisor",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "accounts.accounts",
+  "pk": 43,
+  "fields": {
+    "password": "pbkdf2_sha256$1200000$ntKuTtcyBr26bB8Ulnf9Zr$rsO4uo4m//4nl1Opr1VhczSa2tWWgm6VyV61zOCnMw0=",
+    "last_login": "2026-08-01T18:24:44.126Z",
+    "is_superuser": false,
+    "username": "Sumit Alam Khan",
+    "first_name": "",
+    "last_name": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-08-01T18:24:42.826Z",
+    "email": "sumitalam@bubt.edu.bd",
+    "role": "supervisor",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "accounts.accounts",
+  "pk": 44,
+  "fields": {
+    "password": "pbkdf2_sha256$1200000$7ykITr8Md4q3e0AwBJl89P$bqaKHXXTJc5NEiYATSKK3eiqLiutOHv463KHNI6A3GY=",
+    "last_login": "2026-08-01T18:29:00.769Z",
+    "is_superuser": false,
+    "username": "Shrabani Das",
+    "first_name": "",
+    "last_name": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-08-01T18:28:59.505Z",
+    "email": "shrabanidas@bubt.edu.bd",
+    "role": "supervisor",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "accounts.accounts",
+  "pk": 45,
+  "fields": {
+    "password": "pbkdf2_sha256$1200000$0Y0J6EyzKxubKT0JdssTRQ$bWDVbE0adGU9nbiq96l2DI6WQrveVfKoyTfrQ3ObVgc=",
+    "last_login": "2026-08-01T18:32:44.946Z",
+    "is_superuser": false,
+    "username": "Sudipto Ghosh",
+    "first_name": "",
+    "last_name": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-08-01T18:32:43.510Z",
+    "email": "sudiptoghosh555@gmail.com",
+    "role": "supervisor",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "accounts.accounts",
+  "pk": 46,
+  "fields": {
+    "password": "pbkdf2_sha256$1200000$ZcPvc34hK8dKARcAaE8imr$PJhLXJHvcF2NDxp9hGMF3KVETF62IUUBgLFipFeYaMM=",
+    "last_login": "2026-08-01T18:36:36.335Z",
+    "is_superuser": false,
+    "username": "Rubaiya Reza Sohana",
+    "first_name": "",
+    "last_name": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-08-01T18:36:35.011Z",
+    "email": "rubaiyarezasohana@bubt.edu.bd",
+    "role": "supervisor",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "accounts.accounts",
+  "pk": 47,
+  "fields": {
+    "password": "pbkdf2_sha256$1200000$blW6Z3cdGhIcEm8QslU0pe$0cxjj9qEKqAXWO7hiaYgrk+aaJZb5CPLgGcdcBXm4lI=",
+    "last_login": "2026-08-01T18:45:15.277Z",
+    "is_superuser": false,
+    "username": "Talimul Bari Shreshtho",
+    "first_name": "",
+    "last_name": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-08-01T18:45:13.905Z",
+    "email": "talimulbari@bubt.edu.bd",
+    "role": "supervisor",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "accounts.accounts",
+  "pk": 48,
+  "fields": {
+    "password": "pbkdf2_sha256$1200000$Q0eLkZPwrEOxouhpFrVnaj$DLcAVlgoZw2ltVWl+RISvi+dAVE75e+XdigeNrixQLs=",
+    "last_login": "2026-08-01T18:48:41.048Z",
+    "is_superuser": false,
+    "username": "Md. Amirul Hasan Shanto",
+    "first_name": "",
+    "last_name": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-08-01T18:48:39.634Z",
+    "email": "shantoict27@gmail.com",
+    "role": "supervisor",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "accounts.accounts",
+  "pk": 49,
+  "fields": {
+    "password": "pbkdf2_sha256$1200000$HFxsIPlCyevZBVKZolskBh$tA5wreXOulvxLme92mHUlklcdv53qjEZmrcxrYY5ajs=",
+    "last_login": "2026-08-01T18:53:52.853Z",
+    "is_superuser": false,
+    "username": "Prof. Dr. Munshi Mahbubur Rahman",
+    "first_name": "",
+    "last_name": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-08-01T18:53:51.506Z",
+    "email": "mmrahman549@gmail.com",
+    "role": "supervisor",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "accounts.accounts",
+  "pk": 50,
+  "fields": {
+    "password": "pbkdf2_sha256$1200000$lPfWbPLxMAsLthLkBSCzQD$EM7wDMUyLh1YbBmS1iIRRoiYDGHMypWJanEXjx95EIU=",
+    "last_login": "2026-08-01T18:56:45.202Z",
+    "is_superuser": false,
+    "username": "Md. Sabbir Hasan Sohag",
+    "first_name": "",
+    "last_name": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-08-01T18:56:43.872Z",
+    "email": "s.hasan@bubt.edu.bd",
+    "role": "supervisor",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "accounts.accounts",
+  "pk": 51,
+  "fields": {
+    "password": "pbkdf2_sha256$1200000$EWSXp6sVUuR1zkCRTF5bUH$xKtOOsZpeKpmwC5ecpgCuSari0aNv24ukVmVB2jdiRw=",
+    "last_login": "2026-08-01T19:00:00.036Z",
+    "is_superuser": false,
+    "username": "Mohammad Jahidul Islam",
+    "first_name": "",
+    "last_name": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-08-01T18:59:58.658Z",
+    "email": "jahidulislam@bubt.edu.bd",
+    "role": "supervisor",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "accounts.accounts",
+  "pk": 52,
+  "fields": {
+    "password": "pbkdf2_sha256$1200000$ZQ781MYawSi5warm4S93A0$gXSpZTebkgXtNECgBwporH896M01ErBITBa85/vlA1k=",
+    "last_login": "2026-08-01T19:05:27.236Z",
+    "is_superuser": false,
+    "username": "Md. Sayeem Bin Hafiz",
+    "first_name": "",
+    "last_name": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-08-01T19:05:25.847Z",
+    "email": "hafiz@bubt.edu.bd",
+    "role": "supervisor",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "accounts.accounts",
+  "pk": 53,
+  "fields": {
+    "password": "pbkdf2_sha256$1200000$OYzqokn40zNF43NBjfCMXe$AswaZWjO6nGXnmfbFru4w2u6stKccMMXWVKEmQMPVdA=",
+    "last_login": "2026-08-01T19:11:02.105Z",
+    "is_superuser": false,
+    "username": "Dr. Md. Zakir Hosain",
+    "first_name": "",
+    "last_name": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-08-01T19:11:00.714Z",
+    "email": "zakir@bubt.edu.bd",
+    "role": "supervisor",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "accounts.accounts",
+  "pk": 54,
+  "fields": {
+    "password": "pbkdf2_sha256$1200000$LxNO5ihtFaVu5jvyjicscp$j/c8MVycEYHOlVkUCJohHGXgk9uf3vCSctQriNSLrIA=",
+    "last_login": "2026-08-01T19:17:12.258Z",
+    "is_superuser": false,
+    "username": "Prof. Dr. Syed Abdul Mofiz",
+    "first_name": "",
+    "last_name": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-08-01T19:17:10.903Z",
+    "email": "samofiz@gmail.com",
+    "role": "supervisor",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "accounts.accounts",
+  "pk": 55,
+  "fields": {
+    "password": "pbkdf2_sha256$1200000$IacJRQPp7uY6J3JrcAdlae$2IhQ3Q+yvGRtMK8S9BvrPAP+s/CD39FTH4oguGZBv+Y=",
+    "last_login": "2026-08-01T19:20:07.932Z",
+    "is_superuser": false,
+    "username": "Prof. Dr. Ali Ahmed",
+    "first_name": "",
+    "last_name": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-08-01T19:20:06.498Z",
+    "email": "dr.aliahmed@bubt.edu.bd",
+    "role": "supervisor",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "accounts.accounts",
+  "pk": 56,
+  "fields": {
+    "password": "pbkdf2_sha256$1200000$oh7vC7LjPpxBe4rCiDT56R$4AIQdWeOq9z40I11PO+CjDMOkTu1zA8n8obRYZ3ioKQ=",
+    "last_login": "2026-08-10T17:35:12.819Z",
+    "is_superuser": false,
+    "username": "Sadah Anjum Shanto",
+    "first_name": "Sadah",
+    "last_name": "Anjum Shanto",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-08-01T19:25:48.222Z",
+    "email": "sshanto@bubt.edu.bd",
+    "role": "supervisor",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "accounts.accounts",
+  "pk": 57,
+  "fields": {
+    "password": "pbkdf2_sha256$1200000$V0Hykvh3yXPoOiOr6udGUe$o6+k0sb5u5cc/5Ti51u0qNzt9ebQ1jivNcG0WZTCsbI=",
+    "last_login": "2026-09-14T17:35:08.396Z",
+    "is_superuser": false,
+    "username": "Sondip Poul Singh",
+    "first_name": "",
+    "last_name": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-08-01T19:29:40.953Z",
+    "email": "sondipsingha@bubt.edu.bd",
+    "role": "supervisor",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "accounts.accounts",
+  "pk": 58,
+  "fields": {
+    "password": "pbkdf2_sha256$1200000$az9G4Z3yAK4p1TvmBQxtcS$C1goTap5TZ2eIy+iGQCukODJBEOddIKCU1cAnZM6g28=",
+    "last_login": "2026-10-08T07:04:57.778Z",
+    "is_superuser": false,
+    "username": "A. S. M. Shafi",
+    "first_name": "A.",
+    "last_name": "S. M. Shafi",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-08-01T19:32:53.327Z",
+    "email": "asmshafi@bubt.edu.bd",
+    "role": "supervisor",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "accounts.accounts",
+  "pk": 59,
+  "fields": {
+    "password": "pbkdf2_sha256$1200000$SZy9sn6GaoYh7ywdSvmHrE$ZOAoLV8tiVqWA16XL/OddiGQezgSh0hUYg5C+qfjVR0=",
+    "last_login": "2026-09-14T15:47:19.230Z",
+    "is_superuser": false,
+    "username": "SAGORIKA MANDAL",
+    "first_name": "",
+    "last_name": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-08-02T16:12:03.636Z",
+    "email": "smsudipto909@gmail.com",
+    "role": "student",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "accounts.accounts",
+  "pk": 60,
+  "fields": {
+    "password": "pbkdf2_sha256$1200000$SwLtsy09643WMFoMsssc7s$PBAyS7jav210ssK0dnHdHbK7vVl3iTm3Abo+/bHQzgQ=",
+    "last_login": "2026-08-04T04:24:14.551Z",
+    "is_superuser": false,
+    "username": "Md Sahid Islam",
+    "first_name": "",
+    "last_name": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-08-04T04:24:13.137Z",
+    "email": "mdsahidislam515@gmail.com",
+    "role": "student",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "accounts.accounts",
+  "pk": 61,
+  "fields": {
+    "password": "pbkdf2_sha256$1200000$qmBQdX9N3UZEnSofin3f5G$soJx2xtLfd4nNt5/tlg9uETFGqJst7/tHV4Lc3KbRj8=",
+    "last_login": "2026-08-04T04:37:58.979Z",
+    "is_superuser": true,
+    "username": "SUDIPTO",
+    "first_name": "",
+    "last_name": "",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2026-08-04T04:37:03.011Z",
+    "email": "sudiptomandolsm@gmai.com",
+    "role": "student",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "accounts.accounts",
+  "pk": 62,
+  "fields": {
+    "password": "pbkdf2_sha256$1200000$X4eziKN7snsGgfWHgjqZfN$ELz2R4e9yXrb0EWqfKBcuVRILxKGCqEg25TbM7yqP7w=",
+    "last_login": "2026-09-13T06:31:45.911Z",
+    "is_superuser": false,
+    "username": "Sudipto Mandol",
+    "first_name": "",
+    "last_name": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-08-04T04:48:40.214Z",
+    "email": "sudiptokumarmandol@gmail.com",
+    "role": "student",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "accounts.accounts",
+  "pk": 63,
+  "fields": {
+    "password": "pbkdf2_sha256$1200000$oHdVUIKvNV7aTq3sfLeFhe$vPr5f67vKWLe1gGc/rXCSfg60jKQwp/qT7xesVHuDWc=",
+    "last_login": "2026-08-04T04:53:46.135Z",
+    "is_superuser": false,
+    "username": "Mst. Sumaiya Akter ",
+    "first_name": "",
+    "last_name": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-08-04T04:53:44.763Z",
+    "email": "22235103059@cse.bubt.edu.bd",
+    "role": "student",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "accounts.accounts",
+  "pk": 64,
+  "fields": {
+    "password": "pbkdf2_sha256$1200000$jH2AqlIHRjX8bvnDafaoNE$tFpQIdS1pYoCWnZHCJRXjL5pttwKv6RB5PTYJ2tk/MY=",
+    "last_login": "2026-09-13T06:32:10.509Z",
+    "is_superuser": false,
+    "username": "Shojib Sheikh",
+    "first_name": "",
+    "last_name": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-08-04T08:27:47.483Z",
+    "email": "suhojibsheikh99@gmail.com",
+    "role": "student",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "accounts.accounts",
+  "pk": 65,
+  "fields": {
+    "password": "pbkdf2_sha256$1200000$tKm2kHGMVdcQcBiaDYAIm9$j8BOmS9TGFuS+RDmOsZ5TDnA7Jhqogfd3anHmtrPBP8=",
+    "last_login": "2026-10-08T07:06:58.200Z",
+    "is_superuser": false,
+    "username": "SUDIPTO_MANDAL",
+    "first_name": "",
+    "last_name": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-09-12T17:40:56.322Z",
+    "email": "sudipto_mandal@gmail.com",
+    "role": "student",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "accounts.accounts",
+  "pk": 66,
+  "fields": {
+    "password": "pbkdf2_sha256$1200000$csnP9BTOQdojDGsNnGjWgl$sN3iTjPTogvsD/RaIeCpv71nGDa3YZNTdsicwO1P2RI=",
+    "last_login": "2026-10-08T06:43:19.522Z",
+    "is_superuser": false,
+    "username": "sudipto_mandal",
+    "first_name": "",
+    "last_name": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-09-13T06:51:32.567Z",
+    "email": "22235103081@cse.bubt.edu.bd",
+    "role": "supervisor",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "accounts.accounts",
+  "pk": 69,
+  "fields": {
+    "password": "pbkdf2_sha256$1200000$0ShejZb5vxaCfPQeL87qe2$K0kOPlFfs28KBI8es9jEToZabrakeBGJi5gLfRVyhGs=",
+    "last_login": "2026-10-08T07:05:58.535Z",
+    "is_superuser": false,
+    "username": "shojib sheikh",
+    "first_name": "",
+    "last_name": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-09-13T19:38:13.862Z",
+    "email": "shojibsheikh99@gmail.com",
+    "role": "student",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "accounts.accounts",
+  "pk": 75,
+  "fields": {
+    "password": "pbkdf2_sha256$1200000$g7QlxpdnOVLb1hF4LMoTH5$NsQCUDAkY5hHYY5bLcOsr4Lg8hZcYJtVViPcVobc/E0=",
+    "last_login": "2026-09-14T14:41:01.157Z",
+    "is_superuser": false,
+    "username": "22235103358@cse.bubt.edu.bd",
+    "first_name": "",
+    "last_name": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-09-14T14:41:00.452Z",
+    "email": "22235103358@cse.bubt.edu.bd",
+    "role": "student",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "accounts.accounts",
+  "pk": 76,
+  "fields": {
+    "password": "pbkdf2_sha256$1200000$8DHXNaH7GRNht7S04Mf9Ym$/jBb4pRThSE86RalAktH9YT6MTo15vK1PkX6PdlKvhc=",
+    "last_login": "2026-09-14T16:37:34.766Z",
+    "is_superuser": false,
+    "username": "Utso Madnal",
+    "first_name": "",
+    "last_name": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-09-14T16:37:32.443Z",
+    "email": "utso@gmail.com",
+    "role": "student",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "accounts.accounts",
+  "pk": 77,
+  "fields": {
+    "password": "pbkdf2_sha256$1200000$vbf3mCqeW3j5zdfzASwdyc$R6Av0IY7MwFt3BNhhv7MMMLcrLeptlesajH7JOLThtc=",
+    "last_login": "2026-09-14T17:27:27.937Z",
+    "is_superuser": false,
+    "username": "utso mandal",
+    "first_name": "",
+    "last_name": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-09-14T17:27:25.739Z",
+    "email": "utso0164@gmail.com",
+    "role": "supervisor",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "accounts.accounts",
+  "pk": 78,
+  "fields": {
+    "password": "pbkdf2_sha256$1200000$mREhO9HDVduc9miuFaSIB0$2Ae8i+rQJ5udogAQUZIXIkqk37UZ6QYkfK4f+BcgW0M=",
+    "last_login": "2026-09-14T17:30:10.854Z",
+    "is_superuser": false,
+    "username": "Bimal Mandal",
+    "first_name": "",
+    "last_name": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-09-14T17:30:08.694Z",
+    "email": "bimal@gmail.com",
+    "role": "student",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "profiles.studentprofile",
+  "pk": 1,
+  "fields": {
+    "user": 28,
+    "student_id": "22235103081",
+    "profile_picture": "students/man.png",
+    "department": "Computer Science",
+    "intake": "51",
+    "section": "11",
+    "cgpa": "3.80",
+    "research_interests": "AI,ML,Deep Learning",
+    "skills": "Python,Djano",
+    "phone_number": "01742950164"
+  }
+},
+{
+  "model": "profiles.studentprofile",
+  "pk": 2,
+  "fields": {
+    "user": 29,
+    "student_id": "22235103082",
+    "profile_picture": "students/373646096_1019584919222260_3821242114898610674_n.jpg",
+    "department": "Electrical Engineering",
+    "intake": "57",
+    "section": "12",
+    "cgpa": "2.22",
+    "research_interests": "AI",
+    "skills": "Python",
+    "phone_number": "01742950166"
+  }
+},
+{
+  "model": "profiles.studentprofile",
+  "pk": 3,
+  "fields": {
+    "user": 59,
+    "student_id": "1996072893",
+    "profile_picture": "students/pngtree-cute-cartoon-girl.png",
+    "department": "Computer Science",
+    "intake": "45",
+    "section": "9",
+    "cgpa": "3.84",
+    "research_interests": "ML ,AI,Deep Learning",
+    "skills": "Python,Djano",
+    "phone_number": "01742950164"
+  }
+},
+{
+  "model": "profiles.studentprofile",
+  "pk": 4,
+  "fields": {
+    "user": 60,
+    "student_id": "22235103515",
+    "profile_picture": "students/Sahid.jpeg",
+    "department": "Computer Science",
+    "intake": "51",
+    "section": "11",
+    "cgpa": "3.28",
+    "research_interests": "Artificial Intelligence (AI) , Machine Learning (ML) , Deep Learning (DL) , Natural Language Processing (NLP)",
+    "skills": "JavaScript,  python,C# , .NET Core / .NET 8 , ASP.NET Core Web API, React.js , HTML5 & CSS3,  Bootstrap & Tailwind CSS , MySQL & PostgreSQL",
+    "phone_number": "01970310680"
+  }
+},
+{
+  "model": "profiles.studentprofile",
+  "pk": 5,
+  "fields": {
+    "user": 62,
+    "student_id": "2235103081",
+    "profile_picture": "students/IMG-20250224-WA0028.jpg",
+    "department": "Computer Science",
+    "intake": "51",
+    "section": "11",
+    "cgpa": "3.84",
+    "research_interests": "Artificial Intelligence (AI) , Machine Learning (ML) , Deep Learning (DL) , Natural Language Processing (NLP)",
+    "skills": "Python ,Django ,JavaScript,  , HTML5 & CSS3,  Bootstrap & Tailwind CSS , MySQL & PostgreSQL,React",
+    "phone_number": "01569135033"
+  }
+},
+{
+  "model": "profiles.studentprofile",
+  "pk": 6,
+  "fields": {
+    "user": 63,
+    "student_id": "22235103059",
+    "profile_picture": "students/pexels-simonakidric-2607544_RQaGIj1.jpg",
+    "department": "Computer Science",
+    "intake": "51",
+    "section": "11",
+    "cgpa": "3.65",
+    "research_interests": "AI,ML,Deep Learning",
+    "skills": "Python,Djano",
+    "phone_number": "01310903504"
+  }
+},
+{
+  "model": "profiles.studentprofile",
+  "pk": 7,
+  "fields": {
+    "user": 64,
+    "student_id": "2235103050",
+    "profile_picture": "students/WhatsApp_Image_2026-08-04_at_2.27.11_PM.jpeg",
+    "department": "Computer Science",
+    "intake": "57",
+    "section": "12",
+    "cgpa": "3.50",
+    "research_interests": "AI,ML,Deep Learning",
+    "skills": "Python,Djano",
+    "phone_number": "07940617366"
+  }
+},
+{
+  "model": "profiles.studentprofile",
+  "pk": 8,
+  "fields": {
+    "user": 65,
+    "student_id": "222351030811",
+    "profile_picture": "students/SUDIPTO_MANDAL_wcdyhV0.jpeg",
+    "department": "Computer Science",
+    "intake": "51",
+    "section": "11",
+    "cgpa": "3.68",
+    "research_interests": "ML ,Deep Learning",
+    "skills": "Python,Djano",
+    "phone_number": "01569135033"
+  }
+},
+{
+  "model": "profiles.studentprofile",
+  "pk": 9,
+  "fields": {
+    "user": 69,
+    "student_id": "222351030500",
+    "profile_picture": "students/485098559_1372505937269755_3307448007276085155_n.jpg",
+    "department": "Computer Science",
+    "intake": "51",
+    "section": "11",
+    "cgpa": "3.36",
+    "research_interests": "AI , ML , Data Science , Cyber Security",
+    "skills": "Python, C++, Java, SQL, MongoDB , Web Development",
+    "phone_number": "01889308902"
+  }
+},
+{
+  "model": "profiles.studentprofile",
+  "pk": 13,
+  "fields": {
+    "user": 75,
+    "student_id": "Afrin Akter Achol",
+    "profile_picture": "",
+    "department": "Computer Science",
+    "intake": null,
+    "section": null,
+    "cgpa": "3.80",
+    "research_interests": "",
+    "skills": "",
+    "phone_number": null
+  }
+},
+{
+  "model": "profiles.studentprofile",
+  "pk": 14,
+  "fields": {
+    "user": 76,
+    "student_id": "222351030",
+    "profile_picture": "students/Screenshot_2026-09-04_114559.png",
+    "department": "Civil Engineering",
+    "intake": null,
+    "section": null,
+    "cgpa": "3.00",
+    "research_interests": "Artificial Intelligence (AI) , Machine Learning (ML) , Deep Learning (DL) , Natural Language Processing (NLP)",
+    "skills": "",
+    "phone_number": null
+  }
+},
+{
+  "model": "profiles.studentprofile",
+  "pk": 15,
+  "fields": {
+    "user": 78,
+    "student_id": "42950164",
+    "profile_picture": "students/Screenshot_2026-09-05_104849_mv4XOym.png",
+    "department": "Computer Science",
+    "intake": null,
+    "section": null,
+    "cgpa": "2.17",
+    "research_interests": "AI",
+    "skills": "",
+    "phone_number": null
+  }
+},
+{
+  "model": "profiles.supervisorprofile",
+  "pk": 1,
+  "fields": {
+    "user": 4,
+    "designation": "Associate Professor",
+    "expertise_areas": "Machine Learning, AI",
+    "max_student_capacity": 5,
+    "current_student_count": 0,
+    "department": "Computer Science",
+    "profile_pic": "supervisors/default.png",
+    "research_interests": "AI, ML",
+    "status": "Accepting Students"
+  }
+},
+{
+  "model": "profiles.supervisorprofile",
+  "pk": 3,
+  "fields": {
+    "user": 16,
+    "designation": null,
+    "expertise_areas": null,
+    "max_student_capacity": 5,
+    "current_student_count": 0,
+    "department": "Computer Science",
+    "profile_pic": "supervisors/default.png",
+    "research_interests": null,
+    "status": "Accepting Students"
+  }
+},
+{
+  "model": "profiles.supervisorprofile",
+  "pk": 4,
+  "fields": {
+    "user": 17,
+    "designation": "Associate Professor II",
+    "expertise_areas": "",
+    "max_student_capacity": 5,
+    "current_student_count": 0,
+    "department": "Computer Science",
+    "profile_pic": "supervisors/default.png",
+    "research_interests": null,
+    "status": "Accepting Students"
+  }
+},
+{
+  "model": "profiles.supervisorprofile",
+  "pk": 5,
+  "fields": {
+    "user": 18,
+    "designation": null,
+    "expertise_areas": null,
+    "max_student_capacity": 5,
+    "current_student_count": 0,
+    "department": "Computer Science",
+    "profile_pic": "supervisors/default.png",
+    "research_interests": null,
+    "status": "Accepting Students"
+  }
+},
+{
+  "model": "profiles.supervisorprofile",
+  "pk": 6,
+  "fields": {
+    "user": 19,
+    "designation": "lacturar",
+    "expertise_areas": "Softeare Engineer",
+    "max_student_capacity": 5,
+    "current_student_count": 0,
+    "department": "Business",
+    "profile_pic": "supervisors/IMG_20231126_211148_DKGTSGl.jpg",
+    "research_interests": "Data Scienve",
+    "status": "Accepting Students"
+  }
+},
+{
+  "model": "profiles.supervisorprofile",
+  "pk": 7,
+  "fields": {
+    "user": 20,
+    "designation": "Associate Professor II",
+    "expertise_areas": "Machin Learning",
+    "max_student_capacity": 5,
+    "current_student_count": 0,
+    "department": "Civil",
+    "profile_pic": "supervisors/IMG_20231126_211148_KiT0w08.jpg",
+    "research_interests": "ML",
+    "status": "Full"
+  }
+},
+{
+  "model": "profiles.supervisorprofile",
+  "pk": 8,
+  "fields": {
+    "user": 21,
+    "designation": "Associate Professor",
+    "expertise_areas": "data science",
+    "max_student_capacity": 5,
+    "current_student_count": 0,
+    "department": "Computer Science",
+    "profile_pic": "supervisors/WhatsApp_Image_2026-07-23_at_4.21.04_PM.jpeg",
+    "research_interests": "AI, ML, Data Mining, NLP",
+    "status": "Accepting Students"
+  }
+},
+{
+  "model": "profiles.supervisorprofile",
+  "pk": 9,
+  "fields": {
+    "user": 22,
+    "designation": "Associate Professor",
+    "expertise_areas": "la la ala",
+    "max_student_capacity": 5,
+    "current_student_count": 0,
+    "department": "Business",
+    "profile_pic": "supervisors/WhatsApp_Image_2025-12-18_at_9.25.38_PM.jpeg",
+    "research_interests": "ML",
+    "status": "Full"
+  }
+},
+{
+  "model": "profiles.supervisorprofile",
+  "pk": 10,
+  "fields": {
+    "user": 23,
+    "designation": "lacturar",
+    "expertise_areas": "Software Engineer",
+    "max_student_capacity": 5,
+    "current_student_count": 0,
+    "department": "Computer Science",
+    "profile_pic": "supervisors/pexels-simonakidric-2607544_pmbjwn2.jpg",
+    "research_interests": "Cyber Security",
+    "status": "Accepting Students"
+  }
+},
+{
+  "model": "profiles.supervisorprofile",
+  "pk": 11,
+  "fields": {
+    "user": 24,
+    "designation": "Associate Professor",
+    "expertise_areas": "lul lu l",
+    "max_student_capacity": 5,
+    "current_student_count": 0,
+    "department": "Computer Science",
+    "profile_pic": "supervisors/IMG_20231126_211148.jpg",
+    "research_interests": "AI, ML",
+    "status": "Full"
+  }
+},
+{
+  "model": "profiles.supervisorprofile",
+  "pk": 12,
+  "fields": {
+    "user": 25,
+    "designation": "Associate Professor II",
+    "expertise_areas": "ha ha ha aha ha a ha aha aha aha aha ahh",
+    "max_student_capacity": 5,
+    "current_student_count": 0,
+    "department": "Civil",
+    "profile_pic": "supervisors/20250101_133113.jpg",
+    "research_interests": "AI, ML",
+    "status": "Full"
+  }
+},
+{
+  "model": "profiles.supervisorprofile",
+  "pk": 13,
+  "fields": {
+    "user": 26,
+    "designation": "Associate Professor",
+    "expertise_areas": "gan of la la",
+    "max_student_capacity": 5,
+    "current_student_count": 0,
+    "department": "Electrical Engineering",
+    "profile_pic": "supervisors/557597373_1509900146857399_3205462768479599010_n.jpg",
+    "research_interests": "AI, ML, Data Mining, NLP",
+    "status": "Full"
+  }
+},
+{
+  "model": "profiles.supervisorprofile",
+  "pk": 14,
+  "fields": {
+    "user": 27,
+    "designation": "Professor - Department of Computer Science & Engineerin",
+    "expertise_areas": "Machine Learning,  Deep Learning,Artificial Intelligence, Data Mining, Natural Language Processing,",
+    "max_student_capacity": 5,
+    "current_student_count": 0,
+    "department": "Computer Science",
+    "profile_pic": "supervisors/prof-dr-md-ahsan-habib.jpg",
+    "research_interests": "AI, ML, Deep Learning",
+    "status": "Accepting Students"
+  }
+},
+{
+  "model": "profiles.supervisorprofile",
+  "pk": 15,
+  "fields": {
+    "user": 30,
+    "designation": "Assistant Professor",
+    "expertise_areas": "Software Development & Architecture\r\n\r\nDatabase Systems & Enterprise Automation\r\n\r\nScalable Web and Mobile Applications\r\n\r\nTechnologies: .NET, SQL Server, Flutter, Dart, PHP, ASP, JavaScript, HTML5, CSS\r\n\r\nCloud and Network Infrastructures",
+    "max_student_capacity": 5,
+    "current_student_count": 0,
+    "department": "Computer Science",
+    "profile_pic": "supervisors/mijanur-rahman.jpg",
+    "research_interests": "Human-Computer Interaction (HCI),  Internet of Things (IoT) , Agricultural Technology , Smart Systems",
+    "status": "Accepting Students"
+  }
+},
+{
+  "model": "profiles.supervisorprofile",
+  "pk": 16,
+  "fields": {
+    "user": 31,
+    "designation": "Associate Professor",
+    "expertise_areas": "Cloud Optimization & Data Centers: (Cloud Computing, Load Balancing, Green Cloud)\r\n\r\nDeep Learning Applications: (Medical Diagnosis - Tumor Detection, Brain Anomaly, Fruit Identification)\r\n\r\nIoT & Embedded Systems: (Automated Systems, Waste Management, Smart Water Pump Control)\r\n\r\nBlockchain & Hardware Security: (Quantum-Resistant Systems, Secured Distribution)\r\n\r\nApplied AI: (Speech Emotion Recognition, Speech/Image Processing)",
+    "max_student_capacity": 3,
+    "current_student_count": 0,
+    "department": "Computer Science",
+    "profile_pic": "supervisors/md-mahbub-or-rashid.jpg",
+    "research_interests": "Cloud Computing & IoT,  Machine Learning & Deep Learning,  Medical Image Processing,  Blockchain & Security",
+    "status": "Accepting Students"
+  }
+},
+{
+  "model": "profiles.supervisorprofile",
+  "pk": 17,
+  "fields": {
+    "user": 32,
+    "designation": "Associate Professor",
+    "expertise_areas": "NLP & Text Analytics: (Emotion Detection, Sentiment Analysis, Text-to-Speech Synthesis)\r\n\r\nApplied Machine Learning: (Ensemble Learning, Medical Diagnosis - Cervical Cancer & Mosquito Classification)\r\n\r\nData Visualization & Analytics: (COVID-19 Analysis, Cloud Deployment Models/SaaS)\r\n\r\nPredictive Modeling: (Personality Prediction, Explainable AI)",
+    "max_student_capacity": 5,
+    "current_student_count": 0,
+    "department": "Computer Science",
+    "profile_pic": "supervisors/fahima-khanam.jpg",
+    "research_interests": "Natural Language Processing (NLP),  Emotion & Sentiment Analysis , Machine Learning & Deep Learning,  Healthcare Data Analytics",
+    "status": "Accepting Students"
+  }
+},
+{
+  "model": "profiles.supervisorprofile",
+  "pk": 18,
+  "fields": {
+    "user": 33,
+    "designation": "Associate Professor",
+    "expertise_areas": "Assistive & Healthcare Technology: (Medical apps for elderly/visually impaired, early ASD traits prediction, indoor navigation)\r\n\r\nComputer Vision & Image Processing: (Real-time object identification, Weather Image Classification)\r\n\r\nIoT & Smart Systems: (Gas leak detection prototypes, IoT-ML-Blockchain for Agriculture, Smart-Agri)\r\n\r\nExplainable AI (XAI) & Machine Learning: (interpretable models with SHAP, Proactive Diabetes Screening, Prediction Models)",
+    "max_student_capacity": 5,
+    "current_student_count": 0,
+    "department": "Computer Science",
+    "profile_pic": "supervisors/md-ashiqur-rahman.jpg",
+    "research_interests": "Assistive Healthcare & IoT , Applied Deep Learning & Computer Vision , Explainable AI (XAI) , Smart Agricultural Systems",
+    "status": "Accepting Students"
+  }
+},
+{
+  "model": "profiles.supervisorprofile",
+  "pk": 19,
+  "fields": {
+    "user": 34,
+    "designation": "Associate Professor",
+    "expertise_areas": "IoT & Smart Robotics: (Smart Home Automation, Obstacle Avoidance Robots for Visually Impaired, Automated Water Supply Systems)\r\n\r\nHealthcare Analytics & Assistive Web Tech: (ICU Readmission Prediction via Data Mining, Autism Support Web Portals, Medical Signal Processing)\r\n\r\nDeep Learning & Computer Vision: (Facial Expression Recognition, Image Pattern Analysis)\r\n\r\nIntelligent Transportation Systems: (Vehicular Ad-hoc Networks - VANETs, Low-cost Accident Detection Prototypes)",
+    "max_student_capacity": 5,
+    "current_student_count": 0,
+    "department": "Computer Science",
+    "profile_pic": "supervisors/iffat-tamanna.jpg",
+    "research_interests": "IoT & Home Automation,  Healthcare Data Mining & Assistive Systems,  Deep Learning & Computer Vision,  Smart Agricultural Systems",
+    "status": "Accepting Students"
+  }
+},
+{
+  "model": "profiles.supervisorprofile",
+  "pk": 20,
+  "fields": {
+    "user": 35,
+    "designation": "Associate Professor",
+    "expertise_areas": "Bio-Medical Image Analysis & Cancer Detection: (Breast Cancer Detection, Melanoma Skin Cancer, Colorectal Polyp Detection from Colonoscopy, Lung Cancer Classification)\r\n\r\nHealthcare Disease Prediction Systems: (Heart Disease Prediction, PCOS & Ovarian Cancer Prediction, Hepatitis C Detection)\r\n\r\nComputer Vision & Pattern Recognition: (Offline Bangla Handwritten Character Recognition, Local Fruit Detection/Classification)\r\n\r\nIoT & Smart Domotics Security: (AI-based Domotics, Facial Authentication for Smart Home Security, Environmental Monitoring Systems)",
+    "max_student_capacity": 5,
+    "current_student_count": 0,
+    "department": "Computer Science",
+    "profile_pic": "supervisors/md-mahbubur-rahman.jpg",
+    "research_interests": "Medical Image Processing & Bio-AI,  Machine Learning & Healthcare Analytics , Computer Vision & OCR , IoT & Smart Home Security",
+    "status": "Accepting Students"
+  }
+},
+{
+  "model": "profiles.supervisorprofile",
+  "pk": 21,
+  "fields": {
+    "user": 36,
+    "designation": "Associate Professor",
+    "expertise_areas": "Medical Image Analysis & Deep Learning: (Brain Tumor Classification using MRI via MobDenseNet, Lung Disease Diagnosis via Deep Transfer Learning)\r\n\r\nCybersecurity & Data Privacy: (Cryptography, Steganography, Hybrid Data Security Techniques)\r\n\r\nAdvanced Wireless Technology: (Li-Fi Technology, Optical Wireless Communications, Modulation Techniques)\r\n\r\nData Mining & Pattern Recognition: (Transfer Learning Models, Healthcare Predictive Analytics)",
+    "max_student_capacity": 5,
+    "current_student_count": 0,
+    "department": "Computer Science",
+    "profile_pic": "supervisors/meher-afroj.jpg",
+    "research_interests": "Deep Learning in Medical Imaging,  Cybersecurity & Cryptography , Steganography & Data Security , Optical & Wireless Communications (Li-Fi)",
+    "status": "Accepting Students"
+  }
+},
+{
+  "model": "profiles.supervisorprofile",
+  "pk": 22,
+  "fields": {
+    "user": 37,
+    "designation": "Associate Professor",
+    "expertise_areas": "Agri-Tech & Plant Pathology: (Fresh & Rotten Fruit Recognition, Crop & Cucumber Leaf Disease Detection via Computer Vision)\r\n\r\nDataset Creation & Curation: (Building benchmark datasets for Machine Learning and Computer Vision applications)\r\n\r\nBangla Natural Language Processing (NLP): (ONUBAD project - Automated conversion of Bangla regional dialects to standard Bengali)\r\n\r\nSmart Wearables & Healthcare AR: (Dia-Glass - Calorie calculating spectacles for diabetic patients using Faster R-CNN & Augmented Reality)",
+    "max_student_capacity": 5,
+    "current_student_count": 0,
+    "department": "Computer Science",
+    "profile_pic": "supervisors/nusrat-sultana.jpg",
+    "research_interests": "Computer Vision & Agri-Tech , Dataset Engineering & Machine Learning,  Natural Language Processing (Bangla NLP) , AR & Smart Healthcare Systems",
+    "status": "Accepting Students"
+  }
+},
+{
+  "model": "profiles.supervisorprofile",
+  "pk": 23,
+  "fields": {
+    "user": 38,
+    "designation": "Lecturer",
+    "expertise_areas": "Agri-Tech & Vision Transformers: (Plant Leaf & Bean Disease Detection, Explainable AI in Agriculture)\r\n\r\nHealthcare Diagnostics: (Advanced Sleep Disorder Detection using Ensemble Learning & Data Balancing)\r\n\r\nCybersecurity & Network Security: (DoS/DDoS Attack Detection in SDN using Hybrid CNN-LSTM)\r\n\r\nBlockchain, DLT & Digital Twins: (Digital Twin & IoT Integrated Automated Healthcare Systems, Blockchain-based Fraud Detection)",
+    "max_student_capacity": 5,
+    "current_student_count": 0,
+    "department": "Computer Science",
+    "profile_pic": "supervisors/maharin-afroj_.jpg",
+    "research_interests": "Ensemble Learning & Agri-Tech , Healthcare AI & Diagnostics,  Cybersecurity & SDN Security , Blockchain & Digital Twins",
+    "status": "Accepting Students"
+  }
+},
+{
+  "model": "profiles.supervisorprofile",
+  "pk": 24,
+  "fields": {
+    "user": 39,
+    "designation": "Lacturar",
+    "expertise_areas": "Vehicular Networks (VANETs) & Security: (Privacy-preserving data sharing mechanisms in vehicular networks)\r\n\r\nDecentralized AI & Blockchain: (Blockchain-enabled Federated Learning approaches for distributed systems)\r\n\r\nGenerative AI & HCI: (Evaluating Generative AI vs. Human-Centered usability evaluation methods on mobile apps)\r\n\r\nIntelligent Transportation Systems: (Privacy, decentralization, and security in smart transportation networks)",
+    "max_student_capacity": 5,
+    "current_student_count": 0,
+    "department": "Computer Science",
+    "profile_pic": "supervisors/maruf-billah.jpg",
+    "research_interests": "Vehicular Networks & Privacy,  Blockchain & Federated Learning , Generative AI & Usability,  Human-Computer Interaction (HCI)",
+    "status": "Accepting Students"
+  }
+},
+{
+  "model": "profiles.supervisorprofile",
+  "pk": 25,
+  "fields": {
+    "user": 40,
+    "designation": "Lacturar",
+    "expertise_areas": "Assistive Systems for Visually Impaired: (Customized smart blind glasses with deep learning integration)\r\n\r\nIoT & Smart Systems: (IoT-enabled fruit and vegetable identification systems, Web-interface integration)\r\n\r\nDeep Learning & Computer Vision: (FruVeg_MultiNet architecture, Image classification and object recognition)\r\n\r\nAgri-Food Technology: (Automated fresh produce identification and quality classification)",
+    "max_student_capacity": 5,
+    "current_student_count": 0,
+    "department": "Computer Science",
+    "profile_pic": "supervisors/m-a-nur-quraishi.jpg",
+    "research_interests": "Assistive Technology & AI,  IoT & Embedded Systems,  Hybrid Deep Learning , Computer Vision in Agriculture",
+    "status": "Accepting Students"
+  }
+},
+{
+  "model": "profiles.supervisorprofile",
+  "pk": 26,
+  "fields": {
+    "user": 41,
+    "designation": "Lacturar",
+    "expertise_areas": "Recommender Systems & Language Models: (Recurrent ALBERT for Recommendation - RAR, Hybrid architectures for lightweight recommendation systems)\r\n\r\nComputer Vision & Contrastive Learning: (Cassava leaf disease classification using supervised contrastive learning)\r\n\r\nIoT Healthcare & Diagnostics: (Portable diagnostic and medication systems using IoT for rural healthcare)\r\n\r\nDeep Learning Applications: (Agri-tech plant disease classification, NLP-driven recommendation models)",
+    "max_student_capacity": 5,
+    "current_student_count": 0,
+    "department": "Computer Science",
+    "profile_pic": "supervisors/sayefa-arafah.jpg",
+    "research_interests": "Recommender Systems & NLP , Transformer Architectures (ALBERT) , Contrastive Learning & Agri-Tech,  IoT Healthcare Systems",
+    "status": "Accepting Students"
+  }
+},
+{
+  "model": "profiles.supervisorprofile",
+  "pk": 27,
+  "fields": {
+    "user": 42,
+    "designation": "Lacturar",
+    "expertise_areas": "Plasmonics & Nanophotonics: (Localized Surface Plasmon Resonance - LSPR technology)Optical Sensor Design: (Refractive Index Sensing for chemical/biological detection)Thin Film & Material Coating: (Design with Silver-$MgF_2$ layers for optical enhancement)Photonic Device Modeling: (Simulation and performance analysis of plasmonic sensors)",
+    "max_student_capacity": 5,
+    "current_student_count": 0,
+    "department": "Computer Science",
+    "profile_pic": "supervisors/nilanjana-basak.jpg",
+    "research_interests": "Plasmonics & Photonics,  LSPR-based Optical Sensors,  Nanophotonics & Material Engineering,  Refractive Index Sensing",
+    "status": "Accepting Students"
+  }
+},
+{
+  "model": "profiles.supervisorprofile",
+  "pk": 28,
+  "fields": {
+    "user": 43,
+    "designation": "Lacturar",
+    "expertise_areas": "Medical Image Analysis & Deep Learning: (Brain Tumor Classification using MRI via MobDenseNet, Lung Disease Diagnosis via Deep Transfer Learning)\r\n\r\nCybersecurity & Data Privacy: (Cryptography, Steganography, Hybrid Data Security Techniques)",
+    "max_student_capacity": 5,
+    "current_student_count": 0,
+    "department": "Computer Science",
+    "profile_pic": "supervisors/sumit-alam-khan.jpg",
+    "research_interests": "Deep Learning in Medical Imaging,  Cybersecurity & Cryptography",
+    "status": "Accepting Students"
+  }
+},
+{
+  "model": "profiles.supervisorprofile",
+  "pk": 29,
+  "fields": {
+    "user": 44,
+    "designation": "Lacturar",
+    "expertise_areas": "Healthcare Diagnostics & Biosignals: (Parkinson's disease diagnosis from EEG signals, automated blood cell quantification, and near-infrared vein detection)\r\n\r\nComputer Vision & Biometrics: (Anti-spoof face recognition, YOLOv8-based pest/insect detection, and secure voting systems)\r\n\r\nOptical Sensors & Photonics: (PCF-SPR sensors designed for alcohol and carbonated drinks detection)\r\n\r\nSmart Cities, NLP & Smart Systems: (AI in smart transportation, rumour detection using DAN-BERT, and AI applications in waste management)",
+    "max_student_capacity": 5,
+    "current_student_count": 0,
+    "department": "Computer Science",
+    "profile_pic": "supervisors/shrabani-das.jpg",
+    "research_interests": "Healthcare AI & Medical Diagnostics,  Computer Vision & Deep Learning,  Smart Sensors & Photonics (PCF-SPR),  Smart Cities & IoT Applications",
+    "status": "Accepting Students"
+  }
+},
+{
+  "model": "profiles.supervisorprofile",
+  "pk": 30,
+  "fields": {
+    "user": 45,
+    "designation": "Lacturar",
+    "expertise_areas": "Natural Language Processing (NLP) & Sentiment Analysis: (Contextual emotion detection, movie/film review summarization, text analytics using deep learning)\r\n\r\nCybersecurity & Threat Detection: (Ransomware attack detection using machine learning, Safe Internet framework for children and teenagers)\r\n\r\nMedical AI & Healthcare Systems: (Recognizing Kidney Disease using Deep Learning, Sensor-based remote patient monitoring, Clinical trials overview)\r\n\r\nComputer Vision & Automation: (Real-time violence detection from CCTV cameras, Human & object detection, PLC-based automatic transfer switch, Photonic Crystal Fiber (PCF) sensors)",
+    "max_student_capacity": 5,
+    "current_student_count": 0,
+    "department": "Computer Science",
+    "profile_pic": "supervisors/sudipto-ghosh.jpg",
+    "research_interests": "NLP & Sentiment Analytics,  Machine Learning & Cybersecurity,  Healthcare & Medical AI , Computer Vision & Smart Automation",
+    "status": "Accepting Students"
+  }
+},
+{
+  "model": "profiles.supervisorprofile",
+  "pk": 31,
+  "fields": {
+    "user": 46,
+    "designation": "Lacturar",
+    "expertise_areas": "Deep Learning & Computer Vision: (FruVeg_MultiNet architecture, Image classification and object recognition)\r\n\r\nAgri-Food Technology: (Automated fresh produce identification and quality classification)",
+    "max_student_capacity": 5,
+    "current_student_count": 0,
+    "department": "Computer Science",
+    "profile_pic": "supervisors/rubaiya-reza-sohana.jpg",
+    "research_interests": "Hybrid Deep Learning  ,Computer Vision in Agriculture",
+    "status": "Accepting Students"
+  }
+},
+{
+  "model": "profiles.supervisorprofile",
+  "pk": 32,
+  "fields": {
+    "user": 47,
+    "designation": "Lacturar",
+    "expertise_areas": "Recommender Systems & Language Models: (Recurrent ALBERT for Recommendation - RAR, Hybrid architectures for lightweight recommendation systems)\r\n\r\nComputer Vision & Contrastive Learning: (Cassava leaf disease classification using supervised contrastive learning)",
+    "max_student_capacity": 5,
+    "current_student_count": 0,
+    "department": "Computer Science",
+    "profile_pic": "supervisors/talimul-bari-shreshtho.jpg",
+    "research_interests": "Cloud Computing & IoT,  Machine Learning & Deep Learning,  Medical Image Processing,  Blockchain & Security",
+    "status": "Accepting Students"
+  }
+},
+{
+  "model": "profiles.supervisorprofile",
+  "pk": 33,
+  "fields": {
+    "user": 48,
+    "designation": "Lacturar",
+    "expertise_areas": "Next-Generation Wireless Networks (B5G/6G): (Priority-based uplink 6G communication and advanced network architectures)\r\n\r\nURLLC & Network Reliability: (Cluster-based transmission diversity optimization, retransmission-based reliability, and reserved bandwidth allocation)\r\n\r\nIntelligent Reflecting Surface (IRS) Applications: (IRS-assisted wireless communication models for enhanced signal optimization)\r\n\r\nSmart Transportation Networks: (IRS-enabled B5G/6G communication frameworks for Intelligent Transportation Systems)",
+    "max_student_capacity": 5,
+    "current_student_count": 0,
+    "department": "Computer Science",
+    "profile_pic": "supervisors/md-amirul-hasan-shanto.jpg",
+    "research_interests": "B5G/6G Wireless Communications , Ultra-Reliable Low-Latency Communication (URLLC),  Intelligent Reflecting Surfaces (IRS)  ,Intelligent Transportation Systems (ITS)",
+    "status": "Accepting Students"
+  }
+},
+{
+  "model": "profiles.supervisorprofile",
+  "pk": 34,
+  "fields": {
+    "user": 49,
+    "designation": "Dean - Faculty of Sciences & Engineering",
+    "expertise_areas": "Smart Grid & Power Electronics: (Microgrid optimization, High-efficiency DC-DC Converters, Inverters, and Hybrid Renewable Integration - Solar/Wind)\r\n\r\nEmbedded Systems & Robotics: (Microcontroller-based systems [Arduino/ESP32/STM32], Industrial Automation, PID Controllers, and Autonomous Mobile Robots)\r\n\r\nIoT & Edge Computing: (Smart Home/City Energy Management, Wireless Sensor Networks [WSN], Remote Health and Environmental Monitoring Systems)\r\n\r\nVLSI & Signal Processing: (Digital Signal Processing [DSP], Circuit Simulation [MATLAB/Simulink, Proteus, PSpice], and Semiconductor Devices)",
+    "max_student_capacity": 5,
+    "current_student_count": 0,
+    "department": "Electrical Engineering",
+    "profile_pic": "supervisors/prof-dr-munshi-mahbubur-rahman.jpg",
+    "research_interests": "Smart Grid & Renewable Energy Systems,  Embedded Systems & IoT Applications,  Power Electronics & Drives  Robotics, Control Systems & Automation",
+    "status": "Accepting Students"
+  }
+},
+{
+  "model": "profiles.supervisorprofile",
+  "pk": 35,
+  "fields": {
+    "user": 50,
+    "designation": "Associate Professor",
+    "expertise_areas": "Photonics & Optical Sensors: (Numerical analysis of Photonic Crystal Fibers - PCF, Biosensors for cancer cell detection, highly birefringent optical communication)\r\n\r\nRF, Antenna & Wireless Systems: (5GHz Insert Fed Microstrip Patch Antenna design for water pH detection & wireless applications, Free Space Optical networks)\r\n\r\nRenewable Energy & Microgrids: (Solar Photovoltaic Power Plant analysis, Renewable Energy-Based DC Hybrid Microgrids)\r\n\r\nPower Electronics & EV Technologies: (Solar-powered static/dynamic Wireless EV Charging, PWM strategy for Grid-Connected NPC converters, EV Battery Lifetime Estimation via Machine Learning)",
+    "max_student_capacity": 5,
+    "current_student_count": 0,
+    "department": "Electrical Engineering",
+    "profile_pic": "supervisors/md-sabbir-hasan-sohag.jpg",
+    "research_interests": "Photonic Crystal Fibers & Biosensors,  Microstrip Antenna & Wireless Communication,  Renewable Energy & Microgrid Systems , EV Wireless Charging & Power Electronics",
+    "status": "Accepting Students"
+  }
+},
+{
+  "model": "profiles.supervisorprofile",
+  "pk": 36,
+  "fields": {
+    "user": 51,
+    "designation": "Associate Professor",
+    "expertise_areas": "DFT & Material Simulation: (First-principles study of structural, electronic, optical, and thermoelectric properties using DFT)\r\n\r\nPerovskites & Optoelectronics: (Lead-free halide double perovskites for solar cells, opto-photovoltaic materials)\r\n\r\nPhotocatalysis & Environmental Tech: (Photocatalyst investigation for wastewater treatment)\r\n\r\nComputational Chemistry & ADMET: (Chemical reactivity, thermophysical properties, QSAR study, and biological activity analysis of ionic liquids and metal complexes)",
+    "max_student_capacity": 5,
+    "current_student_count": 0,
+    "department": "Electrical Engineering",
+    "profile_pic": "supervisors/mohammad-jahidul-islam.jpg",
+    "research_interests": "Density Functional Theory (DFT) Calculations , Optoelectronic & Perovskite Materials,  Computational Drug Design & ADMET Study,  Ionic Liquids & Photocatalytic Materials",
+    "status": "Accepting Students"
+  }
+},
+{
+  "model": "profiles.supervisorprofile",
+  "pk": 37,
+  "fields": {
+    "user": 52,
+    "designation": "Assistant Professor - Department of Finance",
+    "expertise_areas": "Islamic & Commercial Banking: (Analysis of bank-specific and macroeconomic variables affecting bank profitability and performance)\r\n\r\nNon-Bank Financial Institutions (NBFIs): (Profitability assessment and panel data analysis of NBFIs in Bangladesh)\r\n\r\nMacroeconomics & Economic Growth: (Causal dynamics between public investment, capital formation, and economic growth)\r\n\r\nEnvironmental Sustainability in Finance: (Role of commercial banks and NBFIs in green banking and sustainable development)",
+    "max_student_capacity": 5,
+    "current_student_count": 0,
+    "department": "Business",
+    "profile_pic": "supervisors/md-sayeem-bin-hafiz.jpg",
+    "research_interests": "Banking & Financial Institutions,  Macroeconomics & Public Investment , Panel Data Analysis & Financial Econometrics , Sustainable Finance & Green Banking",
+    "status": "Accepting Students"
+  }
+},
+{
+  "model": "profiles.supervisorprofile",
+  "pk": 38,
+  "fields": {
+    "user": 53,
+    "designation": "Associate Professor - Department of Finance",
+    "expertise_areas": "Stock Market & Capital Market Dynamics: (Testing Weak-form Market Efficiency in Dhaka Stock Exchange, Foreign Exchange Market Efficiency, and determinants of Stock Market Development)\r\n\r\nCorporate Governance & Dividend Policy: (Impact of Managerial, Institutional, and Individual Ownership structure on Dividend Payout Policy and Stock Price Volatility)\r\n\r\nFinancial Economics & Market Policy: (Impact of Interest Rate Liberalization on Financial Development and Economic Growth in Bangladesh)\r\n\r\nCorporate Disclosure & Compliance: (Corporate Mandatory and Voluntary Disclosure practices in listed companies, Money Laundering Prevention, and Firm Asset Management)",
+    "max_student_capacity": 5,
+    "current_student_count": 0,
+    "department": "Business",
+    "profile_pic": "supervisors/dr-md-zakir-hosain.jpg",
+    "research_interests": "Capital Market & Stock Price Volatility,  Corporate Governance & Ownership Structure,  Dividend Policy & Financial Economics,  Market Efficiency & Financial Development",
+    "status": "Accepting Students"
+  }
+},
+{
+  "model": "profiles.supervisorprofile",
+  "pk": 39,
+  "fields": {
+    "user": 54,
+    "designation": "Chief Engineer (Acting) - Engineering & Maintanence Division",
+    "expertise_areas": "Structural Engineering & Materials: (Finite Element Analysis (FEA), Structural retrofitting and rehabilitation, High-performance concrete, Steel and RCC structure design)\r\n\r\nGeotechnical & Foundation Engineering: (Soil-structure interaction, Deep foundation analysis, Slope stability, Liquefaction assessment, and Soil stabilization techniques)\r\n\r\nEnvironmental & Water Resources Engineering: (Wastewater treatment technologies, Hydrological modeling, Integrated water resource management, and Environmental Impact Assessment)\r\n\r\nTransportation & Construction Management: (Geometric design of highways, Intelligent Transportation Systems (ITS), Pavement design, and Construction project management)",
+    "max_student_capacity": 5,
+    "current_student_count": 0,
+    "department": "Civil",
+    "profile_pic": "supervisors/prof-dr-syed-abdul-mofiz.jpg",
+    "research_interests": "Structural Health Monitoring & Retrofitting , Sustainable Construction Materials & Concrete Tech , Geotechnical Earthquake Engineering & Soil Dynamics,  Transportation Safety & Traffic Flow Modeling",
+    "status": "Accepting Students"
+  }
+},
+{
+  "model": "profiles.supervisorprofile",
+  "pk": 40,
+  "fields": {
+    "user": 55,
+    "designation": "Professor - Department of Civil Engineering",
+    "expertise_areas": "Steel Structures & Connection Dynamics: (Nonlinear Finite Element Analysis (FEA) of top- and seat-angle connections, moment-rotation behavior, prying action, and bolt tension prediction)\r\n\r\nStructural Dynamics & Seismic Design: (Seismic hazard maps, Uniform Hazard Spectrum (UHS), elastic seismic response coefficients, and impact vibration modeling using ABAQUS)\r\n\r\nProgressive Collapse & Structural Safety: (Progressive collapse assessment of reinforced concrete and precast panel structures under blast and impact loading)\r\n\r\nSoil Mechanics & Pavement Materials: (Stabilization of Lateritic Soil and Cement-Dune Sand using Rice Husk Ash, Lime, and Silica Fume for highway applications",
+    "max_student_capacity": 5,
+    "current_student_count": 0,
+    "department": "Civil",
+    "profile_pic": "supervisors/prof-dr-ali-ahmed.jpg",
+    "research_interests": "Structural Steel Connections & FEA Modeling,  Seismic Hazard & Earthquake Engineering,  Progressive Collapse & Impact Analysis , Geotechnical & Highway Material Stabilization",
+    "status": "Accepting Students"
+  }
+},
+{
+  "model": "profiles.supervisorprofile",
+  "pk": 41,
+  "fields": {
+    "user": 56,
+    "designation": "Assistant Professor - Department of Computer Science & Engineering",
+    "expertise_areas": "Blockchain Technology: (Blockchain-based counterfeit medicine authentication and IoT-integrated smart agriculture systems)\r\n\r\nHealthcare & Deep Learning: (Medical image classification using GCN/CNN for breast cancer, brain tumor, depression, and eye disease detection)\r\n\r\nIoT & Smart Automation: (Smart water tank management, intelligent shoes for visually impaired, gas leak monitoring, and remote health monitoring via Blynk)\r\n\r\nComputer Vision & Spatial Mapping: (CBAM-YOLOv8 based pothole and crack detection, OCR location mapping, and object recognition)",
+    "max_student_capacity": 5,
+    "current_student_count": 0,
+    "department": "Computer Science",
+    "profile_pic": "supervisors/sadah-anjum-shanto.jpg",
+    "research_interests": "Blockchain & Security Applications , Healthcare AI & Medical Imaging,  IoT Systems & Smart Automation,Computer Vision & Deep Learning",
+    "status": "Full"
+  }
+},
+{
+  "model": "profiles.supervisorprofile",
+  "pk": 42,
+  "fields": {
+    "user": 57,
+    "designation": "Associate Professor",
+    "expertise_areas": "Explainable AI (XAI) & Financial Data Analytics: (Banking fraud detection on imbalanced data using Machine Learning and Explainable AI, early ASD trait prediction in toddlers/adults)\r\n\r\nGraph Neural Networks (GNN) & Spatial Modeling: (Graph-based clustering and GNNs for modeling complex spatial patterns and socio-political conflict analysis)\r\n\r\nComputer Vision & Deep Learning: (Dual-stream CNN-Transformer networks for single image deraining, sign language detection using Deep CNN)\r\n\r\nCybersecurity & Safe Computing: (Subdomain TakeOver threat detection with real-time alerting, AI-based safe internet frameworks for children and teenagers)",
+    "max_student_capacity": 5,
+    "current_student_count": 0,
+    "department": "Computer Science",
+    "profile_pic": "supervisors/sondip-poul-singh.jpg",
+    "research_interests": "Explainable AI (XAI) & Fraud Detection , Graph Neural Networks & Data Analytics,  Computer Vision & Image Restoration , Cybersecurity & Threat Detection",
+    "status": "Accepting Students"
+  }
+},
+{
+  "model": "profiles.supervisorprofile",
+  "pk": 43,
+  "fields": {
+    "user": 58,
+    "designation": "Associate Professor",
+    "expertise_areas": "Medical Imaging & Healthcare Diagnostics: (Brain tumor, colon cancer, colorectal polyps, diabetic retinopathy, breast cancer, heart disease, and COVID-19 detection from MRI/CT/Endoscopy images using Deep Learning & Ensemble ML)\r\n\r\nComputer Vision & Feature Engineering: (Wavelet decomposition, higher-order statistical texture features, CNN feature extraction, and image classification)\r\n\r\nAgri-Tech Applications: (Fruit and plant disease recognition and classification using MSVM and texture analysis)\r\n\r\nData Science & Applied ML: (Language identification in multilingual text, customer retention analytics in Bangladeshi banks, Microstrip Patch Antenna design using Graphene)",
+    "max_student_capacity": 5,
+    "current_student_count": 0,
+    "department": "Computer Science",
+    "profile_pic": "supervisors/a-s-m-shafi.jpg",
+    "research_interests": "Medical Image Processing & Healthcare AI , Computer Vision & Pattern Recognition,  Machine Learning & Predictive Analytics,  Agri-Tech & Plant Disease Identification",
+    "status": "Accepting Students"
+  }
+},
+{
+  "model": "profiles.supervisorprofile",
+  "pk": 44,
+  "fields": {
+    "user": 66,
+    "designation": "Associate Professor",
+    "expertise_areas": "AI,ML,DL",
+    "max_student_capacity": 5,
+    "current_student_count": 0,
+    "department": "Computer Science",
+    "profile_pic": "supervisors/sudipto.jpeg",
+    "research_interests": "Medical Image Processing & Healthcare, AI Computer Vision & Pattern Recognition",
+    "status": "Accepting Students"
+  }
+},
+{
+  "model": "profiles.supervisorprofile",
+  "pk": 45,
+  "fields": {
+    "user": 77,
+    "designation": "Associate Professor",
+    "expertise_areas": "ML",
+    "max_student_capacity": 5,
+    "current_student_count": 0,
+    "department": "Computer Science",
+    "profile_pic": "supervisors/Screenshot_2026-09-05_104527.png",
+    "research_interests": "AI, ML, Data Mining, NLP",
+    "status": "Accepting Students"
+  }
+},
+{
+  "model": "research_library.thesispaper",
+  "pk": 1,
+  "fields": {
+    "title": "AI-Driven Medical Image Processing for Early Brain Tumor Detection",
+    "abstract": "This paper proposes a deep learning model using Convolutional Neural Networks (CNN) to detect early-stage brain tumors from MRI scans. The system achieves high accuracy in classification, significantly reducing diagnostic time for medical professionals.",
+    "authors": "Sudipto Mandal",
+    "supervisor_name": "A. S. M. Shafi",
+    "domain": "Artificial Intelligence",
+    "publication_year": 2025,
+    "pdf_file": "thesis_papers/_Literature_Review_Compact__Practical_2.pdf",
+    "uploaded_at": "2026-09-12T12:42:37.274Z"
+  }
+},
+{
+  "model": "research_library.thesispaper",
+  "pk": 2,
+  "fields": {
+    "title": "Real-Time Credit Card Fraud Detection Using Machine Learning Ensemble Models",
+    "abstract": "Fraudulent transactions pose a critical threat to modern financial networks. This research compares Random Forest, XGBoost, and Isolation Forest algorithms to analyze highly imbalanced transaction datasets and detect fraudulent patterns in real time.",
+    "authors": "Md. Sahid Islam, Nayeem Ahmed",
+    "supervisor_name": "Dr. Ali Ahmed",
+    "domain": "Data Science",
+    "publication_year": 2024,
+    "pdf_file": "thesis_papers/Capstone_project_part1.pdf",
+    "uploaded_at": "2026-09-12T12:45:12.984Z"
+  }
+},
+{
+  "model": "research_library.thesispaper",
+  "pk": 3,
+  "fields": {
+    "title": "Smart Agriculture Telemetry System using ESP32 Microcontroller and Blynk Cloud",
+    "abstract": "An IoT-based environmental monitoring framework designed to capture real-time soil moisture, temperature, and humidity levels. The telemetry data is transmitted to a cloud server to automate agricultural irrigation systems.",
+    "authors": "Sudipto Mandal, Mst. Sumaiya Akter",
+    "supervisor_name": "Sondip Poul Singh",
+    "domain": "Embedded Systems",
+    "publication_year": 2025,
+    "pdf_file": "thesis_papers/Cpastone_Class_Literature_Review.pdf",
+    "uploaded_at": "2026-09-12T12:46:14.924Z"
+  }
+},
+{
+  "model": "research_library.thesispaper",
+  "pk": 4,
+  "fields": {
+    "title": "Automated Unit Test Case Generation for Django Web Applications",
+    "abstract": "Manual test writing slows down agile deployment pipelines. This project introduces a static code analysis tool that automatically extracts API endpoints and model schema to generate unit test files for Django applications.",
+    "authors": "Shojib Sheikh, Mahmudul Hasan",
+    "supervisor_name": "Dr. Md. Zakir Hosain",
+    "domain": "Software Engineering",
+    "publication_year": 2025,
+    "pdf_file": "thesis_papers/IEEE_ACCESS__Final_Recommender_System.pdf",
+    "uploaded_at": "2026-09-12T12:47:49.089Z"
+  }
+},
+{
+  "model": "research_library.thesispaper",
+  "pk": 5,
+  "fields": {
+    "title": "Network Intrusion Detection in Cloud Environments Using Deep Autoencoders",
+    "abstract": "As cloud migration accelerates, traditional firewalls struggle against complex cyber threats. This study develops an unsupervised deep learning model to identify zero-day network attacks and unusual bandwidth anomalies in cloud infrastructure.",
+    "authors": "Shahid Islam,Sudipto Mandal",
+    "supervisor_name": "Prof. Shahriar Rahman",
+    "domain": "Cybersecurity",
+    "publication_year": 2026,
+    "pdf_file": "thesis_papers/Literature_ReviewBangla.pdf",
+    "uploaded_at": "2026-09-12T12:49:22.151Z"
+  }
+},
+{
+  "model": "research_library.thesispaper",
+  "pk": 6,
+  "fields": {
+    "title": "Natural Language Processing for Automated Bengali Essay Scoring",
+    "abstract": "Automated essay evaluation systems are predominantly designed for English. This research introduces a Bengali transformer model (BERT-based) to grade student essays based on grammar, semantic relevance, and structural cohesion.",
+    "authors": "Anika Tabassum, Joy Das",
+    "supervisor_name": "Kazi Omar Faruk",
+    "domain": "Machine Learning",
+    "publication_year": 2026,
+    "pdf_file": "thesis_papers/Personalized_Career-Path_Recommendation_Model_for_Information_Technology_S_JFXlfts.pdf",
+    "uploaded_at": "2026-09-12T12:50:44.737Z"
+  }
+},
+{
+  "model": "research_library.thesispaper",
+  "pk": 7,
+  "fields": {
+    "title": "Optimization of Real-Time Physics and Rendering Performance in Mobile 3D Racing Games",
+    "abstract": "Mobile devices face memory constraints when rendering complex 3D assets. This paper analyzes draw call optimization, level-of-detail (LOD) techniques, and rigid-body physics tuning in the Unity game engine for Android builds.",
+    "authors": "Sudipto Mandal, Fahim Hossain",
+    "supervisor_name": "Engr. Mahmud Islam",
+    "domain": "Game Engineering",
+    "publication_year": 2025,
+    "pdf_file": "thesis_papers/Systematic_Review_Trends_in_Intelligent_Tutoring_Systems_in_Mathematics_Te_OAjjoeU.pdf",
+    "uploaded_at": "2026-09-12T12:52:33.932Z"
+  }
+},
+{
+  "model": "research_library.thesispaper",
+  "pk": 8,
+  "fields": {
+    "title": "Autonomous Vehicle Lane Detection and Obstacle Tracking in Low-Visibility Conditions",
+    "abstract": "Fog and heavy rain severely impair optical cameras in self-driving cars. This project presents a hybrid approach integrating thermal vision processing and LiDAR point-cloud mapping to maintain accurate lane tracking.",
+    "authors": "Rakibul Hasan, Shifat Hossain",
+    "supervisor_name": "Dr. Ali Ahmed",
+    "domain": "Computer Vision",
+    "publication_year": 2026,
+    "pdf_file": "thesis_papers/ThesisBridge_An_Intelligent_StudentSupervisor_Thesis_Topic_Mapping_System.pdf",
+    "uploaded_at": "2026-09-12T12:54:36.021Z"
+  }
+},
+{
+  "model": "research_library.thesispaper",
+  "pk": 9,
+  "fields": {
+    "title": "Decentralized Academic Certificate Verification Protocol on Ethereum",
+    "abstract": "Paper certificates are prone to forgery. This project implements a decentralized application (DApp) utilizing Smart Contracts to verify student degree credentials immutably on a public blockchain ledger.",
+    "authors": "Mehedi Hasan, Al-Amin Hossain",
+    "supervisor_name": "Prof. Shahriar Rahman",
+    "domain": "Blockchain",
+    "publication_year": 2023,
+    "pdf_file": "thesis_papers/2026-09-10T09-45-14.878Z-b-10-assignment_.pdf",
+    "uploaded_at": "2026-09-12T12:56:00.989Z"
+  }
+},
+{
+  "model": "proposals.supervisorrequest",
+  "pk": 1,
+  "fields": {
+    "student": 64,
+    "supervisor": 66,
+    "topic_title": null,
+    "message": "Dear Sir,\r\n\r\nI am highly interested in pursuing my thesis research under your supervision. My research interest lies in Machine Learning and Software Engineering, and I would love to work on a topic under your guidance. Please let me know if you have any available slots for supervision.\r\n\r\nThank you,\r\n\r\nShojib Sheikh\n\nSupervisor feedback:\ncontack with me",
+    "status": "Accepted",
+    "initiated_by": "Student",
+    "created_at": "2026-09-13T08:39:16.799Z",
+    "updated_at": "2026-09-13T14:36:00.042Z"
+  }
+},
+{
+  "model": "proposals.supervisorrequest",
+  "pk": 2,
+  "fields": {
+    "student": 64,
+    "supervisor": 66,
+    "topic_title": null,
+    "message": "hi bro i am interest to work you\n\nSupervisor feedback:\nSorry this seat is not available",
+    "status": "Rejected",
+    "initiated_by": "Student",
+    "created_at": "2026-09-13T08:47:20.668Z",
+    "updated_at": "2026-09-13T14:36:28.606Z"
+  }
+},
+{
+  "model": "proposals.supervisorrequest",
+  "pk": 3,
+  "fields": {
+    "student": 64,
+    "supervisor": 66,
+    "topic_title": null,
+    "message": "hi boro tumi to amaky kino review dila na\n\nSupervisor feedback:\nwelcome",
+    "status": "Accepted",
+    "initiated_by": "Student",
+    "created_at": "2026-09-13T08:48:06.695Z",
+    "updated_at": "2026-09-13T09:12:21.490Z"
+  }
+},
+{
+  "model": "proposals.supervisorrequest",
+  "pk": 5,
+  "fields": {
+    "student": 64,
+    "supervisor": 66,
+    "topic_title": null,
+    "message": "হ্যালো সাগরিকা,\r\n\r\nতোমার প্রোফাইলটি দেখেছি। থিসিসের কাজ ও টপিক নিয়ে আলোচনা করার জন্য আমার সাথে যোগাযোগ করো অথবা তোমার প্রস্তাবিত টপিকের বিস্তারিত ইমেইলে জানাও।\r\n\r\nধন্যবাদ,\r\n\r\nSudipto Mandal",
+    "status": "Pending",
+    "initiated_by": "Student",
+    "created_at": "2026-09-13T14:53:14.278Z",
+    "updated_at": "2026-09-13T14:53:14.278Z"
+  }
+},
+{
+  "model": "proposals.supervisorrequest",
+  "pk": 6,
+  "fields": {
+    "student": 64,
+    "supervisor": 66,
+    "topic_title": null,
+    "message": "হ্যালো সাগরিকা,\r\n\r\nতোমার প্রোফাইলটি দেখেছি। থিসিসের কাজ ও টপিক নিয়ে আলোচনা করার জন্য আমার সাথে যোগাযোগ করো অথবা তোমার প্রস্তাবিত টপিকের বিস্তারিত ইমেইলে জানাও।\r\n\r\nধন্যবাদ,\r\n\r\nএ. এস. এম. শাফি",
+    "status": "Pending",
+    "initiated_by": "Student",
+    "created_at": "2026-09-13T14:54:39.002Z",
+    "updated_at": "2026-09-13T14:54:39.002Z"
+  }
+},
+{
+  "model": "proposals.supervisorrequest",
+  "pk": 7,
+  "fields": {
+    "student": 64,
+    "supervisor": 66,
+    "topic_title": null,
+    "message": "Dear Sagorika,\r\n\r\nI have reviewed your profile and background. Please reach out to discuss your thesis research interests and potential topic alignment at your earliest convenience.\r\n\r\nBest regards,\r\n\r\nA. S. M. Shafi",
+    "status": "Pending",
+    "initiated_by": "Student",
+    "created_at": "2026-09-13T14:59:28.158Z",
+    "updated_at": "2026-09-13T14:59:28.158Z"
+  }
+},
+{
+  "model": "proposals.supervisorrequest",
+  "pk": 8,
+  "fields": {
+    "student": 64,
+    "supervisor": 66,
+    "topic_title": null,
+    "message": "Dear Sagorika,\r\n\r\nI have reviewed your profile and background. Please reach out to discuss your thesis research interests and potential topic alignment at your earliest convenience.\r\n\r\nBest regards,\r\n\r\nA. S. M. Shafi",
+    "status": "Pending",
+    "initiated_by": "Student",
+    "created_at": "2026-09-13T14:59:54.667Z",
+    "updated_at": "2026-09-13T14:59:54.667Z"
+  }
+},
+{
+  "model": "proposals.supervisorrequest",
+  "pk": 9,
+  "fields": {
+    "student": 64,
+    "supervisor": 66,
+    "topic_title": null,
+    "message": "Act as a Django full-stack developer. Fix the redirect flow and success message display after sending an email in `contact_student_view`.\r\n\r\nSTRICT RULE: Only modify `proposals/views.py` and ensure the target list template (`find_students.html` or `base.html`) renders Django messages.\r\n\r\nRequirements:\r\n\r\n1. Proper Redirect after Mail Dispatch (`views.py`):\r\n   - In `contact_student_view`, after successfully running `send_mail()`:\r\n     a. Call `messages.success(request, f\"Email sent successfully to {student.username}!\")`\r\n     b. Return a HTTP redirect to the student list view: `return redirect('find_students')` (or the corresponding URL name for the search page).\r\n     c. Do NOT render `contact_student.html` again after POST submission.\r\n\r\n2. Ensure Alert/Toast Rendering in Target Template:\r\n   - Make sure `find_students.html` (or `base.html`) includes the standard Django messages block so the green alert notification displays cleanly at the top of the page upon redirect:\r\n\r\n   {% if messages %}\r\n     {% for message in messages %}\r\n       <div class=\"alert alert-{{ message.tags }} alert-dismissible fade show\" role=\"alert\">\r\n         {{ message }}\r\n         <button type=\"button\" class=\"btn-close\" data-bs-dismiss=\"alert\" aria-label=\"Close\"></button>\r\n       </div>\r\n     {% endfor %}\r\n   {% endif %}\r\n\r\nPlease update `proposals/views.py` to fix the redirect and message display.",
+    "status": "Pending",
+    "initiated_by": "Student",
+    "created_at": "2026-09-13T15:05:14.897Z",
+    "updated_at": "2026-09-13T15:05:14.897Z"
+  }
+},
+{
+  "model": "proposals.supervisorrequest",
+  "pk": 10,
+  "fields": {
+    "student": 69,
+    "supervisor": 66,
+    "topic_title": null,
+    "message": "Hi...",
+    "status": "Pending",
+    "initiated_by": "Student",
+    "created_at": "2026-09-13T19:42:33.872Z",
+    "updated_at": "2026-09-13T19:42:33.872Z"
+  }
+},
+{
+  "model": "proposals.supervisorrequest",
+  "pk": 11,
+  "fields": {
+    "student": 65,
+    "supervisor": 66,
+    "topic_title": null,
+    "message": "sajkhioahoiqhow",
+    "status": "Pending",
+    "initiated_by": "Student",
+    "created_at": "2026-09-13T19:45:07.566Z",
+    "updated_at": "2026-09-13T19:45:07.566Z"
+  }
+},
+{
+  "model": "proposals.supervisorrequest",
+  "pk": 12,
+  "fields": {
+    "student": 69,
+    "supervisor": 66,
+    "topic_title": null,
+    "message": "Hi.....How are you",
+    "status": "Accepted",
+    "initiated_by": "Student",
+    "created_at": "2026-09-13T19:45:47.677Z",
+    "updated_at": "2026-09-13T19:47:42.583Z"
+  }
+},
+{
+  "model": "proposals.supervisorrequest",
+  "pk": 13,
+  "fields": {
+    "student": 78,
+    "supervisor": 57,
+    "topic_title": null,
+    "message": "sir i am interst to contact with you\n\nSupervisor feedback:\nokay you are my student",
+    "status": "Accepted",
+    "initiated_by": "Student",
+    "created_at": "2026-09-14T17:36:03.269Z",
+    "updated_at": "2026-09-14T17:36:42.424Z"
+  }
+},
+{
+  "model": "proposals.supervisorrequest",
+  "pk": 14,
+  "fields": {
+    "student": 65,
+    "supervisor": 66,
+    "topic_title": null,
+    "message": "Assalamu Alaikum Sir,\r\n\r\nI hope you are doing well. Sir, I would like to request you to kindly allow me to work under your supervision for my Capstone Project, **“ThesisBridge: An Intelligent Student–Supervisor Thesis Topic Mapping System.”**\r\n\r\nI am very interested in working with you and learning from your guidance throughout this project. I believe that your valuable suggestions and supervision will help me improve the project and complete it successfully.\r\n\r\nIf you kindly give me the opportunity to work with you, I would be very grateful, Sir.\r\n\r\nThank you for your time and consideration.\n\nSupervisor feedback:\nOkay, I want to work with you. However, I would like to interview you first. So, please meet me in person.",
+    "status": "Accepted",
+    "initiated_by": "Student",
+    "created_at": "2026-10-08T06:42:17.303Z",
+    "updated_at": "2026-10-08T06:49:20.308Z"
+  }
+},
+{
+  "model": "proposals.supervisorrequest",
+  "pk": 15,
+  "fields": {
+    "student": 65,
+    "supervisor": 58,
+    "topic_title": null,
+    "message": "Assalamu Alaikum Sir,\r\n\r\nI hope you are doing well. Sir, I would like to request you to kindly allow me to work under your supervision for my Capstone Project, **“ThesisBridge: An Intelligent Student–Supervisor Thesis Topic Mapping System.”**\r\n\r\nI am very interested in working with you and learning from your guidance throughout this project. I believe that your valuable suggestions and supervision will help me improve the project and complete it successfully.\r\n\r\nIf you kindly give me the opportunity to work with you, I would be very grateful, Sir.\r\n\r\nThank you for your time and consideration.",
+    "status": "Accepted",
+    "initiated_by": "Student",
+    "created_at": "2026-10-08T07:08:36.873Z",
+    "updated_at": "2026-10-08T07:09:08.968Z"
+  }
+},
+{
+  "model": "proposals.researchtopic",
+  "pk": 1,
+  "fields": {
+    "title": "Explainable AI in Early Disease Detection using Deep Learning",
+    "description": "This research focuses on developing interpretable deep learning models for medical image diagnosis (e.g., MRI, X-ray). The primary objective is to enhance model transparency, allowing medical practitioners to understand the decision-making process of diagnostic AI tools.",
+    "domain": "Artificial Intelligence",
+    "prerequisites": "Strong background in Python, PyTorch/TensorFlow, Computer Vision basics, and Data Analysis techniques.",
+    "supervisor": 58,
+    "available_seats": 3,
+    "status": "Open",
+    "created_at": "2026-09-12T17:03:53.150Z"
+  }
+},
+{
+  "model": "proposals.researchtopic",
+  "pk": 2,
+  "fields": {
+    "title": "Microservices Architecture Optimization for Scalable Web Applications",
+    "description": "The goal of this project is to analyze performance bottlenecks, latency issues, and inter-service communication efficiency in containerized microservices. The candidate will design a lightweight API gateway pattern and benchmark modern orchestration tools under heavy user traffic.",
+    "domain": "Software Engineering",
+    "prerequisites": "Good knowledge of Django/Node.js, Docker, RESTful API design, PostgreSQL, and basic understanding of System Architecture.",
+    "supervisor": 58,
+    "available_seats": 1,
+    "status": "Open",
+    "created_at": "2026-09-12T17:12:41.526Z"
+  }
+},
+{
+  "model": "proposals.researchtopic",
+  "pk": 3,
+  "fields": {
+    "title": "Automated Brain Tumor Detection and Classification from MRI Images Using Hybrid Deep Learning Models",
+    "description": "This research project focuses on designing an automated and explainable computer vision framework to segment and classify brain tumors (e.g., glioma, meningioma) from MRI scans. The primary goal is to combine Convolutional Neural Networks (CNNs) with statistical feature extraction to improve diagnostic accuracy and assist medical specialists.",
+    "domain": "Artificial Intelligence",
+    "prerequisites": "Knowledge of Python, PyTorch/TensorFlow, Computer Vision (OpenCV), Image Processing, and basic Machine Learning algorithms.",
+    "supervisor": 58,
+    "available_seats": 5,
+    "status": "Open",
+    "created_at": "2026-09-13T06:35:09.026Z"
+  }
+},
+{
+  "model": "proposals.thesisproposal",
+  "pk": 1,
+  "fields": {
+    "student": 59,
+    "supervisor": 58,
+    "topic": 1,
+    "proposed_title": "Explainable AI in Early Disease Detection using Deep Learning",
+    "proposed_abstract": "ha ha ahakjaoia a  ajoitae laioe a",
+    "supervisor_feedback": "Thank you for your application. Unfortunately, all seats for this topic are full right now. Please try applying for other available topics. Good luck!",
+    "file": "",
+    "status": "rejected",
+    "created_at": "2026-09-12T17:04:57.744Z",
+    "updated_at": "2026-09-12T18:32:19.914Z"
+  }
+},
+{
+  "model": "proposals.thesisproposal",
+  "pk": 2,
+  "fields": {
+    "student": 65,
+    "supervisor": 58,
+    "topic": 1,
+    "proposed_title": "Explainable AI in Early Disease Detection using Deep Learning",
+    "proposed_abstract": "Dear Sir,\r\n\r\nI am very interested in working on the topic \"Microservices Architecture Optimization for Scalable Web Applications\" under your supervision. I have hands-on experience with Django, Docker, and REST APIs, and I am eager to apply and expand my knowledge in system optimization for my thesis. I would welcome the opportunity to discuss this further.\r\n\r\nThank you,\r\nSudipto Mandal",
+    "supervisor_feedback": "Thank you for your application. Unfortunately, all seats for this topic are full right now. Please try applying for other available topics. Good luck!",
+    "file": "",
+    "status": "rejected",
+    "created_at": "2026-09-12T17:41:43.988Z",
+    "updated_at": "2026-09-12T18:31:46.111Z"
+  }
+},
+{
+  "model": "proposals.thesisproposal",
+  "pk": 3,
+  "fields": {
+    "student": 65,
+    "supervisor": 58,
+    "topic": 2,
+    "proposed_title": "Microservices Architecture Optimization for Scalable Web Applications",
+    "proposed_abstract": "Dear Sir,\r\n\r\nI am very interested in working on the topic \"Microservices Architecture Optimization for Scalable Web Applications\" under your supervision. I have hands-on experience with Django, Docker, and REST APIs, and I am eager to apply and expand my knowledge in system optimization for my thesis. I would welcome the opportunity to discuss this further.\r\n\r\nThank you,\r\nSudipto Mandal",
+    "supervisor_feedback": "",
+    "file": "",
+    "status": "accepted",
+    "created_at": "2026-09-12T17:42:49.401Z",
+    "updated_at": "2026-09-12T18:29:03.580Z"
+  }
+},
+{
+  "model": "proposals.thesisproposal",
+  "pk": 4,
+  "fields": {
+    "student": 64,
+    "supervisor": 58,
+    "topic": 1,
+    "proposed_title": "Explainable AI in Early Disease Detection using Deep Learning",
+    "proposed_abstract": "Subject: Request for Research Supervision on Brain Tumor Detection Topic - [Sudipto Mandal]\r\n\r\nDear Sir,\r\n\r\nI hope this email finds you well.\r\n\r\nI am writing to express my strong interest in working on the research topic \"Automated Brain Tumor Detection and Classification from MRI Images Using Hybrid Deep Learning Models\" under your supervision.\r\n\r\nI have a solid foundation in Python, Machine Learning fundamentals, and Computer Vision concepts. I am eager to apply deep learning architectures (like CNNs) to medical image processing and contribute effectively to this project.\r\n\r\nI have attached my academic CV/resume for your review. I would be grateful for the opportunity to discuss this further with you at your convenience.\r\n\r\nThank you for your time and consideration.\r\n\r\nSincerely,\r\n\r\n[Sudipto Mandal]\r\n\r\nStudent ID: [22235103081]\r\n\r\nDepartment of Computer Science & Engineering\r\n\r\nBangladesh University of Business and Technology (BUBT)",
+    "supervisor_feedback": "Proposal accepted! I am glad to approve your request for this thesis topic. Please check your progress dashboard and prepare for our initial discussion.",
+    "file": "",
+    "status": "accepted",
+    "created_at": "2026-09-13T06:40:50.441Z",
+    "updated_at": "2026-09-13T06:42:57.998Z"
+  }
+},
+{
+  "model": "progress_tracker.thesisproject",
+  "pk": 1,
+  "fields": {
+    "proposal": 3,
+    "student": 65,
+    "supervisor": 58,
+    "title": "Microservices Architecture Optimization for Scalable Web Applications",
+    "created_at": "2026-09-12T19:04:08.937Z"
+  }
+},
+{
+  "model": "progress_tracker.thesisproject",
+  "pk": 2,
+  "fields": {
+    "proposal": 4,
+    "student": 64,
+    "supervisor": 58,
+    "title": "Explainable AI in Early Disease Detection using Deep Learning",
+    "created_at": "2026-09-13T06:57:52.219Z"
+  }
+},
+{
+  "model": "progress_tracker.thesisproject",
+  "pk": 4,
+  "fields": {
+    "proposal": null,
+    "student": 64,
+    "supervisor": 66,
+    "title": "Supervisor request project",
+    "created_at": "2026-09-13T09:21:06.279Z"
+  }
+},
+{
+  "model": "progress_tracker.thesisproject",
+  "pk": 5,
+  "fields": {
+    "proposal": null,
+    "student": 69,
+    "supervisor": 66,
+    "title": "Supervisor request project",
+    "created_at": "2026-09-13T19:47:42.590Z"
+  }
+},
+{
+  "model": "progress_tracker.thesisproject",
+  "pk": 6,
+  "fields": {
+    "proposal": null,
+    "student": 78,
+    "supervisor": 57,
+    "title": "Supervisor request project",
+    "created_at": "2026-09-14T17:36:42.454Z"
+  }
+},
+{
+  "model": "progress_tracker.thesisproject",
+  "pk": 7,
+  "fields": {
+    "proposal": null,
+    "student": 65,
+    "supervisor": 66,
+    "title": "Supervisor request project",
+    "created_at": "2026-10-08T06:49:20.325Z"
+  }
+},
+{
+  "model": "progress_tracker.thesisproject",
+  "pk": 8,
+  "fields": {
+    "proposal": null,
+    "student": 65,
+    "supervisor": 58,
+    "title": "Supervisor request project",
+    "created_at": "2026-10-08T07:09:08.988Z"
+  }
+},
+{
+  "model": "progress_tracker.milestone",
+  "pk": 1,
+  "fields": {
+    "project": 1,
+    "group": null,
+    "title": "Literature Review & System Architecture Design",
+    "description": "Review existing microservice design patterns, API gateways, and define system boundaries.",
+    "status": "Completed",
+    "due_date": "2026-09-15",
+    "submission_link": "",
+    "submission_notes": "",
+    "supervisor_feedback": "good work",
+    "submitted_file": "",
+    "is_approved": false,
+    "submitted_at": "2026-09-12T19:24:36.481Z",
+    "updated_at": "2026-09-12T19:24:36.481Z"
+  }
+},
+{
+  "model": "progress_tracker.milestone",
+  "pk": 2,
+  "fields": {
+    "project": 1,
+    "group": null,
+    "title": "Project Proposal Submission",
+    "description": "Submit initial research scope, problem statement, and objectives.",
+    "status": "Completed",
+    "due_date": "2026-09-20",
+    "submission_link": "https://github.com/smsudipto/Single-Vendor-Ecommerce-Project",
+    "submission_notes": "Attached the initial project proposal document including research scope, problem statement, and primary objectives for your review. Please let me know if any updates are needed.",
+    "supervisor_feedback": "good work",
+    "submitted_file": "",
+    "is_approved": false,
+    "submitted_at": "2026-09-12T19:54:34.758Z",
+    "updated_at": "2026-09-12T19:54:34.758Z"
+  }
+},
+{
+  "model": "progress_tracker.milestone",
+  "pk": 3,
+  "fields": {
+    "project": 1,
+    "group": null,
+    "title": "Supervisor Matching",
+    "description": "Supervisor Matching",
+    "status": "Completed",
+    "due_date": "2026-09-15",
+    "submission_link": "https://github.com/smsudipto/Single-Vendor-Ecommerce-Project",
+    "submission_notes": "https://github.com/smsudipto/Single-Vendor-Ecommerce-Project",
+    "supervisor_feedback": "good",
+    "submitted_file": "",
+    "is_approved": false,
+    "submitted_at": "2026-09-12T20:15:39.094Z",
+    "updated_at": "2026-09-12T20:15:39.094Z"
+  }
+},
+{
+  "model": "progress_tracker.milestone",
+  "pk": 4,
+  "fields": {
+    "project": 1,
+    "group": null,
+    "title": "Data Collection",
+    "description": "Data Collection",
+    "status": "Completed",
+    "due_date": "2026-09-20",
+    "submission_link": "",
+    "submission_notes": "",
+    "supervisor_feedback": "data collection",
+    "submitted_file": "",
+    "is_approved": false,
+    "submitted_at": "2026-09-12T20:17:34.223Z",
+    "updated_at": "2026-09-12T20:17:34.223Z"
+  }
+},
+{
+  "model": "progress_tracker.milestone",
+  "pk": 5,
+  "fields": {
+    "project": 1,
+    "group": null,
+    "title": "Implementation",
+    "description": "Implementation",
+    "status": "Completed",
+    "due_date": "2026-09-27",
+    "submission_link": "https://github.com/smsudipto/Single-Vendor-Ecommerce-Project",
+    "submission_notes": "Implementation",
+    "supervisor_feedback": "Implementation",
+    "submitted_file": "",
+    "is_approved": false,
+    "submitted_at": "2026-09-12T20:18:46.644Z",
+    "updated_at": "2026-09-12T20:18:46.644Z"
+  }
+},
+{
+  "model": "progress_tracker.milestone",
+  "pk": 6,
+  "fields": {
+    "project": 1,
+    "group": null,
+    "title": "Thesis Defense",
+    "description": "Thesis Defense",
+    "status": "Completed",
+    "due_date": "2026-10-04",
+    "submission_link": "",
+    "submission_notes": "",
+    "supervisor_feedback": "good",
+    "submitted_file": "",
+    "is_approved": false,
+    "submitted_at": "2026-09-12T20:20:08.505Z",
+    "updated_at": "2026-09-12T20:20:08.505Z"
+  }
+},
+{
+  "model": "progress_tracker.milestone",
+  "pk": 7,
+  "fields": {
+    "project": 1,
+    "group": null,
+    "title": "Planning",
+    "description": "Planning",
+    "status": "Completed",
+    "due_date": "2026-09-14",
+    "submission_link": "https://github.com/smsudipto/Single-Vendor-Ecommerce-Project",
+    "submission_notes": "Planning",
+    "supervisor_feedback": "good",
+    "submitted_file": "",
+    "is_approved": false,
+    "submitted_at": "2026-09-12T20:42:07.528Z",
+    "updated_at": "2026-09-12T20:42:07.528Z"
+  }
+},
+{
+  "model": "progress_tracker.milestone",
+  "pk": 8,
+  "fields": {
+    "project": 1,
+    "group": null,
+    "title": "System Design",
+    "description": "System Design",
+    "status": "Completed",
+    "due_date": "2026-09-16",
+    "submission_link": "https://github.com/smsudipto/Single-Vendor-Ecommerce-Project",
+    "submission_notes": "System Design",
+    "supervisor_feedback": "System Design",
+    "submitted_file": "",
+    "is_approved": false,
+    "submitted_at": "2026-09-12T20:42:59.299Z",
+    "updated_at": "2026-09-12T20:42:59.299Z"
+  }
+},
+{
+  "model": "progress_tracker.milestone",
+  "pk": 9,
+  "fields": {
+    "project": 1,
+    "group": null,
+    "title": "Testing",
+    "description": "Testing",
+    "status": "Completed",
+    "due_date": "2026-09-16",
+    "submission_link": "",
+    "submission_notes": "",
+    "supervisor_feedback": "Testing",
+    "submitted_file": "",
+    "is_approved": false,
+    "submitted_at": "2026-09-12T20:43:56.830Z",
+    "updated_at": "2026-09-12T20:43:56.830Z"
+  }
+},
+{
+  "model": "progress_tracker.milestone",
+  "pk": 10,
+  "fields": {
+    "project": 1,
+    "group": null,
+    "title": "Deployment",
+    "description": "Deployment",
+    "status": "Completed",
+    "due_date": null,
+    "submission_link": "https://github.com/smsudipto/Single-Vendor-Ecommerce-Project",
+    "submission_notes": "Deployment",
+    "supervisor_feedback": "Deployment",
+    "submitted_file": "",
+    "is_approved": false,
+    "submitted_at": "2026-09-12T20:44:40.744Z",
+    "updated_at": "2026-09-12T20:44:40.744Z"
+  }
+},
+{
+  "model": "progress_tracker.milestone",
+  "pk": 11,
+  "fields": {
+    "project": 1,
+    "group": null,
+    "title": "Maintenance",
+    "description": "Maintenance",
+    "status": "Completed",
+    "due_date": "2026-09-29",
+    "submission_link": "https://github.com/smsudipto/Single-Vendor-Ecommerce-Project",
+    "submission_notes": "Final Thesis Defense & Book Submission",
+    "supervisor_feedback": "Final Thesis Defense & Book Submission",
+    "submitted_file": "",
+    "is_approved": false,
+    "submitted_at": "2026-09-12T20:46:01.396Z",
+    "updated_at": "2026-09-12T20:46:01.396Z"
+  }
+},
+{
+  "model": "progress_tracker.milestone",
+  "pk": 12,
+  "fields": {
+    "project": 1,
+    "group": null,
+    "title": "Final Thesis Defense & Book Submission",
+    "description": "Final Thesis Defense & Book Submission",
+    "status": "Completed",
+    "due_date": "2026-09-30",
+    "submission_link": "https://github.com/smsudipto/Single-Vendor-Ecommerce-Project",
+    "submission_notes": "Final Thesis Defense & Book Submission",
+    "supervisor_feedback": "Final Thesis Defense & Book Submission",
+    "submitted_file": "",
+    "is_approved": false,
+    "submitted_at": "2026-09-12T20:46:12.464Z",
+    "updated_at": "2026-09-12T20:46:12.464Z"
+  }
+},
+{
+  "model": "progress_tracker.milestone",
+  "pk": 13,
+  "fields": {
+    "project": 2,
+    "group": null,
+    "title": "Proposal Submission PENDING",
+    "description": "please submit your propesol",
+    "status": "Completed",
+    "due_date": "2026-09-17",
+    "submission_link": "https://github.com/smsudipto/Single-Vendor-Ecommerce-Project",
+    "submission_notes": "now see my submit proposal",
+    "supervisor_feedback": "good work",
+    "submitted_file": "milestone_submissions/Screenshot_2026-09-12_182717.png",
+    "is_approved": false,
+    "submitted_at": "2026-09-13T07:10:56.294Z",
+    "updated_at": "2026-09-13T07:10:56.294Z"
+  }
+},
+{
+  "model": "progress_tracker.milestone",
+  "pk": 14,
+  "fields": {
+    "project": 2,
+    "group": null,
+    "title": "Planning",
+    "description": "Planning",
+    "status": "Completed",
+    "due_date": "2026-09-17",
+    "submission_link": "https://github.com/smsudipto/Single-Vendor-Ecommerce-Project",
+    "submission_notes": "planning",
+    "supervisor_feedback": "good work",
+    "submitted_file": "milestone_submissions/SHA_512.pdf",
+    "is_approved": false,
+    "submitted_at": "2026-09-13T07:13:52.921Z",
+    "updated_at": "2026-09-13T07:13:52.921Z"
+  }
+},
+{
+  "model": "progress_tracker.milestone",
+  "pk": 15,
+  "fields": {
+    "project": 2,
+    "group": null,
+    "title": "Requirement Analysis & Literature Review",
+    "description": "Requirement Analysis & Literature Review",
+    "status": "Completed",
+    "due_date": "2026-09-01",
+    "submission_link": "https://github.com/smsudipto/Single-Vendor-Ecommerce-Project",
+    "submission_notes": "Requirement Analysis & Literature Review",
+    "supervisor_feedback": "good work",
+    "submitted_file": "milestone_submissions/sudipto.jpeg",
+    "is_approved": false,
+    "submitted_at": "2026-09-13T07:41:03.579Z",
+    "updated_at": "2026-09-13T07:41:03.579Z"
+  }
+},
+{
+  "model": "progress_tracker.milestone",
+  "pk": 16,
+  "fields": {
+    "project": 2,
+    "group": null,
+    "title": "System Design",
+    "description": "System Design",
+    "status": "Completed",
+    "due_date": "2026-09-23",
+    "submission_link": "https://github.com/smsudipto/Single-Vendor-Ecommerce-Project",
+    "submission_notes": "System Design",
+    "supervisor_feedback": "good",
+    "submitted_file": "",
+    "is_approved": false,
+    "submitted_at": "2026-09-13T07:42:28.729Z",
+    "updated_at": "2026-09-13T07:42:28.729Z"
+  }
+},
+{
+  "model": "progress_tracker.milestone",
+  "pk": 17,
+  "fields": {
+    "project": 2,
+    "group": null,
+    "title": "Implementation / Coding",
+    "description": "Implementation / Coding",
+    "status": "Completed",
+    "due_date": "2026-09-30",
+    "submission_link": "https://github.com/smsudipto/Single-Vendor-Ecommerce-Project",
+    "submission_notes": "Implementation / Coding",
+    "supervisor_feedback": "Implementation / Coding",
+    "submitted_file": "",
+    "is_approved": false,
+    "submitted_at": "2026-09-13T07:46:56.422Z",
+    "updated_at": "2026-09-13T07:46:56.422Z"
+  }
+},
+{
+  "model": "progress_tracker.milestone",
+  "pk": 18,
+  "fields": {
+    "project": 2,
+    "group": null,
+    "title": "Testing",
+    "description": "Testing",
+    "status": "Completed",
+    "due_date": "2026-09-16",
+    "submission_link": "https://github.com/smsudipto/Single-Vendor-Ecommerce-Project",
+    "submission_notes": "Testing",
+    "supervisor_feedback": "Testing",
+    "submitted_file": "",
+    "is_approved": false,
+    "submitted_at": "2026-09-13T07:56:29.826Z",
+    "updated_at": "2026-09-13T07:56:29.826Z"
+  }
+},
+{
+  "model": "progress_tracker.milestone",
+  "pk": 19,
+  "fields": {
+    "project": 4,
+    "group": null,
+    "title": "Proposal Submission",
+    "description": "Proposal Submission",
+    "status": "Completed",
+    "due_date": "2026-09-14",
+    "submission_link": "https://github.com/smsudipto/Single-Vendor-Ecommerce-Project",
+    "submission_notes": "Proposal Submission",
+    "supervisor_feedback": "good work",
+    "submitted_file": "",
+    "is_approved": false,
+    "submitted_at": "2026-09-13T09:24:11.081Z",
+    "updated_at": "2026-09-13T09:24:11.081Z"
+  }
+},
+{
+  "model": "progress_tracker.milestone",
+  "pk": 20,
+  "fields": {
+    "project": 5,
+    "group": null,
+    "title": "Proposal Submission",
+    "description": "please submit your project proposal",
+    "status": "Completed",
+    "due_date": "2026-09-18",
+    "submission_link": "https://www.facebook.com/photo.php?fbid=1372505933936422&set=pb.100035310840410.-2207520000&type=3",
+    "submission_notes": "Link",
+    "supervisor_feedback": "good work",
+    "submitted_file": "",
+    "is_approved": false,
+    "submitted_at": "2026-09-13T19:50:19.571Z",
+    "updated_at": "2026-09-13T19:50:19.571Z"
+  }
+},
+{
+  "model": "progress_tracker.milestone",
+  "pk": 21,
+  "fields": {
+    "project": 6,
+    "group": null,
+    "title": "submit your project proposal",
+    "description": "explain detail......",
+    "status": "Pending",
+    "due_date": null,
+    "submission_link": "",
+    "submission_notes": "",
+    "supervisor_feedback": "",
+    "submitted_file": "",
+    "is_approved": false,
+    "submitted_at": "2026-09-14T17:37:43.091Z",
+    "updated_at": "2026-09-14T17:37:43.091Z"
+  }
+},
+{
+  "model": "progress_tracker.milestone",
+  "pk": 22,
+  "fields": {
+    "project": 6,
+    "group": null,
+    "title": "submit your project proposal",
+    "description": "explain detail......",
+    "status": "Completed",
+    "due_date": null,
+    "submission_link": "https://posted-citable-stiffen.ngrok-free.dev/progress/my-progress/",
+    "submission_notes": "lalal",
+    "supervisor_feedback": "jakala",
+    "submitted_file": "",
+    "is_approved": false,
+    "submitted_at": "2026-09-14T17:41:15.054Z",
+    "updated_at": "2026-09-14T17:41:15.054Z"
+  }
+},
+{
+  "model": "progress_tracker.milestone",
+  "pk": 23,
+  "fields": {
+    "project": 6,
+    "group": null,
+    "title": "Planning",
+    "description": "lalala",
+    "status": "Completed",
+    "due_date": "2026-09-17",
+    "submission_link": "https://posted-citable-stiffen.ngrok-free.dev/progress/my-progress/",
+    "submission_notes": "jlalal",
+    "supervisor_feedback": "oaiao",
+    "submitted_file": "",
+    "is_approved": false,
+    "submitted_at": "2026-09-14T17:55:19.192Z",
+    "updated_at": "2026-09-14T17:55:19.192Z"
+  }
+},
+{
+  "model": "progress_tracker.milestone",
+  "pk": 24,
+  "fields": {
+    "project": 6,
+    "group": null,
+    "title": "Requirement Analysis",
+    "description": "requirement analyais",
+    "status": "Completed",
+    "due_date": "2026-09-17",
+    "submission_link": "",
+    "submission_notes": "",
+    "supervisor_feedback": "ajaopqpoiew",
+    "submitted_file": "",
+    "is_approved": false,
+    "submitted_at": "2026-09-14T17:56:08.698Z",
+    "updated_at": "2026-09-14T17:56:08.698Z"
+  }
+},
+{
+  "model": "progress_tracker.milestone",
+  "pk": 25,
+  "fields": {
+    "project": 6,
+    "group": null,
+    "title": "System Design",
+    "description": "design",
+    "status": "Completed",
+    "due_date": null,
+    "submission_link": "",
+    "submission_notes": "",
+    "supervisor_feedback": "design",
+    "submitted_file": "",
+    "is_approved": false,
+    "submitted_at": "2026-09-14T17:56:40.445Z",
+    "updated_at": "2026-09-14T17:56:40.445Z"
+  }
+},
+{
+  "model": "progress_tracker.milestone",
+  "pk": 26,
+  "fields": {
+    "project": 6,
+    "group": null,
+    "title": "Coding",
+    "description": "coding",
+    "status": "Completed",
+    "due_date": "2026-09-19",
+    "submission_link": "https://posted-citable-stiffen.ngrok-free.dev/progress/my-progress/",
+    "submission_notes": "lkaoao",
+    "supervisor_feedback": "good work",
+    "submitted_file": "",
+    "is_approved": false,
+    "submitted_at": "2026-09-14T17:58:16.105Z",
+    "updated_at": "2026-09-14T17:58:16.105Z"
+  }
+},
+{
+  "model": "progress_tracker.milestone",
+  "pk": 27,
+  "fields": {
+    "project": 7,
+    "group": null,
+    "title": "Proposal Submission",
+    "description": "please submit your project proposal as soon as possible",
+    "status": "Completed",
+    "due_date": "2026-10-09",
+    "submission_link": "https://posted-citable-stiffen.ngrok-free.dev/progress/my-progress/",
+    "submission_notes": "this is my project proposal",
+    "supervisor_feedback": "",
+    "submitted_file": "",
+    "is_approved": false,
+    "submitted_at": "2026-10-08T06:53:45.399Z",
+    "updated_at": "2026-10-08T06:53:45.399Z"
+  }
+},
+{
+  "model": "progress_tracker.milestone",
+  "pk": 28,
+  "fields": {
+    "project": 7,
+    "group": null,
+    "title": "Planning",
+    "description": "",
+    "status": "Pending",
+    "due_date": "2026-10-09",
+    "submission_link": "",
+    "submission_notes": "",
+    "supervisor_feedback": "",
+    "submitted_file": "",
+    "is_approved": false,
+    "submitted_at": "2026-10-08T06:54:09.955Z",
+    "updated_at": "2026-10-08T06:54:09.955Z"
+  }
+},
+{
+  "model": "progress_tracker.milestone",
+  "pk": 29,
+  "fields": {
+    "project": 8,
+    "group": null,
+    "title": "Proposal Submission",
+    "description": "please submit your project proposal",
+    "status": "Completed",
+    "due_date": "2026-10-09",
+    "submission_link": "https://docs.google.com/document/d/16QkMdUfCA_1JEvgeAVnH8FzIpWANpxgFD7doQeYqNYc/edit?tab=t.0",
+    "submission_notes": "this is my project proposal",
+    "supervisor_feedback": "good work",
+    "submitted_file": "",
+    "is_approved": false,
+    "submitted_at": "2026-10-08T07:18:31.404Z",
+    "updated_at": "2026-10-08T07:18:31.404Z"
+  }
+},
+{
+  "model": "progress_tracker.milestonesubmission",
+  "pk": 1,
+  "fields": {
+    "milestone": 3,
+    "submitted_by": 65,
+    "status": "Submitted",
+    "submission_link": "https://github.com/smsudipto/Single-Vendor-Ecommerce-Project",
+    "submission_notes": "https://github.com/smsudipto/Single-Vendor-Ecommerce-Project",
+    "submitted_file": "",
+    "supervisor_feedback": "",
+    "created_at": "2026-09-12T20:14:20.180Z"
+  }
+},
+{
+  "model": "progress_tracker.milestonesubmission",
+  "pk": 2,
+  "fields": {
+    "milestone": 3,
+    "submitted_by": 58,
+    "status": "Completed",
+    "submission_link": "https://github.com/smsudipto/Single-Vendor-Ecommerce-Project",
+    "submission_notes": "https://github.com/smsudipto/Single-Vendor-Ecommerce-Project",
+    "submitted_file": "",
+    "supervisor_feedback": "good",
+    "created_at": "2026-09-12T20:15:39.112Z"
+  }
+},
+{
+  "model": "progress_tracker.milestonesubmission",
+  "pk": 3,
+  "fields": {
+    "milestone": 4,
+    "submitted_by": 58,
+    "status": "Under Review",
+    "submission_link": "",
+    "submission_notes": "",
+    "submitted_file": "",
+    "supervisor_feedback": "data collection",
+    "created_at": "2026-09-12T20:16:46.520Z"
+  }
+},
+{
+  "model": "progress_tracker.milestonesubmission",
+  "pk": 4,
+  "fields": {
+    "milestone": 4,
+    "submitted_by": 58,
+    "status": "Revision Required",
+    "submission_link": "",
+    "submission_notes": "",
+    "submitted_file": "",
+    "supervisor_feedback": "data collection",
+    "created_at": "2026-09-12T20:17:06.041Z"
+  }
+},
+{
+  "model": "progress_tracker.milestonesubmission",
+  "pk": 5,
+  "fields": {
+    "milestone": 4,
+    "submitted_by": 58,
+    "status": "Completed",
+    "submission_link": "",
+    "submission_notes": "",
+    "submitted_file": "",
+    "supervisor_feedback": "data collection",
+    "created_at": "2026-09-12T20:17:34.231Z"
+  }
+},
+{
+  "model": "progress_tracker.milestonesubmission",
+  "pk": 6,
+  "fields": {
+    "milestone": 5,
+    "submitted_by": 65,
+    "status": "Submitted",
+    "submission_link": "https://github.com/smsudipto/Single-Vendor-Ecommerce-Project",
+    "submission_notes": "Implementation",
+    "submitted_file": "",
+    "supervisor_feedback": "",
+    "created_at": "2026-09-12T20:18:29.672Z"
+  }
+},
+{
+  "model": "progress_tracker.milestonesubmission",
+  "pk": 7,
+  "fields": {
+    "milestone": 5,
+    "submitted_by": 58,
+    "status": "Completed",
+    "submission_link": "https://github.com/smsudipto/Single-Vendor-Ecommerce-Project",
+    "submission_notes": "Implementation",
+    "submitted_file": "",
+    "supervisor_feedback": "Implementation",
+    "created_at": "2026-09-12T20:18:46.652Z"
+  }
+},
+{
+  "model": "progress_tracker.milestonesubmission",
+  "pk": 8,
+  "fields": {
+    "milestone": 6,
+    "submitted_by": 58,
+    "status": "Completed",
+    "submission_link": "",
+    "submission_notes": "",
+    "submitted_file": "",
+    "supervisor_feedback": "good",
+    "created_at": "2026-09-12T20:20:08.512Z"
+  }
+},
+{
+  "model": "progress_tracker.milestonesubmission",
+  "pk": 9,
+  "fields": {
+    "milestone": 7,
+    "submitted_by": 65,
+    "status": "Submitted",
+    "submission_link": "https://github.com/smsudipto/Single-Vendor-Ecommerce-Project",
+    "submission_notes": "Planning",
+    "submitted_file": "",
+    "supervisor_feedback": "",
+    "created_at": "2026-09-12T20:41:52.969Z"
+  }
+},
+{
+  "model": "progress_tracker.milestonesubmission",
+  "pk": 10,
+  "fields": {
+    "milestone": 7,
+    "submitted_by": 58,
+    "status": "Completed",
+    "submission_link": "https://github.com/smsudipto/Single-Vendor-Ecommerce-Project",
+    "submission_notes": "Planning",
+    "submitted_file": "",
+    "supervisor_feedback": "good",
+    "created_at": "2026-09-12T20:42:07.534Z"
+  }
+},
+{
+  "model": "progress_tracker.milestonesubmission",
+  "pk": 11,
+  "fields": {
+    "milestone": 8,
+    "submitted_by": 65,
+    "status": "Submitted",
+    "submission_link": "https://github.com/smsudipto/Single-Vendor-Ecommerce-Project",
+    "submission_notes": "System Design",
+    "submitted_file": "",
+    "supervisor_feedback": "",
+    "created_at": "2026-09-12T20:42:46.054Z"
+  }
+},
+{
+  "model": "progress_tracker.milestonesubmission",
+  "pk": 12,
+  "fields": {
+    "milestone": 8,
+    "submitted_by": 58,
+    "status": "Completed",
+    "submission_link": "https://github.com/smsudipto/Single-Vendor-Ecommerce-Project",
+    "submission_notes": "System Design",
+    "submitted_file": "",
+    "supervisor_feedback": "System Design",
+    "created_at": "2026-09-12T20:42:59.307Z"
+  }
+},
+{
+  "model": "progress_tracker.milestonesubmission",
+  "pk": 13,
+  "fields": {
+    "milestone": 9,
+    "submitted_by": 58,
+    "status": "Completed",
+    "submission_link": "",
+    "submission_notes": "",
+    "submitted_file": "",
+    "supervisor_feedback": "Testing",
+    "created_at": "2026-09-12T20:43:56.839Z"
+  }
+},
+{
+  "model": "progress_tracker.milestonesubmission",
+  "pk": 14,
+  "fields": {
+    "milestone": 10,
+    "submitted_by": 65,
+    "status": "Submitted",
+    "submission_link": "https://github.com/smsudipto/Single-Vendor-Ecommerce-Project",
+    "submission_notes": "Deployment",
+    "submitted_file": "",
+    "supervisor_feedback": "",
+    "created_at": "2026-09-12T20:44:28.794Z"
+  }
+},
+{
+  "model": "progress_tracker.milestonesubmission",
+  "pk": 15,
+  "fields": {
+    "milestone": 10,
+    "submitted_by": 58,
+    "status": "Completed",
+    "submission_link": "https://github.com/smsudipto/Single-Vendor-Ecommerce-Project",
+    "submission_notes": "Deployment",
+    "submitted_file": "",
+    "supervisor_feedback": "Deployment",
+    "created_at": "2026-09-12T20:44:40.751Z"
+  }
+},
+{
+  "model": "progress_tracker.milestonesubmission",
+  "pk": 16,
+  "fields": {
+    "milestone": 11,
+    "submitted_by": 65,
+    "status": "Submitted",
+    "submission_link": "https://github.com/smsudipto/Single-Vendor-Ecommerce-Project",
+    "submission_notes": "Final Thesis Defense & Book Submission",
+    "submitted_file": "",
+    "supervisor_feedback": "",
+    "created_at": "2026-09-12T20:45:28.278Z"
+  }
+},
+{
+  "model": "progress_tracker.milestonesubmission",
+  "pk": 17,
+  "fields": {
+    "milestone": 12,
+    "submitted_by": 65,
+    "status": "Submitted",
+    "submission_link": "https://github.com/smsudipto/Single-Vendor-Ecommerce-Project",
+    "submission_notes": "Final Thesis Defense & Book Submission",
+    "submitted_file": "",
+    "supervisor_feedback": "",
+    "created_at": "2026-09-12T20:45:43.615Z"
+  }
+},
+{
+  "model": "progress_tracker.milestonesubmission",
+  "pk": 18,
+  "fields": {
+    "milestone": 11,
+    "submitted_by": 58,
+    "status": "Completed",
+    "submission_link": "https://github.com/smsudipto/Single-Vendor-Ecommerce-Project",
+    "submission_notes": "Final Thesis Defense & Book Submission",
+    "submitted_file": "",
+    "supervisor_feedback": "Final Thesis Defense & Book Submission",
+    "created_at": "2026-09-12T20:46:01.404Z"
+  }
+},
+{
+  "model": "progress_tracker.milestonesubmission",
+  "pk": 19,
+  "fields": {
+    "milestone": 12,
+    "submitted_by": 58,
+    "status": "Completed",
+    "submission_link": "https://github.com/smsudipto/Single-Vendor-Ecommerce-Project",
+    "submission_notes": "Final Thesis Defense & Book Submission",
+    "submitted_file": "",
+    "supervisor_feedback": "Final Thesis Defense & Book Submission",
+    "created_at": "2026-09-12T20:46:12.471Z"
+  }
+},
+{
+  "model": "progress_tracker.milestonesubmission",
+  "pk": 20,
+  "fields": {
+    "milestone": 13,
+    "submitted_by": 64,
+    "status": "Submitted",
+    "submission_link": "https://github.com/smsudipto/Single-Vendor-Ecommerce-Project",
+    "submission_notes": "now see my submit proposal",
+    "submitted_file": "milestone_submissions/Screenshot_2026-09-12_182717.png",
+    "supervisor_feedback": "",
+    "created_at": "2026-09-13T07:10:02.269Z"
+  }
+},
+{
+  "model": "progress_tracker.milestonesubmission",
+  "pk": 21,
+  "fields": {
+    "milestone": 13,
+    "submitted_by": 58,
+    "status": "Completed",
+    "submission_link": "https://github.com/smsudipto/Single-Vendor-Ecommerce-Project",
+    "submission_notes": "now see my submit proposal",
+    "submitted_file": "milestone_submissions/Screenshot_2026-09-12_182717.png",
+    "supervisor_feedback": "good work",
+    "created_at": "2026-09-13T07:10:56.301Z"
+  }
+},
+{
+  "model": "progress_tracker.milestonesubmission",
+  "pk": 22,
+  "fields": {
+    "milestone": 14,
+    "submitted_by": 64,
+    "status": "Submitted",
+    "submission_link": "https://github.com/smsudipto/Single-Vendor-Ecommerce-Project",
+    "submission_notes": "planning",
+    "submitted_file": "milestone_submissions/SHA_512.pdf",
+    "supervisor_feedback": "",
+    "created_at": "2026-09-13T07:13:06.805Z"
+  }
+},
+{
+  "model": "progress_tracker.milestonesubmission",
+  "pk": 23,
+  "fields": {
+    "milestone": 14,
+    "submitted_by": 58,
+    "status": "Completed",
+    "submission_link": "https://github.com/smsudipto/Single-Vendor-Ecommerce-Project",
+    "submission_notes": "planning",
+    "submitted_file": "milestone_submissions/SHA_512.pdf",
+    "supervisor_feedback": "good work",
+    "created_at": "2026-09-13T07:13:52.930Z"
+  }
+},
+{
+  "model": "progress_tracker.milestonesubmission",
+  "pk": 24,
+  "fields": {
+    "milestone": 15,
+    "submitted_by": 64,
+    "status": "Submitted",
+    "submission_link": "https://github.com/smsudipto/Single-Vendor-Ecommerce-Project",
+    "submission_notes": "Requirement Analysis & Literature Review",
+    "submitted_file": "milestone_submissions/sudipto.jpeg",
+    "supervisor_feedback": "",
+    "created_at": "2026-09-13T07:28:21.857Z"
+  }
+},
+{
+  "model": "progress_tracker.milestonesubmission",
+  "pk": 25,
+  "fields": {
+    "milestone": 15,
+    "submitted_by": 58,
+    "status": "Completed",
+    "submission_link": "https://github.com/smsudipto/Single-Vendor-Ecommerce-Project",
+    "submission_notes": "Requirement Analysis & Literature Review",
+    "submitted_file": "milestone_submissions/sudipto.jpeg",
+    "supervisor_feedback": "good work",
+    "created_at": "2026-09-13T07:38:06.537Z"
+  }
+},
+{
+  "model": "progress_tracker.milestonesubmission",
+  "pk": 26,
+  "fields": {
+    "milestone": 15,
+    "submitted_by": 58,
+    "status": "Completed",
+    "submission_link": "https://github.com/smsudipto/Single-Vendor-Ecommerce-Project",
+    "submission_notes": "Requirement Analysis & Literature Review",
+    "submitted_file": "milestone_submissions/sudipto.jpeg",
+    "supervisor_feedback": "good work",
+    "created_at": "2026-09-13T07:38:13.416Z"
+  }
+},
+{
+  "model": "progress_tracker.milestonesubmission",
+  "pk": 27,
+  "fields": {
+    "milestone": 15,
+    "submitted_by": 58,
+    "status": "Completed",
+    "submission_link": "https://github.com/smsudipto/Single-Vendor-Ecommerce-Project",
+    "submission_notes": "Requirement Analysis & Literature Review",
+    "submitted_file": "milestone_submissions/sudipto.jpeg",
+    "supervisor_feedback": "good work",
+    "created_at": "2026-09-13T07:38:28.925Z"
+  }
+},
+{
+  "model": "progress_tracker.milestonesubmission",
+  "pk": 28,
+  "fields": {
+    "milestone": 15,
+    "submitted_by": 58,
+    "status": "Completed",
+    "submission_link": "https://github.com/smsudipto/Single-Vendor-Ecommerce-Project",
+    "submission_notes": "Requirement Analysis & Literature Review",
+    "submitted_file": "milestone_submissions/sudipto.jpeg",
+    "supervisor_feedback": "good work",
+    "created_at": "2026-09-13T07:41:03.589Z"
+  }
+},
+{
+  "model": "progress_tracker.milestonesubmission",
+  "pk": 29,
+  "fields": {
+    "milestone": 16,
+    "submitted_by": 64,
+    "status": "Submitted",
+    "submission_link": "https://github.com/smsudipto/Single-Vendor-Ecommerce-Project",
+    "submission_notes": "System Design",
+    "submitted_file": "",
+    "supervisor_feedback": "",
+    "created_at": "2026-09-13T07:41:55.004Z"
+  }
+},
+{
+  "model": "progress_tracker.milestonesubmission",
+  "pk": 30,
+  "fields": {
+    "milestone": 16,
+    "submitted_by": 58,
+    "status": "Completed",
+    "submission_link": "https://github.com/smsudipto/Single-Vendor-Ecommerce-Project",
+    "submission_notes": "System Design",
+    "submitted_file": "",
+    "supervisor_feedback": "good",
+    "created_at": "2026-09-13T07:42:28.747Z"
+  }
+},
+{
+  "model": "progress_tracker.milestonesubmission",
+  "pk": 31,
+  "fields": {
+    "milestone": 17,
+    "submitted_by": 64,
+    "status": "Submitted",
+    "submission_link": "https://github.com/smsudipto/Single-Vendor-Ecommerce-Project",
+    "submission_notes": "Implementation / Coding",
+    "submitted_file": "",
+    "supervisor_feedback": "",
+    "created_at": "2026-09-13T07:46:28.520Z"
+  }
+},
+{
+  "model": "progress_tracker.milestonesubmission",
+  "pk": 32,
+  "fields": {
+    "milestone": 17,
+    "submitted_by": 58,
+    "status": "Completed",
+    "submission_link": "https://github.com/smsudipto/Single-Vendor-Ecommerce-Project",
+    "submission_notes": "Implementation / Coding",
+    "submitted_file": "",
+    "supervisor_feedback": "Implementation / Coding",
+    "created_at": "2026-09-13T07:46:56.440Z"
+  }
+},
+{
+  "model": "progress_tracker.milestonesubmission",
+  "pk": 33,
+  "fields": {
+    "milestone": 18,
+    "submitted_by": 64,
+    "status": "Submitted",
+    "submission_link": "https://github.com/smsudipto/Single-Vendor-Ecommerce-Project",
+    "submission_notes": "Testing",
+    "submitted_file": "",
+    "supervisor_feedback": "",
+    "created_at": "2026-09-13T07:56:20.370Z"
+  }
+},
+{
+  "model": "progress_tracker.milestonesubmission",
+  "pk": 34,
+  "fields": {
+    "milestone": 18,
+    "submitted_by": 58,
+    "status": "Completed",
+    "submission_link": "https://github.com/smsudipto/Single-Vendor-Ecommerce-Project",
+    "submission_notes": "Testing",
+    "submitted_file": "",
+    "supervisor_feedback": "Testing",
+    "created_at": "2026-09-13T07:56:29.835Z"
+  }
+},
+{
+  "model": "progress_tracker.milestonesubmission",
+  "pk": 35,
+  "fields": {
+    "milestone": 19,
+    "submitted_by": 64,
+    "status": "Submitted",
+    "submission_link": "https://github.com/smsudipto/Single-Vendor-Ecommerce-Project",
+    "submission_notes": "Proposal Submission",
+    "submitted_file": "",
+    "supervisor_feedback": "",
+    "created_at": "2026-09-13T09:23:44.073Z"
+  }
+},
+{
+  "model": "progress_tracker.milestonesubmission",
+  "pk": 36,
+  "fields": {
+    "milestone": 19,
+    "submitted_by": 66,
+    "status": "Completed",
+    "submission_link": "https://github.com/smsudipto/Single-Vendor-Ecommerce-Project",
+    "submission_notes": "Proposal Submission",
+    "submitted_file": "",
+    "supervisor_feedback": "good work",
+    "created_at": "2026-09-13T09:24:11.092Z"
+  }
+},
+{
+  "model": "progress_tracker.milestonesubmission",
+  "pk": 37,
+  "fields": {
+    "milestone": 20,
+    "submitted_by": 69,
+    "status": "Submitted",
+    "submission_link": "https://www.facebook.com/photo.php?fbid=1372505933936422&set=pb.100035310840410.-2207520000&type=3",
+    "submission_notes": "Link",
+    "submitted_file": "",
+    "supervisor_feedback": "",
+    "created_at": "2026-09-13T19:49:52.697Z"
+  }
+},
+{
+  "model": "progress_tracker.milestonesubmission",
+  "pk": 38,
+  "fields": {
+    "milestone": 20,
+    "submitted_by": 66,
+    "status": "Completed",
+    "submission_link": "https://www.facebook.com/photo.php?fbid=1372505933936422&set=pb.100035310840410.-2207520000&type=3",
+    "submission_notes": "Link",
+    "submitted_file": "",
+    "supervisor_feedback": "good work",
+    "created_at": "2026-09-13T19:50:19.578Z"
+  }
+},
+{
+  "model": "progress_tracker.milestonesubmission",
+  "pk": 39,
+  "fields": {
+    "milestone": 22,
+    "submitted_by": 78,
+    "status": "Submitted",
+    "submission_link": "https://posted-citable-stiffen.ngrok-free.dev/progress/my-progress/",
+    "submission_notes": "lalal",
+    "submitted_file": "",
+    "supervisor_feedback": "",
+    "created_at": "2026-09-14T17:40:50.342Z"
+  }
+},
+{
+  "model": "progress_tracker.milestonesubmission",
+  "pk": 40,
+  "fields": {
+    "milestone": 22,
+    "submitted_by": 57,
+    "status": "Completed",
+    "submission_link": "https://posted-citable-stiffen.ngrok-free.dev/progress/my-progress/",
+    "submission_notes": "lalal",
+    "submitted_file": "",
+    "supervisor_feedback": "jakala",
+    "created_at": "2026-09-14T17:41:15.072Z"
+  }
+},
+{
+  "model": "progress_tracker.milestonesubmission",
+  "pk": 41,
+  "fields": {
+    "milestone": 23,
+    "submitted_by": 78,
+    "status": "Submitted",
+    "submission_link": "https://posted-citable-stiffen.ngrok-free.dev/progress/my-progress/",
+    "submission_notes": "jlalal",
+    "submitted_file": "",
+    "supervisor_feedback": "",
+    "created_at": "2026-09-14T17:53:56.593Z"
+  }
+},
+{
+  "model": "progress_tracker.milestonesubmission",
+  "pk": 42,
+  "fields": {
+    "milestone": 23,
+    "submitted_by": 57,
+    "status": "Completed",
+    "submission_link": "https://posted-citable-stiffen.ngrok-free.dev/progress/my-progress/",
+    "submission_notes": "jlalal",
+    "submitted_file": "",
+    "supervisor_feedback": "oaiao",
+    "created_at": "2026-09-14T17:55:19.205Z"
+  }
+},
+{
+  "model": "progress_tracker.milestonesubmission",
+  "pk": 43,
+  "fields": {
+    "milestone": 24,
+    "submitted_by": 57,
+    "status": "Completed",
+    "submission_link": "",
+    "submission_notes": "",
+    "submitted_file": "",
+    "supervisor_feedback": "ajaopqpoiew",
+    "created_at": "2026-09-14T17:56:08.714Z"
+  }
+},
+{
+  "model": "progress_tracker.milestonesubmission",
+  "pk": 44,
+  "fields": {
+    "milestone": 25,
+    "submitted_by": 57,
+    "status": "Completed",
+    "submission_link": "",
+    "submission_notes": "",
+    "submitted_file": "",
+    "supervisor_feedback": "design",
+    "created_at": "2026-09-14T17:56:40.457Z"
+  }
+},
+{
+  "model": "progress_tracker.milestonesubmission",
+  "pk": 45,
+  "fields": {
+    "milestone": 26,
+    "submitted_by": 78,
+    "status": "Submitted",
+    "submission_link": "https://posted-citable-stiffen.ngrok-free.dev/progress/my-progress/",
+    "submission_notes": "lkaoao",
+    "submitted_file": "",
+    "supervisor_feedback": "",
+    "created_at": "2026-09-14T17:57:16.284Z"
+  }
+},
+{
+  "model": "progress_tracker.milestonesubmission",
+  "pk": 46,
+  "fields": {
+    "milestone": 26,
+    "submitted_by": 57,
+    "status": "Under Review",
+    "submission_link": "https://posted-citable-stiffen.ngrok-free.dev/progress/my-progress/",
+    "submission_notes": "lkaoao",
+    "submitted_file": "",
+    "supervisor_feedback": "good work",
+    "created_at": "2026-09-14T17:57:57.414Z"
+  }
+},
+{
+  "model": "progress_tracker.milestonesubmission",
+  "pk": 47,
+  "fields": {
+    "milestone": 26,
+    "submitted_by": 57,
+    "status": "Completed",
+    "submission_link": "https://posted-citable-stiffen.ngrok-free.dev/progress/my-progress/",
+    "submission_notes": "lkaoao",
+    "submitted_file": "",
+    "supervisor_feedback": "good work",
+    "created_at": "2026-09-14T17:58:16.129Z"
+  }
+},
+{
+  "model": "progress_tracker.milestonesubmission",
+  "pk": 48,
+  "fields": {
+    "milestone": 27,
+    "submitted_by": 65,
+    "status": "Submitted",
+    "submission_link": "https://posted-citable-stiffen.ngrok-free.dev/progress/my-progress/",
+    "submission_notes": "this is my project proposal",
+    "submitted_file": "",
+    "supervisor_feedback": "",
+    "created_at": "2026-10-08T06:52:36.743Z"
+  }
+},
+{
+  "model": "progress_tracker.milestonesubmission",
+  "pk": 49,
+  "fields": {
+    "milestone": 27,
+    "submitted_by": 66,
+    "status": "Completed",
+    "submission_link": "https://posted-citable-stiffen.ngrok-free.dev/progress/my-progress/",
+    "submission_notes": "this is my project proposal",
+    "submitted_file": "",
+    "supervisor_feedback": "",
+    "created_at": "2026-10-08T06:53:45.408Z"
+  }
+},
+{
+  "model": "progress_tracker.milestonesubmission",
+  "pk": 50,
+  "fields": {
+    "milestone": 29,
+    "submitted_by": 65,
+    "status": "Submitted",
+    "submission_link": "https://docs.google.com/document/d/16QkMdUfCA_1JEvgeAVnH8FzIpWANpxgFD7doQeYqNYc/edit?tab=t.0",
+    "submission_notes": "this is my project proposal",
+    "submitted_file": "",
+    "supervisor_feedback": "",
+    "created_at": "2026-10-08T07:17:41.248Z"
+  }
+},
+{
+  "model": "progress_tracker.milestonesubmission",
+  "pk": 51,
+  "fields": {
+    "milestone": 29,
+    "submitted_by": 58,
+    "status": "Completed",
+    "submission_link": "https://docs.google.com/document/d/16QkMdUfCA_1JEvgeAVnH8FzIpWANpxgFD7doQeYqNYc/edit?tab=t.0",
+    "submission_notes": "this is my project proposal",
+    "submitted_file": "",
+    "supervisor_feedback": "good work",
+    "created_at": "2026-10-08T07:18:31.411Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "21q6fskbighgqaqzhpl2i31ffha3xnfd",
+  "fields": {
+    "session_data": ".eJxVjDkOwjAQAP-yNbJ8HynpeUO0Xq9xADlSjgrxdxQpBbQzo3nDiPvWxn3lZZwKDOAiXH5hRnpyP0x5YL_Pgua-LVMWRyJOu4rbXPh1Pdu_QcO1wQCcPGUdZVApVeNZWfLJZR_ROJKuaHaJ2FpZbaQSiQIqqspKHdAYqvD5AgIyOBc:1x5dk5:n0ouUw7N8G-9RGGeY0UjYnDK8Ou9K7zBxSPvgKQImgQ",
+    "expire_date": "2026-09-27T06:31:09.844Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "263fv1lj84o6jgn58ztlvq1049cjvezm",
+  "fields": {
+    "session_data": ".eJxVjD0LgzAUAP_Lm4sk5tux4Fg6dZbnywuRagSjU-l_LwWHdr077gUDHnsejsrbMEXowHi4_MIR6cnla5BoPcpemxPVpl9wmu_bo_JWcOHbGnm-nv3fJGPN0AEHS2PrhZMhJGVZarLBjNajMiRMbNkEYq1F0p6iJ3IoKUktWodKUYL3BydUOe4:1xEiBV:0Gb1Maox1GIaTCCVu7U-KzbMESGn8Mu69UuFSSDu2jw",
+    "expire_date": "2026-10-22T07:04:57.787Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "2fhcinwyj3pf2hpb6aoftg2do9dv7x7v",
+  "fields": {
+    "session_data": ".eJxVjMsOwiAQAP-FsyELZdni0bvfQJaHUjWQlPZk_HdD0oNeZybzFp73rfi959UvSZyFnsXpFwaOz1yHSQ-u9yZjq9u6BDkSedgury3l1-Vo_waFexlfdqgmsAQh2wgKTNAmokVlFcYJEmoGAgNWERLe2E3kyCFHnWiGJD5fxPg2Rg:1wqFSw:hUn26KFsmvV_-pvH5tx4XKnwju59urHSets1onMwreg",
+    "expire_date": "2026-08-15T19:33:50.001Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "2y4waxhiuo1jhrhuisdnrsmqjig068eo",
+  "fields": {
+    "session_data": ".eJxVjMsOwiAQAP9lz4ZAYQV69N5vICy7laopSR8n47-bJj3odWYyb0h532raV1nSxNBDhMsvo1yeMh-CH3m-N1XavC0TqSNRp13V0Fhet7P9G9S8VujBZB4xoAgiMvniY2Ay1oyROyLE3HnvvEYtmqJGS9pFcVi4-GDNNcLnC-3gN4Q:1wmpBS:Fewy4imES2s8bzrcThuTQeOSnkBbwRPi8W684eBLC7U",
+    "expire_date": "2026-08-06T08:53:38.988Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "338goex52i7xpsx95v232bsbq84hwnwk",
+  "fields": {
+    "session_data": ".eJxVjD0LgzAUAP_Lm4sk5tux4Fg6dZbnywuRagSjU-l_LwWHdr077gUDHnsejsrbMEXowHi4_MIR6cnla5BoPcpemxPVpl9wmu_bo_JWcOHbGnm-nv3fJGPN0AEHS2PrhZMhJGVZarLBjNajMiRMbNkEYq1F0p6iJ3IoKUktWodKUYL3BydUOe4:1x6RJP:MXd3y8oLVJmztaW_KKIp9iKq6PlJQqB97M2bWJsrFoI",
+    "expire_date": "2026-09-29T11:26:55.169Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "68xbo7p37gelp2gmzqh4ewcjkv0wcx5g",
+  "fields": {
+    "session_data": ".eJxVjMsOgjAQAP9lz6ah7XbrcvTON5DtA4uaklA4Gf_dkHDQ68xk3jDKvpVxb3kd5wQ9EMLlFwaJz1wPkx5S74uKS93WOagjUadtalhSft3O9m9QpBXowRl03Am6zJFcZy16g5om9om90agjG6Yui-fsSU86XD2xDYJkKWqCzxfB-jZF:1x5dl4:e2fX8UUTUISNx8USXtZR7twsB9IhOw0R0qATrVa9pSo",
+    "expire_date": "2026-09-27T06:32:10.515Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "6qm1k86jqvd3m1y0on2scxtdyfyhke1w",
+  "fields": {
+    "session_data": ".eJxVjLsOwjAMAP_FM4pS8oB0ZO83RHbskAJKpKadEP-OKnWA9e50b4i4rSVuXZY4M4zgPZx-IWF6St0NP7Dem0qtrstMak_UYbuaGsvrdrR_g4K9wAgZib1DT1fjmL0xJJp0EGe8HVyyjBZRwhkHYRcu2go7yoQ25KCJGT5fMJY5UQ:1x5e3p:Nfni0GP1QeuCSEniCLPaEwZb3IAK_vhpONrkQID2F8s",
+    "expire_date": "2026-09-27T06:51:33.272Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "af9hklwfuma1pe4icdyyc9q2etbmhb8l",
+  "fields": {
+    "session_data": ".eJxVjEEOwiAQAP-yZ0O6FCjbo3ff0Cws2KqBpLQn499Nkx70OjOZN0y8b_O0t7ROi8AIluDyCwPHZyqHkQeXe1Wxlm1dgjoSddqmblXS63q2f4OZ2wwjeNvl3g0eNZEgDuwISdgHq3U0mXNEjyzGDijspNchm5Qc5c6Z2HkLny_xjTe5:1wtTue:wGs1GtSOfMwt1UBYyAyykIDcVcTg3sAfYGCbOTiV3Ys",
+    "expire_date": "2026-08-24T17:35:48.705Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "b3immz9cdagwsfghwo0kuvh7hp6bmct0",
+  "fields": {
+    "session_data": ".eJxVjLsKg0AQRf9l6iC7OrtmLQOWIVVqmZ2ZRYkPcLUK-fcgWCTlOedy39DRvvXdnnXtBoEGXA2XXxmJXzofhZiXfd5ycapctBMN42N9Zl1nmvS-iI63c_930lPuoQFrfKzIacLkSw6xFkFnMNgkErA0nipmVx4cYvJYmatFltqqYkxR4PMFNmc6cA:1x6AaC:Clv0lL4V0cWwgzEEnJjd41MqxHoVJrHF6tesKbp88Tk",
+    "expire_date": "2026-09-28T17:35:08.409Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "d0sp6yjbepwq1af3g07tyds9ntju96l3",
+  "fields": {
+    "session_data": ".eJxVjD0LwyAUAP-LcwnRaNSOhYylU2d5vvfE0HxAjFPpfy-BDO16d9xbBKh7DrXwFkYSV2E7cfmFEfDFy2EAca3LXpoTlWaYYZwe27PwtsDM95V4up393yRDyccbkI10jp230LfO932KSqUkO-MlkGuTQU9RaXRa6gSgI7YUE7FFAyg-XzXUOtw:1x67U3:z22HnYibKVnoy9MsW8eckM9Tc1c_QrcE65Xe0RfviGA",
+    "expire_date": "2026-09-28T14:16:35.672Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "edzb6sgf6afmtoagqc603q9xf609tlrl",
+  "fields": {
+    "session_data": ".eJxVjLsOwjAMAP_FM4rSuMFJR_Z-Q2UnDimgVupjQvw7qtQB1rvTvWHgfavDvuoyjBk6aODyy4TTU6dD5AdP99mkedqWUcyRmNOupp-zvm5n-zeovFboQBpMYlvEWIgjMUcN6EIr8SrWu9QSqXOeCiW1wXMgzc4j2ZIEGRU-X9P0N6k:1x66va:jnTZmRPoNm3Ku55hBh1x7iCCss7k1CVSsTFjwieea5s",
+    "expire_date": "2026-09-28T13:40:58.017Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "euccucou0e2gpy4qvjpnjvisvv9kj8nu",
+  "fields": {
+    "session_data": ".eJxVjD0LwjAQQP_LzVLSXOMlHQVHcXIul8uFFvsBTTuJ_12EDrq-93gv6Hjf-m4vunZDghZqOP2yyPLU-StYZNnnrVQHKtV14mG8r4-i68yT3pak4-Xo_yY9lx5aiDVKNA1iyMSBmIN6tL6J4RyNs9IQqbWOMoka79iTJuuQTJaIjArvD_gmOYA:1x69wD:de5WGXwx28QcBoWOazYcINLrGOGJzZcddFEMl6jzoow",
+    "expire_date": "2026-09-28T16:53:49.772Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "gnsm41ofx67r2b19ardeb4vqr5sf09jv",
+  "fields": {
+    "session_data": ".eJxVjLEKgzAQQP_l5iImpzE6FhxLp85y3l1QqhESnUr_vRQc2vW9x3vBQMc-DUfWNMwCHbgaLr9wJH5q_Bpi3o645-JEuehXmpd7emRNkVa9baLL9ez_JhPlCToQh9YEpCDCTm1bKxnTIErwgpUT1lKr1lZk0KFXErSey1EJubahUXh_AEfAOpc:1xEiDS:42ML-7WypNvEfezxmFkgccBlLUr5Zp0LJtRzly32QI4",
+    "expire_date": "2026-10-22T07:06:58.206Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "h5c53uivg0lrrnys9degx3x84lsuc6qs",
+  "fields": {
+    "session_data": ".eJxVjLsOwjAMAP_FM4oSBzukIzvfUDmJQwuokfqYEP-OKnWA9e50b-hlW4d-W3TuxwIdIMPpFybJT512Ux4y3ZvJbVrnMZk9MYddzK0VfV2P9m8wyDJAB2QxEEkuWhEze-s5oIuoIakyMwWSeDmT9RJLrlx9xEQJvSsp2-rg8wXvHzem:1wq6q9:-yjHZ3BZK9EeUVnFsXwrjcNliFq69ySYw78p2IpNKGs",
+    "expire_date": "2026-08-15T10:21:13.440Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "j1yz4hb1fdwapt1kre66n9x4b0j6bzg1",
+  "fields": {
+    "session_data": ".eJxVjDEKwzAMAP-iuZhYMbGdsXvfEGRLqtMWB-JkKv17CWRo17vj3jDRvpVpb7JOM8MIaOHyCxPlp9TD8IPqfTF5qds6J3Mk5rTN3BaW1_Vs_waFWoERch6C-OCdxgERe5tVlL06qyoO3UCdlUDUK0ZnuxTZhyDMDgVDlASfLxLuOH4:1wqYo7:SX1nhfWx1xt8cthRJ7VPQBxyarmR4oIiZLLPxJS7468",
+    "expire_date": "2026-08-16T16:12:59.151Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "n59lwwf6xcj7xft3xfpjzov8ueg5kxeq",
+  "fields": {
+    "session_data": ".eJxVjD0LwjAQQP_LzVLSXOMlHQVHcXIul8uFFvsBTTuJ_12EDrq-93gv6Hjf-m4vunZDghZqOP2yyPLU-StYZNnnrVQHKtV14mG8r4-i68yT3pak4-Xo_yY9lx5aiDVKNA1iyMSBmIN6tL6J4RyNs9IQqbWOMoka79iTJuuQTJaIjArvD_gmOYA:1x69vX:9c3bTomgwIKekia2JCW458SfngtZ0WGo6DqYSdWB-gQ",
+    "expire_date": "2026-09-28T16:53:07.303Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "qn57aq3nztyvlmienvg4qpp6o25wui3y",
+  "fields": {
+    "session_data": ".eJxVjEEOwiAQAP-yZ0OAFrbt0btvaNhdkKqBpLQn499Nkx70OjOZN8xh3_K8t7jOi8AE3sLlF1LgZyyHkUco96q4lm1dSB2JOm1TtyrxdT3bv0EOLcMETCmMhsgSxmjEIiOLdx2Ohmzy6DWJJu4j4WjZinEJB6f9IMK61x18vjPVOI8:1wrAfB:ZahQ32pQyxHNL922JBVj4kfcg5D0ueFQqs_3byOgu5w",
+    "expire_date": "2026-08-18T08:38:17.777Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "rmuh7bxmmkq4qlrp35bjy6fd0mg2v161",
+  "fields": {
+    "session_data": ".eJxVjLsOwjAMAP_FM4rSuMFJR_Z-Q2UnDimgVupjQvw7qtQB1rvTvWHgfavDvuoyjBk6aODyy4TTU6dD5AdP99mkedqWUcyRmNOupp-zvm5n-zeovFboQBpMYlvEWIgjMUcN6EIr8SrWu9QSqXOeCiW1wXMgzc4j2ZIEGRU-X9P0N6k:1x67CM:w4EfbpHaYigO6PGsyX9cfjyBwUALrv2wwzhNgbJVSeE",
+    "expire_date": "2026-09-28T13:58:18.854Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "rrde19s2ipp6b1fhnsk3os52m8tcphhi",
+  "fields": {
+    "session_data": ".eJxVjLEKwjAQQP_lZilJ8eylo-BYnJzLXXKhxTaFpJnEfxehg67vPd4LRq77NNaieZwD9NAhnH6hsH9q-hr2fqtpL82BSnNbeV7u-VE0J1512IIu16P_m0xcJughIBoXuaUQfeTIgkpqnCNnOjm7loNYUezIqbU2UKuKZKOSGE8XQnh_AFhQOpM:1x67rh:B-l6u6SGLi-TpKmoDEjPa4F7_YK08JoVoVvlyDe_deE",
+    "expire_date": "2026-09-28T14:41:01.164Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "sj3whgel68pilges7twxaoylyie885kv",
+  "fields": {
+    "session_data": "e30:1x67Tf:qp88l3irk0lt6HTxRS0zy_UWwKSF5cV5MaksiFy2q4M",
+    "expire_date": "2026-09-28T14:16:11.568Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "wx70z6fztxpwu4pddui2rfr9ognwpbzo",
+  "fields": {
+    "session_data": ".eJxVjL0KwkAQBt9lawkX70cvpWApVtbh29sNCSYXyCWV-O4ipNB2ZpgXtdjWvt2KLu0g1FAIdPiFjPTU_DVIad7yWqodleo6YRjvy6PokjHpbRYdL3v_N-lRemqoA0vwCHy2XiRYy2rYRPU2uNonJ3CAxiNqFR9Pxql47hgudtGwCL0_VbQ7KA:1x6M1z:9g0Dq8lYFyKHXwvYTHz8w1s92fofqTeq9rOUllKZ9Jw",
+    "expire_date": "2026-09-29T05:48:35.124Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "xd3qtus6he2inwpealagqd8s1sicseke",
+  "fields": {
+    "session_data": ".eJxVjLEKgzAQQP_l5iJqkkvOseBYOnWW83KiVCMYnUr_vRQc2vW9x3tBx8c-dkfWrZsiNOAtXH5hz_LU9DUssh5pz8WJctEuPM337ZF1S7zobY06X8_-bzJyHqEBY3qHGCssBxTnwlATk0aD1oVS-qjBkK05eEH0WknpByXrakOBKPoA7w8aYTkn:1x67iK:SSi9M04Jp4nnzjHjccGTP46OlhSmymXn72vil8g-7Cg",
+    "expire_date": "2026-09-28T14:31:20.140Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "xjykxg9emiq91e2xzdm6u4he8hivwc01",
+  "fields": {
+    "session_data": ".eJxVjLsOwjAMAP_FM4pS8oB0ZO83RHbskAJKpKadEP-OKnWA9e50b4i4rSVuXZY4M4zgPZx-IWF6St0NP7Dem0qtrstMak_UYbuaGsvrdrR_g4K9wAgZib1DT1fjmL0xJJp0EGe8HVyyjBZRwhkHYRcu2go7yoQ25KCJGT5fMJY5UQ:1x5qAg:JBSfz83Tn_36hatfKhxpo4QaWuuPxJRDZaocfzA1sM8",
+    "expire_date": "2026-09-27T19:47:26.477Z"
+  }
+}
+]

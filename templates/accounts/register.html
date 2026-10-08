@@ -1,0 +1,339 @@
+{% extends 'base.html' %}
+
+{% block title %}Register - ThesisBridge{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center align-items-center my-4">
+    <div class="col-md-7 col-lg-6">
+        <!-- Main Card Container -->
+        <div class="card shadow-lg border-0 rounded-4">
+            <div class="card-body p-4 p-sm-5">
+
+                <!-- Header Section -->
+                <div class="text-center mb-4">
+                    <div class="bg-primary text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-3"
+                        style="width: 60px; height: 60px;">
+                        <i class="fa-solid fa-user-plus fa-xl"></i>
+                    </div>
+                    <h3 class="fw-bold text-dark">Create an Account</h3>
+                    <p class="text-muted small">Join ThesisBridge to collaborate on research projects.</p>
+                </div>
+
+                <!-- Registration Form -->
+                <form method="POST" action="{% url 'register' %}" enctype="multipart/form-data">
+                    {% csrf_token %}
+
+                    <!-- Username Field -->
+                    <div class="form-floating mb-3">
+                        <input type="text" name="username" class="form-control rounded-3" id="floatingUsername"
+                            placeholder="Username" value="{{ form_data.username|default:'' }}" required>
+                        <label for="floatingUsername"><i class="fa-regular fa-user me-2"></i>Username</label>
+                    </div>
+
+                    <!-- Email Field -->
+                    <div class="form-floating mb-3">
+                        <input type="email" name="email" class="form-control rounded-3" id="floatingEmail"
+                            placeholder="name@example.com" value="{{ form_data.email|default:'' }}" required>
+                        <label for="floatingEmail"><i class="fa-regular fa-envelope me-2"></i>Email Address</label>
+                    </div>
+
+                    <!-- Role Selection Dropdown -->
+                    <div class="form-floating mb-3">
+                        {% with role=form_data.role|default:'student' %}
+                        <select name="role" class="form-select rounded-3" id="roleSelect" aria-label="Select Role"
+                            required>
+                            {% if role == 'student' %}
+                            <option value="student" selected>Student</option>
+                            {% else %}
+                            <option value="student">Student</option>
+                            {% endif %}
+
+                            {% if role == 'supervisor' %}
+                            <option value="supervisor" selected>Supervisor / Teacher</option>
+                            {% else %}
+                            <option value="supervisor">Supervisor / Teacher</option>
+                            {% endif %}
+                        </select>
+                        {% endwith %}
+                        <label for="roleSelect"><i class="fa-solid fa-user-graduate me-2"></i>Select Your Role</label>
+                    </div>
+
+                    <!-- Student Fields -->
+                    {% with role=form_data.role|default:'student' %}
+                    <div id="studentFields"
+                        style="{% if role == 'student' %}display: block;{% else %}display: none;{% endif %}">
+                        <div class="row g-3 mb-3">
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    <input type="text" name="student_id" class="form-control rounded-3"
+                                        id="floatingStudentId" placeholder="Student ID"
+                                        value="{{ form_data.student_id|default:'' }}">
+                                    <label for="floatingStudentId"><i class="fa-solid fa-id-card me-2"></i>Student
+                                        ID</label>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    {% with dept=form_data.student_department|default:'Computer Science' %}
+                                    <select name="student_department" class="form-select rounded-3"
+                                        id="floatingStudentDepartment" aria-label="Select Student Department">
+                                        {% if dept == 'Computer Science' %}
+                                        <option value="Computer Science" selected>Computer Science</option>
+                                        {% else %}
+                                        <option value="Computer Science">Computer Science</option>
+                                        {% endif %}
+
+                                        {% if dept == 'Electrical Engineering' %}
+                                        <option value="Electrical Engineering" selected>Electrical Engineering</option>
+                                        {% else %}
+                                        <option value="Electrical Engineering">Electrical Engineering</option>
+                                        {% endif %}
+
+                                        {% if dept == 'Civil' %}
+                                        <option value="Civil" selected>Civil</option>
+                                        {% else %}
+                                        <option value="Civil">Civil</option>
+                                        {% endif %}
+
+                                        {% if dept == 'Business' %}
+                                        <option value="Business" selected>Business</option>
+                                        {% else %}
+                                        <option value="Business">Business</option>
+                                        {% endif %}
+                                    </select>
+                                    {% endwith %}
+                                    <label for="floatingStudentDepartment"><i
+                                            class="fa-solid fa-building-columns me-2"></i>Department</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row g-3 mb-3">
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    <input type="text" name="intake" class="form-control rounded-3" id="floatingIntake"
+                                        placeholder="Intake" value="{{ form_data.intake|default:'' }}">
+                                    <label for="floatingIntake"><i
+                                            class="fa-solid fa-calendar-days me-2"></i>Intake</label>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    <input type="text" name="section" class="form-control rounded-3"
+                                        id="floatingSection" placeholder="Section"
+                                        value="{{ form_data.section|default:'' }}">
+                                    <label for="floatingSection"><i
+                                            class="fa-solid fa-layer-group me-2"></i>Section</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row g-3 mb-3">
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    <input type="number" name="cgpa" class="form-control rounded-3" id="floatingCgpa"
+                                        placeholder="CGPA" step="0.01" min="0" max="4"
+                                        value="{{ form_data.cgpa|default:'' }}">
+                                    <label for="floatingCgpa"><i class="fa-solid fa-chart-line me-2"></i>CGPA</label>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    <input type="text" name="phone_number" class="form-control rounded-3"
+                                        id="floatingPhoneNumber" placeholder="Phone Number"
+                                        value="{{ form_data.phone_number|default:'' }}">
+                                    <label for="floatingPhoneNumber"><i class="fa-solid fa-phone me-2"></i>Phone
+                                        Number</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-floating mb-3">
+                            <input type="text" name="student_research_interests" class="form-control rounded-3"
+                                id="floatingStudentResearchInterests" placeholder="Research Interests"
+                                value="{{ form_data.student_research_interests|default:'' }}">
+                            <label for="floatingStudentResearchInterests"><i class="fa-solid fa-flask me-2"></i>Research
+                                Interests</label>
+                        </div>
+
+                        <div class="form-floating mb-3">
+                            <input type="text" name="skills" class="form-control rounded-3" id="floatingSkills"
+                                placeholder="Skills" value="{{ form_data.skills|default:'' }}">
+                            <label for="floatingSkills"><i
+                                    class="fa-solid fa-screwdriver-wrench me-2"></i>Skills</label>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="studentProfilePicture" class="form-label fw-semibold text-dark">
+                                <i class="fa-regular fa-image me-2"></i>Profile Picture
+                            </label>
+                            <input type="file" name="profile_picture" class="form-control rounded-3"
+                                id="studentProfilePicture" accept="image/*">
+                        </div>
+                    </div>
+                    {% endwith %}
+
+                    <!-- Supervisor Fields -->
+                    {% with role=form_data.role|default:'student' %}
+                    <div id="supervisorFields"
+                        style="{% if role == 'supervisor' %}display: block;{% else %}display: none;{% endif %}">
+                        <div class="form-floating mb-3">
+                            <input type="text" name="designation" class="form-control rounded-3"
+                                id="floatingDesignation" placeholder="Designation"
+                                value="{{ form_data.designation|default:'' }}">
+                            <label for="floatingDesignation"><i
+                                    class="fa-solid fa-id-badge me-2"></i>Designation</label>
+                        </div>
+
+                        <div class="form-floating mb-3">
+                            <textarea name="expertise_areas" class="form-control rounded-3" id="floatingExpertiseAreas"
+                                placeholder="Expertise Areas"
+                                style="height: 110px;">{{ form_data.expertise_areas|default:'' }}</textarea>
+                            <label for="floatingExpertiseAreas"><i class="fa-solid fa-list-check me-2"></i>Expertise
+                                Areas</label>
+                        </div>
+
+                        <div class="form-floating mb-3">
+                            <input type="number" name="capacity" class="form-control rounded-3" id="floatingCapacity"
+                                placeholder="Max Student Capacity" value="{{ form_data.capacity|default:'5' }}" min="1">
+                            <label for="floatingCapacity"><i class="fa-solid fa-users me-2"></i>Max Student
+                                Capacity</label>
+                        </div>
+
+                        <div class="form-floating mb-3">
+                            {% with dept=form_data.department|default:'Computer Science' %}
+                            <select name="department" class="form-select rounded-3" id="floatingDepartment"
+                                aria-label="Select Department">
+                                {% if dept == 'Computer Science' %}
+                                <option value="Computer Science" selected>Computer Science</option>
+                                {% else %}
+                                <option value="Computer Science">Computer Science</option>
+                                {% endif %}
+
+                                {% if dept == 'Electrical Engineering' %}
+                                <option value="Electrical Engineering" selected>Electrical Engineering</option>
+                                {% else %}
+                                <option value="Electrical Engineering">Electrical Engineering</option>
+                                {% endif %}
+
+                                {% if dept == 'Civil' %}
+                                <option value="Civil" selected>Civil</option>
+                                {% else %}
+                                <option value="Civil">Civil</option>
+                                {% endif %}
+
+                                {% if dept == 'Business' %}
+                                <option value="Business" selected>Business</option>
+                                {% else %}
+                                <option value="Business">Business</option>
+                                {% endif %}
+                            </select>
+                            {% endwith %}
+                            <label for="floatingDepartment"><i
+                                    class="fa-solid fa-building-columns me-2"></i>Department</label>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="profilePic" class="form-label fw-semibold text-dark">
+                                <i class="fa-regular fa-image me-2"></i>Profile Pic
+                            </label>
+                            <input type="file" name="profile_pic" class="form-control rounded-3" id="profilePic"
+                                accept="image/*">
+                        </div>
+
+                        <div class="form-floating mb-3">
+                            <input type="text" name="research_interests" class="form-control rounded-3"
+                                id="floatingResearchInterests" placeholder="Research Interests"
+                                value="{{ form_data.research_interests|default:'' }}">
+                            <label for="floatingResearchInterests"><i class="fa-solid fa-flask me-2"></i>Research
+                                Interests</label>
+                        </div>
+
+                        <div class="form-floating mb-3">
+                            {% with status=form_data.status|default:'Accepting Students' %}
+                            <select name="status" class="form-select rounded-3" id="floatingStatus"
+                                aria-label="Select Status">
+                                {% if status == 'Accepting Students' %}
+                                <option value="Accepting Students" selected>Accepting Students</option>
+                                {% else %}
+                                <option value="Accepting Students">Accepting Students</option>
+                                {% endif %}
+
+                                {% if status == 'Full' %}
+                                <option value="Full" selected>Full</option>
+                                {% else %}
+                                <option value="Full">Full</option>
+                                {% endif %}
+                            </select>
+                            {% endwith %}
+                            <label for="floatingStatus"><i class="fa-solid fa-circle-info me-2"></i>Status</label>
+                        </div>
+                    </div>
+                    {% endwith %}
+
+                    <!-- Password Field -->
+                    <div class="form-floating mb-3">
+                        <input type="password" name="password" class="form-control rounded-3" id="floatingPassword"
+                            placeholder="Password" required>
+                        <label for="floatingPassword"><i class="fa-solid fa-key me-2"></i>Password</label>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <button type="submit" class="btn btn-primary btn-lg w-100 rounded-3 fw-bold shadow-sm mt-3">
+                        <i class="fa-solid fa-user-check me-2"></i>Register
+                    </button>
+                </form>
+
+                <!-- Divider & Login Link -->
+                <hr class="my-4 text-muted">
+
+                <div class="text-center">
+                    <p class="mb-0 text-muted small">Already have an account?
+                        <a href="{% url 'login' %}" class="text-primary fw-bold text-decoration-none">Sign In Here</a>
+                    </p>
+                </div>
+
+                <script>
+                    document.addEventListener('DOMContentLoaded', function () {
+                        const roleSelect = document.getElementById('roleSelect');
+                        const studentFields = document.getElementById('studentFields');
+                        const supervisorFields = document.getElementById('supervisorFields');
+                        const supervisorInputs = supervisorFields.querySelectorAll('input, textarea, select');
+                        const studentInputs = studentFields.querySelectorAll('input, textarea, select');
+
+                        function toggleRoleFields() {
+                            const isSupervisor = roleSelect.value === 'supervisor';
+                            const isStudent = roleSelect.value === 'student';
+                            studentFields.style.display = isStudent ? 'block' : 'none';
+                            supervisorFields.style.display = isSupervisor ? 'block' : 'none';
+
+                            studentInputs.forEach(function (field) {
+                                if (isStudent) {
+                                    field.setAttribute('required', 'required');
+                                } else {
+                                    field.removeAttribute('required');
+                                }
+                            });
+
+                            supervisorInputs.forEach(function (field) {
+                                if (isSupervisor) {
+                                    field.setAttribute('required', 'required');
+                                } else {
+                                    field.removeAttribute('required');
+                                }
+                            });
+                        }
+
+                        roleSelect.addEventListener('change', toggleRoleFields);
+                        toggleRoleFields();
+                    });
+                </script>
+
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

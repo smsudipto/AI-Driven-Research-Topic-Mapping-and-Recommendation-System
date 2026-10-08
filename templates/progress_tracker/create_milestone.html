@@ -1,0 +1,3 @@
+{% extends 'base.html' %}
+{% block title %}Add Milestone - ThesisBridge{% endblock %}
+{% block content %}<div class="container py-5"><div class="card border-0 shadow-sm mx-auto" style="max-width: 720px;"><div class="card-body p-4"><h1 class="h4 fw-bold mb-1">Add milestone</h1><p class="text-muted mb-4">{{ project.title }}</p><form method="post">{% csrf_token %}{{ form.as_p }}<div class="d-flex justify-content-end gap-2"><a class="btn btn-light" href="{% url 'group_detail' project.id %}">Cancel</a><button class="btn btn-primary" type="submit">Add milestone</button></div></form></div></div></div>{% endblock %}

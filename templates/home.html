@@ -1,0 +1,95 @@
+{% extends 'base.html' %}
+
+{% block title %}ThesisBridge - Where research finds its advisor{% endblock %}
+
+{% block extra_css %}
+<style>
+    .public-home { --home-ink: #f4ecdf; --home-muted: #aebcc0; --home-teal: #5b9c8e; --home-line: rgba(177,205,199,.2); height: calc(100vh - 72px); min-height: 0; overflow: hidden; color: var(--home-ink); background: #172233; font-family: Georgia, 'Times New Roman', serif; }
+
+    .home-hero { position: relative; display: flex; flex-direction: column; justify-content: center; gap: clamp(24px, 5vh, 48px); height: 100%; padding: clamp(30px, 6vh, 68px) clamp(28px, 8vw, 128px); overflow: hidden; background: #172233; }
+
+    .home-hero::before {
+        position: absolute;
+        right: -10%;
+        bottom: -50%;
+        width: 72%;
+        height: 110%;
+        border: 1px solid rgba(143, 193, 181, .24);
+        border-radius: 50%;
+        content: '';
+        transform: rotate(-18deg);
+    }
+
+    .hero-copy { position: relative; z-index: 1; max-width: 860px; }
+    .hero-kicker { margin: 0 0 14px; color: #8fc1b5; font-family: Arial, sans-serif; font-size: .72rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; }
+    .hero-copy h1 { max-width: 760px; margin: 0 0 16px; color: #f4ecdf; font-size: clamp(2.45rem, 5.4vw, 5rem); font-weight: 400; line-height: .98; letter-spacing: -.045em; }
+    .hero-copy p { max-width: 650px; margin: 0 0 22px; color: #c4cbd0; font-family: Arial, sans-serif; font-size: clamp(.9rem, 1.2vw, 1.05rem); line-height: 1.5; }
+    .hero-cta { display: inline-flex; align-items: center; gap: 12px; padding: 12px 20px; border-radius: 8px; color: #fff; background: var(--home-teal); font-family: Arial, sans-serif; font-size: .85rem; font-weight: 700; text-decoration: none; transition: transform .2s, background .2s; }
+    .hero-cta::after { content: '\2192'; font-size: 1.15rem; }
+    .hero-cta:hover { color: #fff; background: #315f58; text-decoration: none; transform: translateY(-2px); }
+    .stats-section { position: relative; z-index: 1; width: min(100%, 1120px); }
+    .stats-heading { display: flex; align-items: end; justify-content: space-between; gap: 24px; margin-bottom: 12px; }
+    .stats-heading h2 { margin: 0; color: #f4ecdf; font-size: clamp(1.25rem, 2.2vw, 1.8rem); font-weight: 400; }
+    .stats-heading p { max-width: 290px; margin: 0; color: var(--home-muted); font-family: Arial, sans-serif; font-size: .75rem; line-height: 1.4; text-align: right; }
+    .stats-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+    .stat-card { padding: 18px 20px; border: 1px solid rgba(177,205,199,.22); border-radius: 14px; background: rgba(255,255,255,.07); box-shadow: 0 12px 28px rgba(0,0,0,.12); backdrop-filter: blur(10px); transition: border-color .2s, background .2s, transform .2s; }
+    .stat-card:hover { border-color: rgba(143,193,181,.65); background: rgba(255,255,255,.11); transform: translateY(-3px); }
+    .stat-value { display: block; margin-bottom: 5px; color: #8fc1b5; font-family: Arial, sans-serif; font-size: clamp(1.65rem, 3.5vw, 2.65rem); font-weight: 700; letter-spacing: -.04em; }
+    .stat-label { color: var(--home-muted); font-family: Arial, sans-serif; font-size: .7rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+
+    @media (max-width: 760px) { .public-home { height: calc(100vh - 56px); } .home-hero { gap: 26px; padding: 24px 20px; } .hero-copy h1 { font-size: clamp(2.35rem, 12vw, 4rem); } .hero-copy p { margin-bottom: 18px; font-size: .86rem; } .stats-heading { display: block; } .stats-heading p { margin-top: 5px; text-align: left; } .stats-grid { gap: 7px; } .stat-card { padding: 14px 10px; } .stat-value { font-size: clamp(1.15rem, 7vw, 2rem); } .stat-label { font-size: .58rem; letter-spacing: .03em; } }
+    @media (max-height: 700px) and (min-width: 761px) { .home-hero { gap: 20px; padding-top: 22px; padding-bottom: 22px; } .hero-kicker { margin-bottom: 8px; } .hero-copy h1 { margin-bottom: 10px; font-size: clamp(2.25rem, 5vw, 4rem); } .hero-copy p { margin-bottom: 14px; } .stats-card { padding: 14px 18px; } }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="public-home">
+    <section class="home-hero" aria-labelledby="hero-title">
+        <div class="hero-copy">
+            <p class="hero-kicker">A better bridge to better research</p>
+            <h1 id="hero-title">Welcome to ThesisBridge.</h1>
+            <p>Connecting scholars with visionary advisors, thoughtful collaboration, and the momentum to carry a thesis from first question to final defense.</p>
+            <a class="hero-cta" href="{% url 'login' %}">Get Started</a>
+        </div>
+        <section class="stats-section" id="community-stats" aria-labelledby="stats-title">
+            <div class="stats-heading">
+                <h2 id="stats-title">A growing research community</h2>
+                <p>Our network grows with every new scholar, advisor, and paper shared.</p>
+            </div>
+            <div class="stats-grid">
+                <article class="stat-card"><span class="stat-value" data-target="{{ student_count }}">0+</span><span class="stat-label">Total Students</span></article>
+                <article class="stat-card"><span class="stat-value" data-target="{{ supervisor_count }}">0+</span><span class="stat-label">Total Supervisors</span></article>
+                <article class="stat-card"><span class="stat-value" data-target="{{ paper_count }}">0+</span><span class="stat-label">Research Papers</span></article>
+            </div>
+        </section>
+    </section>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+(function () {
+    const values = document.querySelectorAll('.stat-value');
+    let hasAnimated = false;
+
+    function animateStats() {
+        if (hasAnimated) return;
+        hasAnimated = true;
+        values.forEach(function (value) {
+            const target = Number(value.dataset.target) || 0;
+            const duration = 1200;
+            const started = performance.now();
+            function step(now) {
+                const progress = Math.min((now - started) / duration, 1);
+                const eased = 1 - Math.pow(1 - progress, 3);
+                value.textContent = Math.floor(eased * target).toLocaleString() + '+';
+                if (progress < 1) window.requestAnimationFrame(step);
+            }
+            window.requestAnimationFrame(step);
+        });
+    }
+
+    window.requestAnimationFrame(animateStats);
+}());
+</script>
+{% endblock %}

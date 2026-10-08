@@ -1,0 +1,413 @@
+{% extends 'base.html' %}
+
+{% block title %}Find Students - ThesisBridge{% endblock %}
+
+{% block extra_css %}
+<style>
+    body {
+        background-color: #f3f6f9;
+    }
+
+    body:has(.find-students-page) { overflow: hidden; }
+
+    .find-students-page { height: calc(100vh - 72px); min-height: 0; overflow: visible; }
+
+    .find-students-page > .row { height: 100%; min-height: 0; }
+
+    .find-students-sidebar {
+        position: sticky;
+        top: 1rem;
+        align-self: start;
+        min-width: 0;
+    }
+
+    .find-students-sidebar .filter-card { height: auto; display: block; }
+
+    .find-students-results {
+        height: 100%;
+        min-width: 0;
+        min-height: 0;
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+
+    /* Left Sidebar Filter Card */
+    .filter-card {
+        background: #ffffff;
+        border: 1px solid #e2e8f0;
+        border-radius: 12px;
+        padding: 16px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02);
+        height: auto;
+    }
+
+    .filter-main-title {
+        font-weight: 700;
+        color: #0f172a;
+        font-size: 1.05rem;
+        margin-bottom: 12px;
+    }
+
+    .filter-section-title {
+        font-size: 0.8rem;
+        font-weight: 700;
+        color: #0f172a;
+        margin-bottom: 8px;
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+    }
+
+    .search-input {
+        border-radius: 8px;
+        border: 1px solid #cbd5e1;
+        padding: 6px 10px;
+        font-size: 0.84rem;
+    }
+
+    .search-input:focus {
+        border-color: #0d6efd;
+        box-shadow: 0 0 0 2px rgba(13, 110, 253, 0.15);
+    }
+
+    .form-check-label {
+        font-size: 0.84rem;
+        color: #334155;
+        font-weight: 500;
+        cursor: pointer;
+    }
+
+    .form-check-input:checked {
+        background-color: #0f5257;
+        border-color: #0f5257;
+    }
+
+    .filter-form {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+    }
+
+    .btn-apply-filter {
+        display: block;
+        background-color: #0d6e75;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        width: 100%;
+        padding: 8px 10px;
+        font-weight: 600;
+        font-size: 0.88rem;
+        transition: background-color 0.2s;
+    }
+
+    .btn-apply-filter:hover {
+        background-color: #094a4f;
+        color: white;
+    }
+
+    /* Right Side Cards Grid */
+    .sup-card {
+        background: #fff;
+        border: 1px solid #e2e8f0;
+        border-radius: 12px;
+        padding: 14px;
+        height: 100%;
+        min-height: 305px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+    }
+
+    .sup-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+        border-color: #cbd5e1;
+    }
+
+    .sup-avatar {
+        width: 68px;
+        height: 68px;
+        border-radius: 0.75rem;
+        object-fit: cover;
+        border: 2px solid #e2e8f0;
+        box-shadow: 0 4px 12px rgba(15, 23, 42, 0.12);
+        background-color: #fff;
+    }
+
+    .sup-name {
+        font-size: 0.98rem;
+        font-weight: 700;
+        color: #0f172a;
+        margin-bottom: 0;
+    }
+
+    .meta-label {
+        font-size: 0.74rem;
+        color: #0f172a;
+        font-weight: 700;
+        margin-top: 8px;
+        margin-bottom: 1px;
+        text-transform: uppercase;
+        letter-spacing: 0.03em;
+    }
+
+    .meta-value {
+        font-size: 0.82rem;
+        color: #475569;
+        margin-bottom: 8px;
+    }
+
+    .badge-interest {
+        background-color: #f1f5f9;
+        color: #334155;
+        font-size: 0.7rem;
+        font-weight: 600;
+        padding: 3px 8px;
+        border-radius: 6px;
+        display: inline-block;
+        margin-right: 4px;
+        margin-bottom: 4px;
+        border: 1px solid #e2e8f0;
+    }
+
+    .tag-wrap {
+        max-height: 42px;
+        overflow: hidden;
+    }
+
+    /* Action Buttons */
+    .btn-view-profile {
+        background-color: #0f2341;
+        color: white;
+        font-size: 0.78rem;
+        font-weight: 600;
+        border-radius: 6px;
+        padding: 7px 10px;
+        border: none;
+        text-decoration: none;
+        text-align: center;
+    }
+
+    .btn-view-profile:hover {
+        background-color: #1c355e;
+        color: white;
+    }
+
+    .btn-send-req {
+        border: 1.5px solid #0d6e75;
+        color: #0d6e75;
+        background: transparent;
+        font-size: 0.78rem;
+        font-weight: 600;
+        border-radius: 6px;
+        padding: 7px 10px;
+        text-decoration: none;
+        text-align: center;
+    }
+
+    .btn-send-req:hover {
+        background-color: #0d6e75;
+        color: white;
+    }
+
+    .btn-disabled-full {
+        border: 1.5px solid #cbd5e1;
+        color: #94a3b8;
+        background: #f8fafc;
+        font-size: 0.78rem;
+        font-weight: 600;
+        border-radius: 6px;
+        padding: 7px 10px;
+        text-align: center;
+        cursor: not-allowed;
+    }
+
+    /* Pagination */
+    .page-link-custom {
+        color: #334155;
+        border-radius: 6px;
+        margin: 0 3px;
+        border: 1px solid #e2e8f0;
+        font-weight: 600;
+        padding: 6px 12px;
+        text-decoration: none;
+    }
+
+    .page-item.active .page-link-custom {
+        background-color: #0d6e75;
+        border-color: #0d6e75;
+        color: white;
+    }
+
+    @media (max-width: 991.98px) {
+        body:has(.find-students-page) { overflow: auto; }
+        .find-students-page { height: auto; min-height: calc(100vh - 72px); overflow: visible; }
+        .find-students-page > .row { height: auto; }
+        .find-students-sidebar { position: static; margin-bottom: 20px; }
+        .find-students-results { height: auto; overflow: visible; }
+    }
+
+    @media (max-width: 575.98px) {
+        .find-students-page { padding-right: 12px !important; padding-left: 12px !important; }
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="container-fluid find-students-page px-4 py-4">
+    {% if messages %}
+    {% for message in messages %}
+    <div class="alert {% if message.tags == 'error' %}alert-danger{% else %}alert-{{ message.tags|default:'info' }}{% endif %} alert-dismissible fade show"
+        role="alert">
+        {{ message }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    {% endfor %}
+    {% endif %}
+
+    <div class="row g-4 align-items-stretch">
+
+        <!-- Left Filter Sidebar -->
+        <aside class="col-lg-3 col-md-4 find-students-sidebar">
+            <div class="filter-card">
+                <h5 class="filter-main-title">Search & Filter</h5>
+                <form method="GET" action="" class="filter-form">
+
+                    <!-- Search Input Box -->
+                    <div class="mb-3">
+                        <label for="search" class="filter-section-title d-block mb-1">Search Student</label>
+                        <input type="text" name="search" id="search" class="form-control search-input"
+                            placeholder="Search by name or student ID..." value="{{ request.GET.search|default:'' }}">
+                    </div>
+
+                    <!-- Department Filter -->
+                    <div class="filter-section-title mt-2">Department</div>
+                    <div class="mb-2">
+                        <select name="department" id="department" class="form-select search-input">
+                            <option value="all">All Departments</option>
+                            <option value="Computer Science">Computer Science</option>
+                            <option value="Electrical Engineering">Electrical Engineering</option>
+                            <option value="Civil">Civil</option>
+                            <option value="Business">Business</option>
+                        </select>
+                    </div>
+
+                    <!-- Intake / Section Filters -->
+
+                    <div class="mb-3">
+                        <label for="intake" class="filter-section-title d-block mb-1">Intake</label>
+                        <input type="text" name="intake" id="intake" class="form-control search-input"
+                            placeholder="Intake" value="{{ request.GET.intake|default:'' }}">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="section" class="filter-section-title d-block mb-1">Section</label>
+                        <input type="text" name="section" id="section" class="form-control search-input"
+                            placeholder="Section" value="{{ request.GET.section|default:'' }}">
+                    </div>
+
+                    <!-- Skills / Interests Filter -->
+                    <div class="filter-section-title mt-2">Skills / Interests</div>
+                    <div class="mb-3">
+                        <input type="text" name="interests" id="interests" class="form-control search-input"
+                            placeholder="Search skills or interests..." value="{{ request.GET.interests|default:'' }}">
+                    </div>
+
+                    <button type="submit" class="btn btn-apply-filter shadow-sm">Apply Filters</button>
+                </form>
+            </div>
+        </aside>
+
+        <!-- Right Main Cards Area -->
+        <section class="col-lg-9 col-md-8 d-flex flex-column find-students-results">
+            <h3 class="fw-bold mb-4" style="color: #0f172a;">Find Students</h3>
+
+            <div class="row g-3 flex-grow-1 align-content-start">
+                {% for student in students %}
+                <div class="col-lg-4 col-md-6">
+                    <div class="sup-card">
+                        <div>
+                            <!-- Header with Image & Name -->
+                            <div class="d-flex align-items-center gap-3 mb-2">
+                                {% if student.profile_picture %}
+                                <img src="{{ student.profile_picture.url }}" class="sup-avatar rounded-3"
+                                    alt="{{ student.display_name }}">
+                                {% else %}
+                                <img src="https://ui-avatars.com/api/?name={{ student.avatar_name|urlencode }}&background=0d6e75&color=fff"
+                                    class="sup-avatar rounded-3" alt="{{ student.display_name }}">
+                                {% endif %}
+                                <div>
+                                    <h6 class="sup-name">{{ student.display_name }}</h6>
+                                    <div class="text-muted small">Student ID: {{ student.student_id }}</div>
+                                </div>
+                            </div>
+
+                            <!-- Department -->
+                            <div class="meta-label">Department</div>
+                            <div class="meta-value">{{ student.department_label }}</div>
+
+                            <div class="row g-3 mb-2">
+                                <div class="col-6">
+                                    <div class="meta-label">Intake</div>
+                                    <div class="meta-value mb-0">{{ student.intake_label }}</div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="meta-label">Section</div>
+                                    <div class="meta-value mb-0">{{ student.section_label }}</div>
+                                </div>
+                            </div>
+
+                            <!-- Dynamic Research Interests -->
+                            <div class="meta-label">Research Interests</div>
+                            <div class="mb-2 tag-wrap">
+                                {% for interest in student.research_interests_list %}
+                                <span class="badge-interest">{{ interest }}</span>
+                                {% empty %}
+                                <span class="text-muted small">None listed</span>
+                                {% endfor %}
+                            </div>
+
+                            <div class="meta-label">Skills</div>
+                            <div class="mb-2 tag-wrap">
+                                {% for skill in student.skills_list %}
+                                <span class="badge-interest">{{ skill }}</span>
+                                {% empty %}
+                                <span class="text-muted small">None listed</span>
+                                {% endfor %}
+                            </div>
+                        </div>
+
+                        <!-- Action Buttons -->
+                        <div class="d-flex align-items-center gap-2 pt-2">
+                            <a href="{% url 'student_detail' student.student_id %}"
+                                class="btn btn-view-profile flex-fill">View Profile</a>
+                            <a href="{% url 'contact_student' student.student_id %}"
+                                class="btn btn-send-req flex-fill">Contact</a>
+                        </div>
+                    </div>
+                </div>
+                {% empty %}
+                <div class="col-12 text-center py-5">
+                    <h5 class="text-muted">No students found.</h5>
+                    <p class="text-secondary small">Ensure student profiles exist in your database or try clearing the
+                        filters.</p>
+                </div>
+                {% endfor %}
+            </div>
+
+            <!-- Pagination -->
+            <nav class="mt-4 pt-3">
+                <ul class="pagination justify-content-end">
+                    <li class="page-item active"><a class="page-link page-link-custom" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link page-link-custom" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link page-link-custom" href="#">3</a></li>
+                    <li class="page-item"><a class="page-link page-link-custom" href="#">Next</a></li>
+                </ul>
+            </nav>
+        </section>
+
+    </div>
+</div>
+{% endblock %}

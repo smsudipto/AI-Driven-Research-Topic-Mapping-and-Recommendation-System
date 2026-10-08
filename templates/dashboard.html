@@ -1,0 +1,242 @@
+{% extends 'base.html' %}
+
+{% block title %}Dashboard - ThesisBridge{% endblock %}
+
+{% block extra_css %}
+<style>
+    /* Hero Section Background Patterns */
+    .hero-section {
+        background: linear-gradient(135deg, #eaf4f8 0%, #f4f9fc 100%);
+        padding: 60px 0 50px 0;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .hero-title {
+        color: #0f2341;
+        font-weight: 700;
+        max-width: 800px;
+        margin: 0 auto 15px auto;
+        line-height: 1.25;
+    }
+
+    .hero-subtitle {
+        color: #5a6e85;
+        font-size: 1.05rem;
+        margin-bottom: 30px;
+    }
+
+    /* Custom Search Input */
+    .search-box-wrapper {
+        max-width: 550px;
+        margin: 0 auto 25px auto;
+        position: relative;
+    }
+
+    .search-box-wrapper input {
+        height: 50px;
+        border-radius: 12px;
+        padding-left: 45px;
+        border: 1px solid #d0dfea;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+    }
+
+    .search-box-wrapper .search-icon {
+        position: absolute;
+        left: 15px;
+        top: 16px;
+        color: #8fa3b8;
+    }
+
+    .btn-get-started {
+        background-color: #228b96;
+        color: white;
+        padding: 10px 28px;
+        border-radius: 10px;
+        font-weight: 600;
+        border: none;
+        transition: all 0.2s;
+    }
+
+    .btn-get-started:hover {
+        background-color: #1a6f78;
+        color: white;
+    }
+
+    /* Feature Cards */
+    .feature-card {
+        background: #ffffff;
+        border: none;
+        border-radius: 16px;
+        padding: 24px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+        height: 100%;
+    }
+
+    .feature-icon-bg {
+        width: 42px;
+        height: 42px;
+        border-radius: 10px;
+        background-color: #e6f5f7;
+        color: #228b96;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.2rem;
+        margin-bottom: 15px;
+    }
+
+    .feature-title {
+        font-size: 1.1rem;
+        font-weight: 700;
+        color: #0f2341;
+        margin-bottom: 8px;
+    }
+
+    .feature-desc {
+        color: #6c7a89;
+        font-size: 0.9rem;
+        line-height: 1.4;
+        margin-bottom: 0;
+    }
+
+    /* Supervisor Cards */
+    .supervisor-card {
+        background: #ffffff;
+        border: none;
+        border-radius: 14px;
+        padding: 18px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+    }
+
+    .supervisor-avatar {
+        width: 42px;
+        height: 42px;
+        border-radius: 50%;
+        object-fit: cover;
+    }
+
+    .supervisor-name {
+        font-size: 0.95rem;
+        font-weight: 700;
+        color: #0f2341;
+        margin-bottom: 2px;
+    }
+
+    .supervisor-dept {
+        font-size: 0.8rem;
+        color: #7a8b9e;
+        margin-bottom: 6px;
+    }
+
+    .supervisor-interests {
+        font-size: 0.78rem;
+        color: #4a5a6a;
+        margin-bottom: 0;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="hero-section text-center">
+    <div class="container">
+        <h1 class="hero-title display-6">
+            Bridge the Gap Between Your Thesis and the Right Supervisor for universities
+        </h1>
+        <p class="hero-subtitle">
+            Discover perfectly matched research opportunities with our intelligent mapping system.
+        </p>
+
+        <!-- Search Bar -->
+        <form id="novelty-search" method="get" action="{% url 'core_ai:search' %}" class="search-box-wrapper">
+            <i class="fa-solid fa-magnifying-glass search-icon"></i>
+            <input type="search" name="q" class="form-control" placeholder="Search for supervisors, topics, or research areas..." required>
+            <button type="submit" class="visually-hidden">Search</button>
+        </form>
+
+        <button type="submit" form="novelty-search" class="btn btn-get-started shadow-sm">Get Started</button>
+    </div>
+</section>
+
+<!-- Key Features Section -->
+<section class="py-5">
+    <div class="container">
+        <h4 class="fw-bold mb-4" style="color: #0f2341;">Key Features</h4>
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="feature-card">
+                    <div class="feature-icon-bg">
+                        <i class="fa-solid fa-brain"></i>
+                    </div>
+                    <h5 class="feature-title">AI-Driven Matching</h5>
+                    <p class="feature-desc">Algorithms find the best supervisor for your research area.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="feature-card">
+                    <div class="feature-icon-bg">
+                        <i class="fa-regular fa-comments"></i>
+                    </div>
+                    <h5 class="feature-title">Easy Communication</h5>
+                    <p class="feature-desc">Direct messaging to connect with potential mentors.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="feature-card">
+                    <div class="feature-icon-bg">
+                        <i class="fa-solid fa-sliders"></i>
+                    </div>
+                    <h5 class="feature-title">Progress Tracking</h5>
+                    <p class="feature-desc">Monitor your thesis application status in real-time.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Featured Supervisors Section -->
+<section class="pb-5">
+    <div class="container">
+        <h4 class="fw-bold mb-4" style="color: #0f2341;">Featured Supervisors</h4>
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="supervisor-card d-flex justify-content-between align-items-start">
+                    <div>
+                        <h6 class="supervisor-name">Professor Asif Iqbal</h6>
+                        <div class="supervisor-dept">Dep. Computer Science</div>
+                        <p class="supervisor-interests"><strong>Research Interests:</strong> Computer Science, Machine
+                            Learning</p>
+                    </div>
+                    <img src="https://ui-avatars.com/api/?name=Asif+Iqbal&background=0f2341&color=fff"
+                        class="supervisor-avatar" alt="Supervisor">
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="supervisor-card d-flex justify-content-between align-items-start">
+                    <div>
+                        <h6 class="supervisor-name">Professor Asif Iqbal</h6>
+                        <div class="supervisor-dept">Dep. Computer Science</div>
+                        <p class="supervisor-interests"><strong>Research Interests:</strong> Scales, Linkat, Data
+                            Science</p>
+                    </div>
+                    <img src="https://ui-avatars.com/api/?name=Asif+Iqbal&background=228b96&color=fff"
+                        class="supervisor-avatar" alt="Supervisor">
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="supervisor-card d-flex justify-content-between align-items-start">
+                    <div>
+                        <h6 class="supervisor-name">Professor Addham</h6>
+                        <div class="supervisor-dept">Dep. Computer Science</div>
+                        <p class="supervisor-interests"><strong>Research Interests:</strong> Python Science, AI
+                            Architecture</p>
+                    </div>
+                    <img src="https://ui-avatars.com/api/?name=Addham&background=1c355e&color=fff"
+                        class="supervisor-avatar" alt="Supervisor">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

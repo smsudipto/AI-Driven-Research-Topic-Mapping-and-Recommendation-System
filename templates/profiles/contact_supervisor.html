@@ -1,0 +1,117 @@
+{% extends 'base.html' %}
+
+{% block title %}Contact Supervisor - ThesisBridge{% endblock %}
+
+{% block extra_css %}
+<style>
+    body {
+        background-color: #f3f6f9;
+    }
+
+    .contact-shell {
+        max-width: 860px;
+        margin: 0 auto;
+        padding: 32px 16px;
+    }
+
+    .contact-card {
+        background: #ffffff;
+        border: 1px solid #e2e8f0;
+        border-radius: 16px;
+        box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
+        overflow: hidden;
+    }
+
+    .contact-banner {
+        background: linear-gradient(135deg, #0f2341 0%, #1c355e 45%, #228b96 100%);
+        color: #fff;
+        padding: 28px;
+    }
+
+    .contact-avatar {
+        width: 88px;
+        height: 88px;
+        border-radius: 18px;
+        object-fit: cover;
+        border: 2px solid rgba(255, 255, 255, 0.25);
+        background: rgba(255, 255, 255, 0.1);
+    }
+
+    .form-control,
+    .form-control:focus {
+        border-radius: 10px;
+    }
+
+    .btn-primary-contact {
+        background: #0d6e75;
+        border: none;
+        border-radius: 8px;
+        padding: 10px 18px;
+        font-weight: 600;
+    }
+
+    .btn-primary-contact:hover {
+        background: #094a4f;
+    }
+
+    .btn-secondary-contact {
+        background: #f1f5f9;
+        color: #0f172a;
+        border: 1px solid #cbd5e1;
+        border-radius: 8px;
+        padding: 10px 18px;
+        font-weight: 600;
+        text-decoration: none;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="contact-shell">
+    <div class="contact-card">
+        <div class="contact-banner d-flex flex-wrap align-items-center gap-4">
+            {% if supervisor_profile.profile_pic and supervisor_profile.profile_pic.name %}
+            <img src="{{ supervisor_profile.profile_pic.url }}" alt="{{ supervisor_profile.display_name }}"
+                class="contact-avatar">
+            {% else %}
+            <img src="https://ui-avatars.com/api/?name={{ supervisor_profile.avatar_name|urlencode }}&background=ffffff&color=0f2341"
+                alt="{{ supervisor_profile.display_name }}" class="contact-avatar">
+            {% endif %}
+            <div>
+                <div class="text-uppercase small fw-semibold mb-2" style="letter-spacing: 0.12em; opacity: 0.8;">
+                    Contact supervisor</div>
+                <h2 class="fw-bold mb-1">{{ supervisor_profile.display_name }}</h2>
+                <div class="opacity-75">{{ supervisor_profile.department_label }} · {{ supervisor_profile.designation_label }}</div>
+            </div>
+        </div>
+
+        <div class="p-4 p-md-5">
+            <form method="post" action="{% url 'profiles_contact_supervisor' supervisor_profile.id %}">
+                {% csrf_token %}
+                <input type="hidden" name="supervisor_id" value="{{ supervisor_profile.id }}">
+                <div class="mb-3">
+                    <label for="message" class="form-label fw-semibold">Quick Message</label>
+                    <textarea id="message" name="message" class="form-control" rows="6"
+                        placeholder="Write a short message for the supervisor...">{{ quick_message|default:'' }}</textarea>
+                </div>
+
+                <div class="d-flex flex-wrap justify-content-between align-items-center gap-2">
+                    <div class="text-muted small">
+                        Email: {{ supervisor_profile.user.email|default:'Not specified' }}
+                    </div>
+                    <div class="d-flex gap-2">
+                        <a href="{% url 'profiles_find_supervisor' %}" class="btn-secondary-contact">Back to Search</a>
+                        {% if saved_request %}
+                        <input type="hidden" name="request_id" value="{{ saved_request.id }}">
+                        <button type="submit" name="action" value="send_mail" class="btn btn-primary-contact">Send Mail Request</button>
+                        <button type="submit" name="action" value="cancel" class="btn-secondary-contact">Cancel</button>
+                        {% else %}
+                        <button type="submit" name="action" value="save_request" class="btn btn-primary-contact">Send Request</button>
+                        {% endif %}
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

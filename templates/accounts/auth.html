@@ -1,0 +1,186 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}{% if auth_mode == 'register' %}Register{% else %}Log in{% endif %} - ThesisBridge{% endblock %}
+
+{% block extra_css %}
+<style>
+    :root { --auth-navbar-height: 72px; --ink: #1c2632; --parchment: #f6f1e7; --line: #ded6c7; --teal: #42776d; --panel: #1a202c; --cream: #f3eadc; --ease: cubic-bezier(.22,.68,.2,1); }
+    body:has(.auth-shell) { overflow: hidden; background: var(--parchment); }
+    .auth-page-navbar { position: relative !important; top: auto !important; width: 100%; }
+    .auth-shell { display: grid; grid-template-columns: 0% 100%; width: 100%; height: calc(100vh - var(--auth-navbar-height)); min-height: 0; overflow: hidden; background: var(--parchment); transition: grid-template-columns 900ms var(--ease); }
+    .auth-shell.is-revealed { grid-template-columns: 56% 44%; }
+    .visual-panel { position: relative; min-width: 0; height: 100%; overflow: hidden; opacity: 0; background-image: linear-gradient(rgba(11, 19, 41, 0.82), rgba(11, 19, 41, 0.82)), url('/media/sudipto.jpeg'); background-size: cover; background-position: center; background-repeat: no-repeat; transition: opacity 450ms ease 120ms; }
+    .auth-shell.is-revealed .visual-panel { opacity: 1; }
+    .visual-panel img { display: block; width: 100%; height: 100%; object-fit: cover; opacity: .46; }
+    .visual-panel::after { position: absolute; inset: 0; content: ''; background: linear-gradient(180deg, rgba(28,38,50,.18), rgba(28,38,50,.9)); }
+    .visual-copy { position: absolute; z-index: 1; bottom: clamp(36px,9vh,94px); left: clamp(32px,7vw,90px); max-width: 470px; color: var(--cream); }
+    .visual-brand { margin-bottom: 24px; font-size: 1.05rem; }
+    .visual-copy h2 { margin: 0 0 20px; font-size: clamp(2.6rem,4vw,4.1rem); font-weight: 400; line-height: .98; }
+    .visual-copy p { max-width: 370px; margin: 0; color: #d8cbb9; font-family: Arial,sans-serif; font-size: .98rem; line-height: 1.65; }
+    .form-panel { display: flex; align-items: center; justify-content: center; min-width: 0; min-height: 0; overflow-y: auto; overflow-x: hidden; padding: 42px 32px; background: var(--parchment); transition: padding 900ms var(--ease); }
+    .auth-shell.is-revealed .form-panel { align-items: flex-start; padding: clamp(30px,6vh,58px) clamp(28px,5vw,84px); }
+    .auth-card { width: min(100%,436px); max-height: 100%; padding: 2px 4px 8px; color: var(--ink); }
+    .auth-shell--login .form-panel { overflow: hidden; padding: 24px 32px; }
+    .auth-shell--login.is-revealed .form-panel { align-items: center; padding: 20px clamp(28px,5vw,84px); }
+    .auth-shell--login .auth-brand { margin-bottom: 20px; }
+    .auth-shell--login .auth-heading p { margin-bottom: 20px; }
+    .auth-shell--login .mode-switch { margin-bottom: 20px; }
+    .auth-shell--login .field { margin-bottom: 12px; }
+    .auth-shell--login .form-options { margin-bottom: 18px; }
+    .auth-shell--login .divider { margin: 20px 0 14px; }
+    .auth-shell--login .switch-hint { margin-top: 16px; }
+    .auth-brand { display: flex; align-items: center; gap: 10px; margin-bottom: 32px; color: #335e59; font-size: 1.05rem; }
+    .auth-brand::before { width: 9px; height: 9px; content: ''; border-radius: 50%; background: var(--teal); }
+    .auth-heading h1 { margin: 0 0 12px; font-size: clamp(2rem,3vw,2.45rem); font-weight: 400; }
+    .auth-heading p { margin: 0 0 28px; color: #82796f; font-family: Arial,sans-serif; font-size: .98rem; }
+    .mode-switch { display: grid; grid-template-columns: 1fr 1fr; gap: 4px; padding: 4px; margin-bottom: 30px; border: 1px solid var(--line); border-radius: 28px; background: #fffdf9; }
+    .mode-switch button { border: 0; border-radius: 22px; padding: 11px 16px; color: #716b63; background: transparent; cursor: pointer; font-family: Arial,sans-serif; font-size: .86rem; font-weight: 700; }
+    .mode-switch button.is-active { color: #fff; background: var(--ink); }
+    .error-alert { margin-bottom: 18px; padding: 11px 13px; border: 1px solid #d7a39a; border-radius: 8px; color: #873f35; background: #f9e5df; font-family: Arial,sans-serif; font-size: .84rem; line-height: 1.45; }
+    .field { margin-bottom: 17px; }
+    .field label { display: block; margin-bottom: 7px; color: #334b64; font-family: Arial,sans-serif; font-size: .78rem; font-weight: 700; }
+    .field input, .field select { width: 100%; height: 49px; padding: 0 14px; border: 1px solid var(--line); border-radius: 11px; outline: none; color: var(--ink); background: rgba(255,255,255,.86); font-family: Arial,sans-serif; }
+    .field input:focus, .field select:focus { border-color: var(--teal); box-shadow: 0 0 0 3px rgba(66,119,109,.13); }
+    .field #profile_pic { display: block; height: 49px; padding: 8px 10px; line-height: 31px; }
+    .field #profile_pic::file-selector-button { height: 31px; margin: 0 10px 0 0; padding: 0 12px; line-height: 29px; vertical-align: middle; }
+    .field #profile_picture { display: block; height: 49px; padding: 8px 10px; line-height: 31px; }
+    .field #profile_picture::file-selector-button { height: 31px; margin: 0 10px 0 0; padding: 0 12px; line-height: 29px; vertical-align: middle; }
+    .registration-fields { display: none; }
+    .registration-fields.is-visible { display: block; }
+    .field-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .form-options { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin: 2px 0 25px; color: #68717a; font-family: Arial,sans-serif; font-size: .82rem; }
+    .remember { display: flex; align-items: center; gap: 8px; }
+    .remember input { accent-color: var(--teal); }
+    .auth-card a { color: #3f6c71; text-decoration: none; }
+    .auth-card a:hover { text-decoration: underline; }
+    .primary-action { width: 100%; border: 0; border-radius: 10px; padding: 14px 18px; color: #fff; background: var(--teal); cursor: pointer; font-family: Arial,sans-serif; font-size: .9rem; font-weight: 700; }
+    .divider { display: flex; align-items: center; gap: 13px; margin: 29px 0 20px; color: #887f73; font-family: Arial,sans-serif; font-size: .78rem; }
+    .divider::before, .divider::after { height: 1px; content: ''; flex: 1; background: var(--line); }
+    .socials { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    .social { display: flex; align-items: center; justify-content: center; gap: 9px; border: 1px solid var(--line); border-radius: 10px; padding: 12px 10px; color: var(--ink) !important; background: #fffdf9; font-family: Arial,sans-serif; font-size: .83rem; font-weight: 700; }
+    .social.google::before { content: 'G'; color: #4285f4; font-size: 1.1rem; font-weight: 800; }
+    .social.github::before { content: '●'; color: var(--ink); font-size: .8rem; }
+    .switch-hint { margin: 24px 0 0; text-align: center; color: #81796f; font-family: Arial,sans-serif; font-size: .81rem; }
+    .switch-hint a { font-weight: 700; }
+    @media (max-width: 760px) {
+        :root { --auth-navbar-height: 56px; }
+        body:has(.auth-shell) { overflow: auto; }
+        .auth-shell, .auth-shell.is-revealed { display: block; height: calc(100vh - var(--auth-navbar-height)); overflow: hidden; }
+        .visual-panel { display: none; }
+        .form-panel, .auth-shell.is-revealed .form-panel { align-items: flex-start; height: 100%; padding: 30px 20px 42px; }
+        .auth-card { max-width: 480px; max-height: none; }
+    }
+    @media (max-width: 430px) { .field-grid { grid-template-columns: 1fr; gap: 0; } }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="auth-shell{% if messages %} is-revealed{% endif %}{% if auth_mode != 'register' %} auth-shell--login{% endif %}" id="authShell">
+    <section class="visual-panel" aria-label="ThesisBridge introduction">
+        <!-- Fallback image for the visual panel. -->
+        <img src="/media/sudipto.jpeg" alt="Researchers collaborating around a table">
+        <div class="visual-copy"><div class="visual-brand">ThesisBridge</div><h2>Where research<br>finds its advisor.</h2><p>Connect with mentors, track milestones, and move your thesis from proposal to defense.</p></div>
+    </section>
+    <section class="form-panel">
+        <div class="auth-card">
+            <div class="auth-brand">ThesisBridge</div>
+            <div class="auth-heading"><h1 id="authTitle">Welcome back</h1><p id="authSubtitle">Sign in to continue your research.</p></div>
+            <div class="mode-switch" role="tablist" aria-label="Authentication mode"><button type="button" class="mode-button" data-mode="login" role="tab">Log in</button><button type="button" class="mode-button" data-mode="register" role="tab">Register</button></div>
+            {% if messages %}<div class="error-alert" role="alert">{% for message in messages %}{{ message }}{% if not forloop.last %}<br>{% endif %}{% endfor %}</div>{% endif %}
+            <form id="authForm" method="post" action="{% if auth_mode == 'register' %}{% url 'register' %}{% else %}{% url 'login' %}{% endif %}" enctype="multipart/form-data" novalidate>
+                {% csrf_token %}
+                <div class="field"><label for="username">Username or email</label><input id="username" type="text" name="username" value="{{ form_data.username|default:'' }}" autocomplete="username" required></div>
+                <div class="registration-fields" id="registrationFields">
+                    <div class="field-grid"><div class="field"><label for="email">Email</label><input id="email" type="email" name="email" value="{{ form_data.email|default:'' }}" autocomplete="email"></div><div class="field"><label for="role">Role</label><select id="role" name="role"><option value="student"{% if form_data.role != 'supervisor' %} selected{% endif %}>Student</option><option value="supervisor"{% if form_data.role == 'supervisor' %} selected{% endif %}>Supervisor</option></select></div></div>
+                    <div id="student-fields">
+                        <div class="field-grid"><div class="field"><label for="student_id">Student ID</label><input id="student_id" type="text" name="student_id" value="{{ form_data.student_id|default:'' }}"></div><div class="field"><label for="cgpa">CGPA</label><input id="cgpa" type="number" name="cgpa" min="0" max="4" step=".01" value="{{ form_data.cgpa|default:'' }}"></div></div>
+                        <div class="field"><label for="student_department">Department</label><input id="student_department" type="text" name="student_department" value="{{ form_data.student_department|default:'Computer Science' }}"></div>
+                        <div class="field"><label for="research_interests">Research interests</label><input id="research_interests" type="text" name="student_research_interests" value="{{ form_data.student_research_interests|default:'' }}"></div>
+                        <div class="field"><label for="profile_picture">Profile picture</label><input id="profile_picture" type="file" name="profile_picture" accept="image/*"></div>
+                    </div>
+                    <div id="supervisor-fields" hidden>
+                        <div class="field-grid"><div class="field"><label for="designation">Designation</label><input id="designation" type="text" name="designation" value="{{ form_data.designation|default:'' }}"></div><div class="field"><label for="capacity">Max student capacity</label><input id="capacity" type="number" name="capacity" min="1" value="{{ form_data.capacity|default:'5' }}"></div></div>
+                        <div class="field"><label for="expertise_areas">Expertise areas</label><input id="expertise_areas" type="text" name="expertise_areas" value="{{ form_data.expertise_areas|default:'' }}"></div>
+                        <div class="field-grid"><div class="field"><label for="department">Department</label><input id="department" type="text" name="department" value="{{ form_data.department|default:'Computer Science' }}"></div><div class="field"><label for="status">Status</label><select id="status" name="status"><option>Accepting Students</option><option>Full</option></select></div></div>
+                        <div class="field"><label for="profile_pic">Profile picture</label><input id="profile_pic" type="file" name="profile_pic" accept="image/*"></div>
+                        <div class="field"><label for="supervisor_research_interests">Supervisor research interests</label><input id="supervisor_research_interests" type="text" name="research_interests" value="{{ form_data.research_interests|default:'' }}"></div>
+                    </div>
+                    <div class="field"><label for="registrationPassword">Password</label><input id="registrationPassword" type="password" name="password" autocomplete="new-password"></div>
+                </div>
+                <div class="field login-password"><label for="password">Password</label><input id="password" type="password" name="password" autocomplete="current-password" required></div>
+                <div class="form-options login-only"><label class="remember"><input type="checkbox" name="remember_me"> Remember me</label><a href="#">Forgot password?</a></div>
+                <button class="primary-action" id="submitButton" type="submit">Log in</button>
+            </form>
+            <div class="divider">or continue with</div><div class="socials"><a class="social google" href="#">Google</a><a class="social github" href="#">GitHub</a></div>
+            <p class="switch-hint" id="switchHint">New to ThesisBridge? <a href="#" data-mode="register">Create an account</a></p>
+        </div>
+    </section>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+(function () {
+    const navbar = document.querySelector('.tb-navbar');
+    const shell = document.getElementById('authShell');
+    const form = document.getElementById('authForm');
+    const registrationFields = document.getElementById('registrationFields');
+    const loginOnly = document.querySelectorAll('.login-only');
+    const loginPassword = document.querySelector('.login-password');
+    const studentFields = document.getElementById('student-fields');
+    const supervisorFields = document.getElementById('supervisor-fields');
+    const role = document.getElementById('role');
+    const title = document.getElementById('authTitle');
+    const subtitle = document.getElementById('authSubtitle');
+    const submit = document.getElementById('submitButton');
+    const hint = document.getElementById('switchHint');
+    const modeButtons = document.querySelectorAll('.mode-button');
+    const loginAction = "{% url 'login' %}";
+    const registerAction = "{% url 'register' %}";
+    let mode = "{{ auth_mode|default:'login' }}" === 'register' ? 'register' : 'login';
+    let revealed = shell.classList.contains('is-revealed');
+
+    function syncNavbarHeight() { document.documentElement.style.setProperty('--auth-navbar-height', navbar.offsetHeight + 'px'); }
+    function updateRoleFields() {
+        const isStudent = role.value === 'student' && mode === 'register';
+        const isSupervisor = role.value === 'supervisor' && mode === 'register';
+        studentFields.hidden = !isStudent;
+        supervisorFields.hidden = !isSupervisor;
+        studentFields.querySelectorAll('input, select').forEach(function (field) {
+            field.required = isStudent && ['student_id', 'cgpa', 'student_department'].includes(field.name);
+        });
+        supervisorFields.querySelectorAll('input, select').forEach(function (field) { field.required = isSupervisor && ['designation','expertise_areas','capacity','department','status','profile_pic','research_interests'].includes(field.name); });
+    }
+    function setMode(nextMode) {
+        mode = nextMode;
+        const isRegister = mode === 'register';
+        shell.classList.toggle('auth-shell--login', !isRegister);
+        title.textContent = isRegister ? 'Create your account' : 'Welcome back';
+        subtitle.textContent = isRegister ? 'Join the research community at ThesisBridge.' : 'Sign in to continue your research.';
+        submit.textContent = isRegister ? 'Create account' : 'Log in';
+        form.action = isRegister ? registerAction : loginAction;
+        registrationFields.classList.toggle('is-visible', isRegister);
+        loginPassword.style.display = isRegister ? 'none' : 'block';
+        loginPassword.querySelector('input').required = !isRegister;
+        loginOnly.forEach(function (element) { element.style.display = isRegister ? 'none' : ''; });
+        registrationFields.querySelectorAll('input, select').forEach(function (field) { field.required = false; });
+        document.getElementById('email').required = isRegister;
+        document.getElementById('role').required = isRegister;
+        document.getElementById('registrationPassword').required = isRegister;
+        updateRoleFields();
+        modeButtons.forEach(function (button) { button.classList.toggle('is-active', button.dataset.mode === mode); button.setAttribute('aria-selected', button.dataset.mode === mode); });
+        hint.innerHTML = isRegister ? 'Already have an account? <a href="#" data-mode="login">Log in</a>' : 'New to ThesisBridge? <a href="#" data-mode="register">Create an account</a>';
+    }
+    function reveal() { if (!revealed) { revealed = true; shell.classList.add('is-revealed'); } }
+
+    document.addEventListener('click', reveal, { once: true });
+    document.addEventListener('click', function (event) { const toggle = event.target.closest('[data-mode]'); if (toggle) { event.preventDefault(); setMode(toggle.dataset.mode); } });
+    role.addEventListener('change', updateRoleFields);
+    window.addEventListener('resize', syncNavbarHeight);
+    new ResizeObserver(syncNavbarHeight).observe(navbar);
+    syncNavbarHeight();
+    setMode(mode);
+}());
+</script>
+{% endblock %}

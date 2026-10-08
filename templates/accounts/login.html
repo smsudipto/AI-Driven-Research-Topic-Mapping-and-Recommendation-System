@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+
+{% block title %}Login - ThesisBridge{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center align-items-center my-5">
+    <div class="col-md-6 col-lg-5">
+        <!-- Main Card Container -->
+        <div class="card shadow-lg border-0 rounded-4">
+            <div class="card-body p-4 p-sm-5">
+
+                <!-- Header Section -->
+                <div class="text-center mb-4">
+                    <div class="bg-primary text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-3"
+                        style="width: 60px; height: 60px;">
+                        <i class="fa-solid fa-user-lock fa-xl"></i>
+                    </div>
+                    <h3 class="fw-bold text-dark">Welcome Back!</h3>
+                    <p class="text-muted small">Please enter your credentials to access ThesisBridge.</p>
+                </div>
+
+                <!-- Login Form -->
+                <form method="POST" action="{% url 'login' %}">
+                    {% csrf_token %}
+
+                    <!-- Username Field -->
+                    <div class="form-floating mb-3">
+                        <input type="text" name="username" class="form-control rounded-3" id="floatingUsername"
+                            placeholder="Username" required>
+                        <label for="floatingUsername"><i class="fa-regular fa-user me-2"></i>Username</label>
+                    </div>
+
+                    <!-- Password Field -->
+                    <div class="form-floating mb-3">
+                        <input type="password" name="password" class="form-control rounded-3" id="floatingPassword"
+                            placeholder="Password" required>
+                        <label for="floatingPassword"><i class="fa-solid fa-key me-2"></i>Password</label>
+                    </div>
+
+                    <!-- Remember Me & Forgot Password -->
+                    <div class="d-flex justify-content-between align-items-center mb-4">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="rememberMe">
+                            <label class="form-check-label small text-muted" for="rememberMe">
+                                Remember me
+                            </label>
+                        </div>
+                        <a href="#" class="text-primary text-decoration-none small fw-semibold">Forgot Password?</a>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <button type="submit" class="btn btn-primary btn-lg w-100 rounded-3 fw-bold shadow-sm">
+                        <i class="fa-solid fa-right-to-bracket me-2"></i>Sign In
+                    </button>
+                </form>
+
+                <!-- Divider & Register Link -->
+                <hr class="my-4 text-muted">
+
+                <div class="text-center">
+                    <p class="mb-0 text-muted small">Don't have an account?
+                        <a href="{% url 'register' %}" class="text-primary fw-bold text-decoration-none">Create an
+                            Account</a>
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

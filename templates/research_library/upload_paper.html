@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block title %}Upload Research Paper - ThesisBridge{% endblock %}
+
+{% block content %}
+<div class="container py-5" style="max-width: 860px;">
+	<div class="bg-white border rounded-3 shadow-sm p-4 p-md-5">
+		<h1 class="h3 mb-4" style="color: #0f2b3c;">Upload Research Paper</h1>
+		<form method="post" enctype="multipart/form-data">
+			{% csrf_token %}
+			{% for field in form %}
+			<div class="mb-3">
+				<label for="{{ field.id_for_label }}" class="form-label fw-semibold">{{ field.label }}</label>
+				{{ field }}
+				{% for error in field.errors %}<div class="text-danger small">{{ error }}</div>{% endfor %}
+			</div>
+			{% endfor %}
+			<div class="d-flex gap-2">
+				<a href="{% url 'paper_list' %}" class="btn btn-light">Cancel</a>
+				<button type="submit" class="btn" style="background: #1b8585; color: #fff;">Upload Paper</button>
+			</div>
+		</form>
+	</div>
+</div>
+{% endblock %}

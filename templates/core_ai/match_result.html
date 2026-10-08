@@ -1,0 +1,165 @@
+{% extends 'base.html' %}
+
+{% block title %}Semantic Research Search - ThesisBridge{% endblock %}
+
+{% block extra_css %}
+<style>
+	body { background: #f4f7f9; }
+	.ai-shell { max-width: 1180px; margin: 0 auto; padding: 40px 16px 64px; }
+	.ai-hero { background: linear-gradient(135deg, #0f2341, #0d6e75); color: #fff; padding: 32px; border-radius: 18px; }
+	.ai-hero h1 { font-weight: 800; letter-spacing: .01em; }
+	.search-form { max-width: 780px; }
+	.search-form .form-control { border: 0; min-height: 52px; }
+	.search-form .btn { min-height: 52px; font-weight: 700; }
+	.metric-card, .panel, .recommendation { background: #fff; border: 1px solid #e2e8f0; border-radius: 14px; }
+	.metric-card { padding: 20px; height: 100%; }
+	.metric-value { font-size: 2rem; font-weight: 800; color: #0f2341; }
+	.panel { padding: 24px; height: 100%; }
+	.status-badge { font-size: .8rem; letter-spacing: .04em; }
+	.match-row + .match-row { border-top: 1px solid #edf1f5; }
+	.match-row { padding: 16px 0; }
+	.score-track { height: 8px; background: #e8eef2; border-radius: 99px; overflow: hidden; }
+	.score-fill { height: 100%; background: #0d6e75; border-radius: inherit; }
+	.recommendation { padding: 18px; height: 100%; }
+	.recommendation h3 { font-size: 1rem; color: #0f2341; }
+</style>
+{% endblock %}
+
+{% block content %}
+<main class="ai-shell">
+	<section class="ai-hero mb-4">
+		<p class="text-uppercase small fw-semibold mb-2 opacity-75">ThesisBridge semantic lab</p>
+		<h1 class="display-6 mb-2">Find the research gap before you commit.</h1>
+		<p class="mb-4 opacity-75">Compare a thesis idea with indexed papers and supervisor topics using local SBERT analysis.</p>
+		<form method="get" action="{% url 'core_ai:search' %}" class="search-form input-group">
+			<label class="visually-hidden" for="query">Research idea</label>
+			<input id="query" name="q" type="search" value="{{ query }}" class="form-control" placeholder="Describe your thesis idea..." required>
+			<button class="btn btn-light px-4" type="submit">Analyze</button>
+		</form>
+	</section>
+
+	{% if query %}
+	<section class="row g-3 mb-4">
+		<div class="col-md-4">
+			<div class="metric-card">
+				<div class="text-muted small text-uppercase fw-semibold">Novelty score</div>
+				<div class="metric-value">{{ novelty_percentage }}%</div>
+				<div class="text-muted small">Estimated room beyond indexed work</div>
+			</div>
+		</div>
+		<div class="col-md-4">
+			<div class="metric-card">
+				<div class="text-muted small text-uppercase fw-semibold">Highest overlap</div>
+				<div class="metric-value">{{ similarity_percentage }}%</div>
+				<div class="text-muted small">Strongest semantic match found</div>
+			</div>
+		</div>
+		<div class="col-md-4">
+			<div class="metric-card d-flex flex-column justify-content-center">
+				<span class="badge text-bg-{{ status.tone }} status-badge align-self-start mb-2">{{ status.label }}</span>
+				<div class="small text-muted">{{ status.description }}</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="row g-3 mb-4">
+		<div class="col-lg-5">
+			<div class="panel">
+				<h2 class="h5 fw-bold mb-3">Novelty balance</h2>
+				<div style="height: 260px;"><canvas id="novelty-chart"></canvas></div>
+			</div>
+		</div>
+		<div class="col-lg-7">
+			<div class="panel">
+				<h2 class="h5 fw-bold mb-3">Closest indexed work</h2>
+				<div style="height: 260px;"><canvas id="match-chart"></canvas></div>
+			</div>
+		</div>
+	</section>
+
+	<section class="panel mb-4">
+		<h2 class="h5 fw-bold mb-1">Top semantic matches</h2>
+		<p class="text-muted small mb-0">Papers and open research topics ranked by local cosine similarity.</p>
+		{% for match in matches %}
+		<article class="match-row">
+			<div class="d-flex justify-content-between gap-3 mb-2">
+				<div>
+					<h3 class="h6 mb-1">{{ match.title }}</h3>
+					<div class="text-muted small">{{ match.kind|title }} · {{ match.meta }}</div>
+				</div>
+				<strong class="text-nowrap">{{ match.similarity }}%</strong>
+			</div>
+			<div class="score-track"><div class="score-fill" style="width: {{ match.similarity }}%"></div></div>
+		</article>
+		{% empty %}
+		<p class="text-muted mb-0 mt-4">No papers or topics are indexed yet.</p>
+		{% endfor %}
+	</section>
+
+	<section>
+		<div class="d-flex justify-content-between align-items-end mb-3">
+			<div><h2 class="h5 fw-bold mb-1">Possible research directions</h2><p class="text-muted small mb-0">Suggestions from lower-density topic areas in the database.</p></div>
+		</div>
+		<div class="row g-3">
+			{% for recommendation in recommendations %}
+			<div class="col-md-4"><article class="recommendation"><span class="badge text-bg-light mb-3">{{ recommendation.domain }}</span><h3>{{ recommendation.title }}</h3><p class="small text-muted">{{ recommendation.description }}</p><div class="small fw-semibold text-success">{{ recommendation.reason }}</div></article></div>
+			{% empty %}
+			<div class="col-12"><div class="panel text-muted">Add research topics to generate database-driven gap suggestions.</div></div>
+			{% endfor %}
+		</div>
+	</section>
+	{% endif %}
+</main>
+
+{% if query %}
+{{ chart_data|json_script:'chart-data' }}
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
+<script>
+	const chartData = JSON.parse(document.getElementById('chart-data').textContent);
+	new Chart(document.getElementById('novelty-chart'), {
+		type: 'doughnut',
+		data: { labels: ['Novelty', 'Similarity'], datasets: [{ data: [chartData.novelty, chartData.similarity], backgroundColor: ['#198754', '#f0ad4e'], borderWidth: 0 }] },
+		options: { maintainAspectRatio: false, cutout: '70%', plugins: { legend: { position: 'bottom' } } }
+	});
+	const wrappedMatchLabels = chartData.labels.map((title) => {
+		const words = title.split(/\s+/);
+		const lines = ['', ''];
+		const maxLineLength = 28;
+
+		words.forEach((word) => {
+			const targetLine = lines[0].length < maxLineLength ? 0 : 1;
+			if (lines[targetLine].length < maxLineLength) {
+				const nextText = lines[targetLine] ? `${lines[targetLine]} ${word}` : word;
+				lines[targetLine] = nextText.slice(0, maxLineLength);
+			}
+		});
+
+		if (lines[1]) {
+			lines[1] = `${lines[1].replace(/\s+$/, '')}...`;
+		}
+		return lines[1] ? lines : [lines[0]];
+	});
+
+	new Chart(document.getElementById('match-chart'), {
+		type: 'bar',
+		data: { labels: wrappedMatchLabels, datasets: [{ label: 'Similarity %', data: chartData.scores, backgroundColor: '#0d6e75', borderRadius: 6 }] },
+		options: {
+			indexAxis: 'y',
+			maintainAspectRatio: false,
+			layout: { padding: { left: 180 } },
+			scales: {
+				x: { beginAtZero: true, max: 100 },
+				y: {
+					ticks: {
+						autoSkip: false,
+						crossAlign: 'far',
+						font: { size: 11 },
+					},
+				},
+			},
+			plugins: { legend: { display: false } },
+		}
+	});
+</script>
+{% endif %}
+{% endblock %}

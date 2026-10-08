@@ -1,0 +1,133 @@
+{% extends 'base.html' %}
+
+{% block title %}Supervisor Profile - ThesisBridge{% endblock %}
+
+{% block extra_css %}
+<style>
+    body {
+        background-color: #f3f6f9;
+    }
+
+    .profile-card {
+        background: #ffffff;
+        border: 1px solid #e2e8f0;
+        border-radius: 12px;
+        padding: 30px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+    }
+
+    .sup-profile-img {
+        width: 120px;
+        height: 120px;
+        border-radius: 12px;
+        object-fit: cover;
+    }
+
+    .badge-interest {
+        background-color: #f1f5f9;
+        color: #334155;
+        font-size: 0.82rem;
+        font-weight: 600;
+        padding: 6px 12px;
+        border-radius: 6px;
+        display: inline-block;
+        margin-right: 6px;
+        margin-bottom: 6px;
+        border: 1px solid #e2e8f0;
+    }
+
+    .btn-edit-profile {
+        background-color: #0f2341;
+        color: white;
+        font-weight: 600;
+        border-radius: 8px;
+        padding: 8px 18px;
+        text-decoration: none;
+        font-size: 0.9rem;
+    }
+
+    .btn-edit-profile:hover {
+        background-color: #1c355e;
+        color: white;
+    }
+
+    .badge-status-accepting {
+        background-color: #dcfce7;
+        color: #166534;
+        font-weight: 600;
+        padding: 4px 10px;
+        border-radius: 20px;
+        font-size: 0.8rem;
+    }
+
+    .badge-status-full {
+        background-color: #fee2e2;
+        color: #991b1b;
+        font-weight: 600;
+        padding: 4px 10px;
+        border-radius: 20px;
+        font-size: 0.8rem;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <div class="profile-card">
+
+                <!-- Profile Header -->
+                <div class="d-flex align-items-start justify-content-between mb-4">
+                    <div class="d-flex gap-4 align-items-center">
+                        {% if profile.profile_pic %}
+                        <img src="{{ profile.profile_pic.url }}" class="sup-profile-img"
+                            alt="{{ profile.avatar_name }}">
+                        {% else %}
+                        <img src="https://ui-avatars.com/api/?name={{ profile.avatar_name|urlencode }}&background=0d6e75&color=fff"
+                            class="sup-profile-img" alt="{{ profile.avatar_name }}">
+                        {% endif %}
+                        <div>
+                            <h4 class="fw-bold mb-1" style="color: #0f172a;">{{ profile.display_name }}</h4>
+                            <p class="text-muted mb-2">{{ profile.department_label }}</p>
+
+                            {% if profile.status_label == 'Accepting Students' %}
+                            <span class="badge-status-accepting">Accepting Students</span>
+                            {% else %}
+                            <span class="badge-status-full">Full</span>
+                            {% endif %}
+                        </div>
+                    </div>
+
+                    <!-- Edit Profile Button -->
+                    <a href="{% url 'edit_profile' %}" class="btn btn-edit-profile shadow-sm">
+                        <i class="bi bi-pencil-square me-1"></i> Edit Profile
+                    </a>
+                </div>
+
+                <hr class="my-4" style="border-color: #e2e8f0;">
+
+                <!-- Details Section -->
+                <div class="mb-4">
+                    <h6 class="fw-bold text-dark mb-2">Research Interests</h6>
+                    <div>
+                        {% if profile.research_interests_list %}
+                        {% for interest in profile.research_interests_list %}
+                        <span class="badge-interest">{{ interest }}</span>
+                        {% endfor %}
+                        {% else %}
+                        <p class="text-muted small">No research interests added yet.</p>
+                        {% endif %}
+                    </div>
+                </div>
+
+                <div class="mb-2">
+                    <h6 class="fw-bold text-dark mb-1">Email Address</h6>
+                    <p class="text-secondary mb-0">{{ user.email }}</p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
