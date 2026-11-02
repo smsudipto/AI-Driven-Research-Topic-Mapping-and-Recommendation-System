@@ -1,1 +1,1 @@
-web: gunicorn thesisbridge_project.wsgi --log-file -
+web: gunicorn ThesisBridge.wsgi:application --log-file -
